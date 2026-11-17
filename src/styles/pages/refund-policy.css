@@ -1930,3 +1930,36 @@ html body { background: rgb(255, 255, 255); }
   }
 }
 
+/* === Framer interaction states (source: OneThing Framer components) === */
+@property --oi-nav-c1 { syntax: "<color>"; inherits: false; initial-value: rgba(255, 255, 255, 0); }
+@property --oi-nav-c2 { syntax: "<color>"; inherits: false; initial-value: rgba(255, 255, 255, 0); }
+@property --oi-nav-shadow { syntax: "<color>"; inherits: false; initial-value: rgba(0, 0, 0, 0); }
+@property --oi-nav-border { syntax: "<color>"; inherits: false; initial-value: rgba(255, 255, 255, 0); }
+/* Header: Transparent -> White variant once the page title scrolls under it (spring 0.4s, bounce 0.2). */
+.framer-mV9bZ[data-fx-nav] { transition: --oi-nav-c1 370ms linear(0, 0.0331, 0.1141, 0.2207, 0.3372, 0.4528, 0.5608, 0.6572, 0.7402, 0.8095, 0.8657, 0.9101, 0.9441, 0.9694, 0.9875, 0.9999, 1.0078, 1.0125, 1.0147, 1.0152, 1.0145, 1.0133, 1.0116, 1.0098, 1.0081, 1.0065, 1.005, 1.0038, 1.0028, 1.0019, 1), --oi-nav-c2 370ms linear(0, 0.0331, 0.1141, 0.2207, 0.3372, 0.4528, 0.5608, 0.6572, 0.7402, 0.8095, 0.8657, 0.9101, 0.9441, 0.9694, 0.9875, 0.9999, 1.0078, 1.0125, 1.0147, 1.0152, 1.0145, 1.0133, 1.0116, 1.0098, 1.0081, 1.0065, 1.005, 1.0038, 1.0028, 1.0019, 1), --oi-nav-shadow 370ms linear(0, 0.0331, 0.1141, 0.2207, 0.3372, 0.4528, 0.5608, 0.6572, 0.7402, 0.8095, 0.8657, 0.9101, 0.9441, 0.9694, 0.9875, 0.9999, 1.0078, 1.0125, 1.0147, 1.0152, 1.0145, 1.0133, 1.0116, 1.0098, 1.0081, 1.0065, 1.005, 1.0038, 1.0028, 1.0019, 1), --oi-nav-border 370ms linear(0, 0.0331, 0.1141, 0.2207, 0.3372, 0.4528, 0.5608, 0.6572, 0.7402, 0.8095, 0.8657, 0.9101, 0.9441, 0.9694, 0.9875, 0.9999, 1.0078, 1.0125, 1.0147, 1.0152, 1.0145, 1.0133, 1.0116, 1.0098, 1.0081, 1.0065, 1.005, 1.0038, 1.0028, 1.0019, 1); }
+.framer-mV9bZ.oi-nav-white {
+  --oi-nav-c1: var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255));
+  --oi-nav-c2: var(--token-5a71bf1c-1fa0-4746-87e5-ea9fa6d354f0, rgba(255, 255, 255, 0.8));
+  --oi-nav-shadow: rgba(0, 0, 0, 0.05);
+  --oi-nav-border: var(--token-8bbbea30-76c9-4ba6-997e-07eab0911b28, rgb(255, 255, 255));
+}
+/* Button component: hover -> opacity 0.8 (spring 0.4s, bounce 0.2). */
+.framer-6dH45 { transition: opacity 370ms linear(0, 0.0331, 0.1141, 0.2207, 0.3372, 0.4528, 0.5608, 0.6572, 0.7402, 0.8095, 0.8657, 0.9101, 0.9441, 0.9694, 0.9875, 0.9999, 1.0078, 1.0125, 1.0147, 1.0152, 1.0145, 1.0133, 1.0116, 1.0098, 1.0081, 1.0065, 1.005, 1.0038, 1.0028, 1.0019, 1); }
+.framer-6dH45:hover { opacity: 0.8 !important; }
+/* Footer socials scale 1.1, footer product card 1.03 (tween 0.3s). */
+.framer-iqhows, .framer-1acbqbl-container { transition: scale 300ms cubic-bezier(0.44, 0, 0.56, 1); }
+.framer-iqhows:hover { scale: 1.1; }
+.framer-1acbqbl-container:hover { scale: 1.03; }
+/* Product cards in the page body: hover scale 1.03 (spring 0.4s, bounce 0.2). */
+.framer-lzivtl-container, .framer-ikxl5d-container { transition: scale 370ms linear(0, 0.0331, 0.1141, 0.2207, 0.3372, 0.4528, 0.5608, 0.6572, 0.7402, 0.8095, 0.8657, 0.9101, 0.9441, 0.9694, 0.9875, 0.9999, 1.0078, 1.0125, 1.0147, 1.0152, 1.0145, 1.0133, 1.0116, 1.0098, 1.0081, 1.0065, 1.005, 1.0038, 1.0028, 1.0019, 1); }
+.framer-lzivtl-container:hover, .framer-ikxl5d-container:hover { scale: 1.03; }
+/* Accordion icons and purchase options (component variant transitions). */
+.framer-q26q4r, .framer-1n78sdg { transition: transform 650ms linear(0, 0.0334, 0.1148, 0.222, 0.339, 0.455, 0.5632, 0.6596, 0.7426, 0.8117, 0.8677, 0.9117, 0.9455, 0.9704, 0.9883, 1.0004, 1.0082, 1.0127, 1.0147, 1.0151, 1.0145, 1.0131, 1.0115, 1.0097, 1.0079, 1.0063, 1.0049, 1.0037, 1.0027, 1.0019, 1); }
+.framer-1oe5sxv { transition: transform 670ms linear(0, 0.0357, 0.1184, 0.2216, 0.3295, 0.4331, 0.5274, 0.6105, 0.682, 0.7424, 0.7926, 0.834, 0.8678, 0.8951, 0.9171, 0.9347, 0.9487, 0.9598, 0.9686, 0.9755, 0.981, 0.9852, 0.9885, 0.9911, 0.9931, 0.9947, 0.9959, 0.9969, 0.9976, 0.9981, 1); }
+.framer-6BFw0 { transition: background-color 370ms linear(0, 0.0331, 0.1141, 0.2207, 0.3372, 0.4528, 0.5608, 0.6572, 0.7402, 0.8095, 0.8657, 0.9101, 0.9441, 0.9694, 0.9875, 0.9999, 1.0078, 1.0125, 1.0147, 1.0152, 1.0145, 1.0133, 1.0116, 1.0098, 1.0081, 1.0065, 1.005, 1.0038, 1.0028, 1.0019, 1); }
+.framer-1imtrad, .framer-1caz9sd { transition: opacity 370ms linear(0, 0.0331, 0.1141, 0.2207, 0.3372, 0.4528, 0.5608, 0.6572, 0.7402, 0.8095, 0.8657, 0.9101, 0.9441, 0.9694, 0.9875, 0.9999, 1.0078, 1.0125, 1.0147, 1.0152, 1.0145, 1.0133, 1.0116, 1.0098, 1.0081, 1.0065, 1.005, 1.0038, 1.0028, 1.0019, 1); }
+.framer-4dylj7, .framer-n19f5h, .framer-1mvdp1s, .framer-p63ssa { touch-action: pan-y; user-select: none; }
+@media (prefers-reduced-motion: reduce) {
+  .framer-mV9bZ[data-fx-nav], .framer-6dH45, .framer-iqhows, .framer-1acbqbl-container, .framer-lzivtl-container, .framer-ikxl5d-container,
+  .framer-q26q4r, .framer-1n78sdg, .framer-1oe5sxv, .framer-6BFw0, .framer-1imtrad, .framer-1caz9sd { transition: none; }
+}
