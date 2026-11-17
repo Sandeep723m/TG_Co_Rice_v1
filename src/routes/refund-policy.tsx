@@ -2,6 +2,10 @@ import type { CSSProperties } from "react";
 import { useEffect } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import capturedCSS from "../styles/pages/refund-policy.css?raw";
+import { fxInitialCss, useFramerEffects } from "../lib/framer-effects";
+import { POLICY_FX } from "../lib/onething-motion";
+
+const POLICY_FX_CSS = fxInitialCss(POLICY_FX);
 
 export const Route = createFileRoute("/refund-policy")({
   head: () => ({
@@ -20,9 +24,11 @@ export const Route = createFileRoute("/refund-policy")({
 
 function Index() {
   useImportedLayout();
+  useFramerEffects(POLICY_FX);
   return (
     <>
       <style>{capturedCSS}</style>
+      <style>{POLICY_FX_CSS}</style>
       <div id="main">
         <div className="framer-DrtIB framer-71N50 framer-2BTrO framer-Jf64E framer-a8wg0 framer-9H6qh framer-unEwr framer-1n95zts items-center flex-col flex-nowrap content-center justify-start [overflow:var(--overflow-clip-fallback,clip)] [min-height:100vh]" style={{ width: "auto" }} data-layout-template="true">
           <ImportedDivOfferNav />

@@ -3,6 +3,10 @@ import { useEffect } from "react";
 import { useSyncExternalStore } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import capturedCSS from "../styles/pages/privacy-policy.css?raw";
+import { fxInitialCss, useFramerEffects } from "../lib/framer-effects";
+import { POLICY_FX } from "../lib/onething-motion";
+
+const POLICY_FX_CSS = fxInitialCss(POLICY_FX);
 
 export const Route = createFileRoute("/privacy-policy")({
   head: () => ({
@@ -23,9 +27,11 @@ function Index() {
   const importedViewportWidth = useSyncExternalStore(subscribeMobile, () => window.innerWidth, () => 1440);
   const isMobile = importedViewportWidth <= 767;
   useImportedLayout();
+  useFramerEffects(POLICY_FX);
   return (
     <>
       <style>{capturedCSS}</style>
+      <style>{POLICY_FX_CSS}</style>
       <div id="main">
         <div className="framer-DrtIB framer-71N50 framer-2BTrO framer-Jf64E framer-a8wg0 framer-9H6qh framer-unEwr framer-1n95zts [min-height:100vh]" style={{ width: "auto" }} data-layout-template="true">
           <div className="framer-frk7oi [order:-1000] [right:0px] [z-index:10] [opacity:1]" style={{ transform: "none", willChange: "transform" }} data-site-import-desktop-header="">
