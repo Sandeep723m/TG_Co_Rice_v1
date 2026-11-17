@@ -1,7 +1,11 @@
 import type { CSSProperties, KeyboardEvent } from "react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import capturedCSS from "../styles/pages/index.css?raw";
+import { fxInitialCss, useFramerEffects } from "../lib/framer-effects";
+import { HOME_FX } from "../lib/onething-motion";
+
+const HOME_FX_CSS = fxInitialCss(HOME_FX);
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -20,9 +24,11 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   useImportedLayout();
+  useFramerEffects(HOME_FX);
   return (
     <>
       <style>{capturedCSS}</style>
+      <style>{HOME_FX_CSS}</style>
       <div id="main">
         <div className="framer-DrtIB framer-71N50 framer-2BTrO framer-Jf64E framer-a8wg0 framer-9H6qh framer-unEwr framer-1n95zts items-center flex-col flex-nowrap content-center justify-start [overflow:var(--overflow-clip-fallback,clip)] [min-height:100vh]" style={{ width: "auto" }} data-layout-template="true">
           <ImportedDivOfferNav />
@@ -2276,32 +2282,6 @@ function ImportedFooterFooterSection() {
       </div>
     </footer>
   );
-}
-
-
-function useInView<T extends HTMLElement>() {
-  const ref = useRef<T>(null);
-  const [inView, setInView] = useState(false);
-  useEffect(() => {
-    const node = ref.current;
-    if (!node) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) {
-      setInView(true);
-      return;
-    }
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry?.isIntersecting) {
-          setInView(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: "0px 0px -10% 0px" },
-    );
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, []);
-  return [ref, inView] as const;
 }
 
 
