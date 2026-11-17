@@ -1,7 +1,7 @@
 import type { CSSProperties } from "react";
 import { useEffect } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import capturedCSS from "../styles/site.css?raw";
+import capturedCSS from "../styles/pages/index.css?raw";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [{ title: "OneThing - Daily Gummies" }] }),
