@@ -28,3 +28,8 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+
+- Imported site pages live one per route file in `src/routes/` with their captured CSS in `src/styles/pages/<route>.css` (loaded raw per page); keep edits focused in those files so the captured Framer class names and cascade keep working.
+- Restored motion and interactivity (scroll-in reveals, floating gummies, FAQ/details accordions, plan picker, product slideshow) use React state plus `oi-*` classes defined at the end of `src/styles/pages/index.css`; respect `prefers-reduced-motion` there.
