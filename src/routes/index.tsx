@@ -1327,8 +1327,9 @@ function ImportedSectionIntroduceSection() {
   );
 }
 
+const FIRST_PRODUCT_SLIDE = { className: "framer-98kjiw", src: "/site-assets/product-slide-1.webp", srcSet: undefined as string | undefined, shadow: false };
 const PRODUCT_SLIDES = [
-  { className: "framer-98kjiw", src: "/site-assets/product-slide-1.webp", srcSet: undefined, shadow: false },
+  FIRST_PRODUCT_SLIDE,
   { className: "framer-1j9k9hh", src: "/site-assets/product-slide-2.webp", srcSet: undefined, shadow: true },
   { className: "framer-1qs3wq8", src: "/site-assets/product-slide-3.webp", srcSet: undefined, shadow: true },
   {
@@ -1363,6 +1364,7 @@ function ImportedSectionBuySection() {
   const [plan, setPlan] = useState<"subscribe" | "one-time">("subscribe");
   const [slide, setSlide] = useState(0);
   const [openDetails, setOpenDetails] = useState<number[]>([]);
+  const activeSlide = PRODUCT_SLIDES[slide] ?? FIRST_PRODUCT_SLIDE;
   useEffect(() => {
     const timer = window.setTimeout(() => setSlide((current) => (current + 1) % PRODUCT_SLIDES.length), 3750);
     return () => window.clearTimeout(timer);
@@ -1374,9 +1376,9 @@ function ImportedSectionBuySection() {
           <div className="framer-wtclw1-container [z-index:1] [@media(max-width:679.98px)]:[order:0] [@media(min-width:680px)_and_(max-width:1199.98px)]:[order:0] will-change-transform [opacity:1]" style={{ transform: "none" }}>
             <div className="framer-L6REA framer-Jf64E framer-1vhsrli items-center flex-col flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]" style={{ width: "100%" }}>
               <div className="framer-14bx2df items-center aspect-square flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: "var(--token-7dec4550-2ba6-4025-bfd1-f0cbf4c0a7c9, rgb(247, 247, 247))", borderRadius: "25px" }}>
-                <div key={slide} className={`${PRODUCT_SLIDES[slide].className} oi-slide-in ${PRODUCT_SLIDES[slide].shadow ? "[box-shadow:rgba(0,_0,_0,_0.15)_0px_5px_5px_0px]" : ""} [opacity:1]`} style={{ borderRadius: "25px" }}>
+                <div key={slide} className={`${activeSlide.className} oi-slide-in ${activeSlide.shadow ? "[box-shadow:rgba(0,_0,_0,_0.15)_0px_5px_5px_0px]" : ""} [opacity:1]`} style={{ borderRadius: "25px" }}>
                   <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
-                    <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="3712" height="4608" sizes="max((min(100vw - 120px, 1200px) - 60px) / 2, 1px)" srcSet={PRODUCT_SLIDES[slide].srcSet} src={PRODUCT_SLIDES[slide].src} alt="Supplement product shot" />
+                    <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="3712" height="4608" sizes="max((min(100vw - 120px, 1200px) - 60px) / 2, 1px)" srcSet={activeSlide.srcSet} src={activeSlide.src} alt="Supplement product shot" />
                   </div>
                 </div>
               </div>
