@@ -3,6 +3,10 @@ import { useEffect } from "react";
 import { useSyncExternalStore } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import capturedCSS from "../styles/pages/privacy-policy.css?raw";
+import { fxInitialCss, useFramerEffects } from "../lib/framer-effects";
+import { POLICY_FX } from "../lib/onething-motion";
+
+const POLICY_FX_CSS = fxInitialCss(POLICY_FX);
 
 export const Route = createFileRoute("/privacy-policy")({
   head: () => ({
@@ -23,16 +27,18 @@ function Index() {
   const importedViewportWidth = useSyncExternalStore(subscribeMobile, () => window.innerWidth, () => 1440);
   const isMobile = importedViewportWidth <= 767;
   useImportedLayout();
+  useFramerEffects(POLICY_FX);
   return (
     <>
       <style>{capturedCSS}</style>
+      <style>{POLICY_FX_CSS}</style>
       <div id="main">
         <div className="framer-DrtIB framer-71N50 framer-2BTrO framer-Jf64E framer-a8wg0 framer-9H6qh framer-unEwr framer-1n95zts [min-height:100vh]" style={{ width: "auto" }} data-layout-template="true">
           <div className="framer-frk7oi [order:-1000] [right:0px] [z-index:10] [opacity:1]" style={{ transform: "none", willChange: "transform" }} data-site-import-desktop-header="">
             <ImportedDivOfferText />
             <div className="framer-grv9nz-container">
               <div className={isMobile ? "ssr-variant hidden-1n95zts hidden-206c69" : "ssr-variant"}>
-                <nav style={{ "--border-bottom-width": "1px", "--border-color": "rgba(255, 255, 255, 0)", "--border-left-width": "0px", "--border-right-width": "0px", "--border-style": "solid", "--border-top-width": "0px", backdropFilter: "blur(5px)", background: "linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 100%)", width: "100%", boxShadow: "rgba(0, 0, 0, 0) 0px 0px 0px 0px", opacity: "1", willChange: "auto" } as CSSProperties} className={isMobile ? "framer-mV9bZ framer-Jf64E framer-opbmt framer-115fwyv framer-v-1lacu8" : "framer-mV9bZ framer-Jf64E framer-opbmt framer-115fwyv"} data-border="true" data-site-import-scroll-header={"{\"desktop\":{\"added\":[\"framer-v-115fwyv\"],\"removed\":[\"framer-v-1sgftv0\"],\"threshold\":648},\"mobile\":{\"added\":[\"framer-v-a3dwaf\"],\"removed\":[\"framer-v-1lacu8\"],\"threshold\":633}}"}>
+                <nav style={{ "--border-bottom-width": "1px", "--border-color": "var(--oi-nav-border)", "--border-left-width": "0px", "--border-right-width": "0px", "--border-style": "solid", "--border-top-width": "0px", backdropFilter: "blur(5px)", background: "linear-gradient(180deg, var(--oi-nav-c1) 0%, var(--oi-nav-c2) 100%)", width: "100%", boxShadow: "0px 2px 3px 0px var(--oi-nav-shadow)", opacity: "1", willChange: "auto" } as CSSProperties} className={isMobile ? "framer-mV9bZ framer-Jf64E framer-opbmt framer-115fwyv framer-v-1lacu8" : "framer-mV9bZ framer-Jf64E framer-opbmt framer-115fwyv framer-v-1sgftv0"} data-fx-nav={isMobile ? "phone" : "desktop"} data-border="true">
                   <ImportedDivInnerStack />
                 </nav>
               </div>
@@ -454,7 +460,7 @@ function ImportedDivOfferNav() {
       </div>
       <div className="framer-grv9nz-container">
         <div className="ssr-variant">
-          <nav className="framer-mV9bZ framer-Jf64E framer-opbmt framer-115fwyv framer-v-1lacu8" style={{ "--border-bottom-width": "1px", "--border-color": "rgba(255, 255, 255, 0)", "--border-left-width": "0px", "--border-right-width": "0px", "--border-style": "solid", "--border-top-width": "0px", backdropFilter: "blur(5px)", background: "linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 100%)", width: "100%", boxShadow: "rgba(0, 0, 0, 0) 0px 0px 0px 0px", opacity: "1", willChange: "auto" } as CSSProperties} data-border="true" data-site-import-scroll-header={"{\"desktop\":{\"added\":[\"framer-v-115fwyv\"],\"removed\":[\"framer-v-1sgftv0\"],\"threshold\":648},\"mobile\":{\"added\":[\"framer-v-a3dwaf\"],\"removed\":[\"framer-v-1lacu8\"],\"threshold\":633}}"}>
+          <nav data-fx-nav="phone" className="framer-mV9bZ framer-Jf64E framer-opbmt framer-115fwyv framer-v-1lacu8" style={{ "--border-bottom-width": "1px", "--border-color": "var(--oi-nav-border)", "--border-left-width": "0px", "--border-right-width": "0px", "--border-style": "solid", "--border-top-width": "0px", backdropFilter: "blur(5px)", background: "linear-gradient(180deg, var(--oi-nav-c1) 0%, var(--oi-nav-c2) 100%)", width: "100%", boxShadow: "0px 2px 3px 0px var(--oi-nav-shadow)", opacity: "1", willChange: "auto" } as CSSProperties} data-border="true">
             <div className="framer-1uparzb" style={{ opacity: "1" }}>
               <div className="framer-5m92od" style={{ opacity: "1" }}>
                 <div className="framer-10nqhn5" style={{ opacity: "1" }}>

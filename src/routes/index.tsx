@@ -1,7 +1,14 @@
 import type { CSSProperties, KeyboardEvent } from "react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import capturedCSS from "../styles/pages/index.css?raw";
+import { animateLayoutHeight, fxInitialCss, useFramerEffects } from "../lib/framer-effects";
+import { HOME_FX } from "../lib/onething-motion";
+
+const HOME_FX_CSS = fxInitialCss(HOME_FX);
+// Variant transitions of the FAQ and product-detail accordions on the source site.
+const FAQ_SPRING = { type: "spring", duration: 0.7, bounce: 0.2 } as const;
+const DETAILS_SPRING = { type: "spring", duration: 0.7, bounce: 0 } as const;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -20,9 +27,11 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   useImportedLayout();
+  useFramerEffects(HOME_FX);
   return (
     <>
       <style>{capturedCSS}</style>
+      <style>{HOME_FX_CSS}</style>
       <div id="main">
         <div className="framer-DrtIB framer-71N50 framer-2BTrO framer-Jf64E framer-a8wg0 framer-9H6qh framer-unEwr framer-1n95zts items-center flex-col flex-nowrap content-center justify-start [overflow:var(--overflow-clip-fallback,clip)] [min-height:100vh]" style={{ width: "auto" }} data-layout-template="true">
           <ImportedDivOfferNav />
@@ -191,7 +200,7 @@ function ImportedDivOfferNav() {
       </div>
       <div className="framer-grv9nz-container flex-none">
         <div className="ssr-variant">
-          <nav className="framer-mV9bZ framer-Jf64E framer-opbmt framer-115fwyv" style={{ "--border-bottom-width": "1px", "--border-color": "rgba(255, 255, 255, 0)", "--border-left-width": "0px", "--border-right-width": "0px", "--border-style": "solid", "--border-top-width": "0px", backdropFilter: "blur(5px)", background: "linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 100%)", width: "100%", boxShadow: "rgba(0, 0, 0, 0) 0px 0px 0px 0px", opacity: "1", willChange: "auto" } as CSSProperties} data-border="true" data-site-import-scroll-header={"{\"desktop\":{\"added\":[\"framer-v-115fwyv\"],\"removed\":[\"framer-v-1sgftv0\"],\"threshold\":648},\"mobile\":{\"added\":[\"framer-v-a3dwaf\"],\"removed\":[\"framer-v-1lacu8\"],\"threshold\":633}}"}>
+          <nav data-fx-nav="desktop" className="framer-mV9bZ framer-Jf64E framer-opbmt framer-115fwyv framer-v-1sgftv0" style={{ "--border-bottom-width": "1px", "--border-color": "var(--oi-nav-border)", "--border-left-width": "0px", "--border-right-width": "0px", "--border-style": "solid", "--border-top-width": "0px", backdropFilter: "blur(5px)", background: "linear-gradient(180deg, var(--oi-nav-c1) 0%, var(--oi-nav-c2) 100%)", width: "100%", boxShadow: "0px 2px 3px 0px var(--oi-nav-shadow)", opacity: "1", willChange: "auto" } as CSSProperties} data-border="true">
             <div className="framer-1uparzb" style={{ opacity: "1" }}>
               <div className="framer-5m92od" style={{ opacity: "1" }}>
                 <div className="framer-10nqhn5" style={{ opacity: "1" }}>
@@ -316,7 +325,7 @@ function ImportedDivOfferNav2() {
       </div>
       <div className="framer-grv9nz-container flex-none">
         <div className="ssr-variant">
-          <nav className="framer-mV9bZ framer-Jf64E framer-opbmt framer-115fwyv framer-v-1lacu8" style={{ "--border-bottom-width": "1px", "--border-color": "rgba(255, 255, 255, 0)", "--border-left-width": "0px", "--border-right-width": "0px", "--border-style": "solid", "--border-top-width": "0px", backdropFilter: "blur(5px)", background: "linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 100%)", width: "100%", boxShadow: "rgba(0, 0, 0, 0) 0px 0px 0px 0px", opacity: "1", willChange: "auto" } as CSSProperties} data-border="true" data-site-import-scroll-header={"{\"desktop\":{\"added\":[\"framer-v-115fwyv\"],\"removed\":[\"framer-v-1sgftv0\"],\"threshold\":648},\"mobile\":{\"added\":[\"framer-v-a3dwaf\"],\"removed\":[\"framer-v-1lacu8\"],\"threshold\":633}}"}>
+          <nav data-fx-nav="phone" className="framer-mV9bZ framer-Jf64E framer-opbmt framer-115fwyv framer-v-1lacu8" style={{ "--border-bottom-width": "1px", "--border-color": "var(--oi-nav-border)", "--border-left-width": "0px", "--border-right-width": "0px", "--border-style": "solid", "--border-top-width": "0px", backdropFilter: "blur(5px)", background: "linear-gradient(180deg, var(--oi-nav-c1) 0%, var(--oi-nav-c2) 100%)", width: "100%", boxShadow: "0px 2px 3px 0px var(--oi-nav-shadow)", opacity: "1", willChange: "auto" } as CSSProperties} data-border="true">
             <div className="framer-1uparzb" style={{ opacity: "1" }}>
               <div className="framer-5m92od" style={{ opacity: "1" }}>
                 <div className="framer-10nqhn5" style={{ opacity: "1" }}>
@@ -345,7 +354,7 @@ function ImportedDivContentStack() {
     <div className="framer-6yab4 items-center flex-none flex-col flex-nowrap place-content-center [overflow:visible] [z-index:2]" id="title">
       <div className="framer-v2n02v items-center flex-none flex-col flex-nowrap place-content-center [overflow:visible]">
         <div className="framer-1jdyhh2 max-w-[656px] [z-index:2]" style={{ transform: "none" }} data-framer-component-type="RichTextContainer">
-          <h1 className="framer-text framer-styles-preset-8hagcl" dir="auto"><span className="will-change-transform" style={{ display: "inline-block" }}>Your</span> <span className="will-change-transform" style={{ display: "inline-block" }}>Supplement</span> <span className="will-change-transform" style={{ display: "inline-block" }}>Shelf,</span> <span className="will-change-transform" style={{ display: "inline-block" }}>Simplified</span></h1>
+          <h1 className="framer-text framer-styles-preset-8hagcl" dir="auto"><span data-fx-word="" className="will-change-transform" style={{ display: "inline-block" }}>Your</span> <span data-fx-word="" className="will-change-transform" style={{ display: "inline-block" }}>Supplement</span> <span data-fx-word="" className="will-change-transform" style={{ display: "inline-block" }}>Shelf,</span> <span data-fx-word="" className="will-change-transform" style={{ display: "inline-block" }}>Simplified</span></h1>
         </div>
         <div className="framer-sd4ed3 max-w-[455px] wrap-break-word [word-break:break-word] [opacity:1]" style={{ transform: "none", willChange: "transform" }} data-framer-component-type="RichTextContainer">
           <p className="framer-text framer-styles-preset-6u41qq" style={{ "--framer-text-alignment": "center" } as CSSProperties} dir="auto">One single gummy in the morning that handles immunity, digestion, sleep, energy and vitality</p>
@@ -368,37 +377,37 @@ function ImportedDivDesktop() {
       <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
         <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="4096" height="4096" sizes="1100px" srcSet="/site-assets/c0bb516676d07043.webp 512w, /site-assets/d1e862df2776c8bb.avif 1024w, /site-assets/0fd8b04348c248b2.avif 2048w, /site-assets/8ddb7fbaad402fa3.avif 4096w" src="/site-assets/8ddb7fbaad402fa3.avif" alt="" />
       </div>
-      <div className="framer-d1too9 aspect-square flex-none right-[85px] [overflow:visible] [z-index:8] [filter:blur(5px)] will-change-transform [opacity:1] oi-float" style={{ transform: "translateY(-50%) rotate(-59deg)" }}>
+      <div className="framer-d1too9 aspect-square flex-none right-[85px] [overflow:visible] [z-index:8] [filter:blur(5px)] will-change-transform [opacity:1]" style={{ transform: "translateY(-50%) rotate(-59deg)" }}>
         <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
           <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="2921" height="2921" sizes="83px" srcSet="/site-assets/2b505afd9b61f6ef.avif 512w, /site-assets/1bffb004a1c8c76a.avif 1024w, /site-assets/78c1116f1df875a5.avif 2048w, /site-assets/07d47ede94a12452.avif 2921w" src="/site-assets/07d47ede94a12452.avif" alt="" />
         </div>
       </div>
-      <div className="framer-1twa8cg aspect-square flex-none right-[43px] [overflow:visible] [z-index:8] [filter:blur(5px)] will-change-transform [opacity:1] oi-float" style={{ transform: "rotate(53deg)" }}>
+      <div className="framer-1twa8cg aspect-square flex-none right-[43px] [overflow:visible] [z-index:8] [filter:blur(5px)] will-change-transform [opacity:1]" style={{ transform: "rotate(53deg)" }}>
         <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
           <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="2921" height="2921" sizes="150px" srcSet="/site-assets/2b505afd9b61f6ef.avif 512w, /site-assets/1bffb004a1c8c76a.avif 1024w, /site-assets/78c1116f1df875a5.avif 2048w, /site-assets/07d47ede94a12452.avif 2921w" src="/site-assets/07d47ede94a12452.avif" alt="" />
         </div>
       </div>
-      <div className="framer-lt83ag aspect-square flex-none right-[286px] [overflow:visible] [z-index:8] will-change-transform [opacity:1] oi-float" style={{ transform: "translateY(-50%) rotate(-32deg)" }}>
+      <div className="framer-lt83ag aspect-square flex-none right-[286px] [overflow:visible] [z-index:8] will-change-transform [opacity:1]" style={{ transform: "translateY(-50%) rotate(-32deg)" }}>
         <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
           <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="2921" height="2921" sizes="136px" srcSet="/site-assets/2b505afd9b61f6ef.avif 512w, /site-assets/1bffb004a1c8c76a.avif 1024w, /site-assets/78c1116f1df875a5.avif 2048w, /site-assets/07d47ede94a12452.avif 2921w" src="/site-assets/07d47ede94a12452.avif" alt="" />
         </div>
       </div>
-      <div className="framer-86ela9 aspect-square flex-none right-[235px] [overflow:visible] [z-index:8] will-change-transform [opacity:1] oi-float" style={{ transform: "rotate(145deg)" }}>
+      <div className="framer-86ela9 aspect-square flex-none right-[235px] [overflow:visible] [z-index:8] will-change-transform [opacity:1]" style={{ transform: "rotate(145deg)" }}>
         <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
           <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="2921" height="2921" sizes="180px" srcSet="/site-assets/2b505afd9b61f6ef.avif 512w, /site-assets/1bffb004a1c8c76a.avif 1024w, /site-assets/78c1116f1df875a5.avif 2048w, /site-assets/07d47ede94a12452.avif 2921w" src="/site-assets/07d47ede94a12452.avif" alt="" />
         </div>
       </div>
-      <div className="framer-1xujcsz aspect-square flex-none [overflow:visible] [z-index:8] will-change-transform [opacity:1] oi-float" style={{ transform: "rotate(285deg)" }}>
+      <div className="framer-1xujcsz aspect-square flex-none [overflow:visible] [z-index:8] will-change-transform [opacity:1]" style={{ transform: "rotate(285deg)" }}>
         <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
           <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="2921" height="2921" sizes="167px" srcSet="/site-assets/2b505afd9b61f6ef.avif 512w, /site-assets/1bffb004a1c8c76a.avif 1024w, /site-assets/78c1116f1df875a5.avif 2048w, /site-assets/07d47ede94a12452.avif 2921w" src="/site-assets/07d47ede94a12452.avif" alt="" />
         </div>
       </div>
-      <div className="framer-1uue3vh aspect-square flex-none [overflow:visible] [z-index:8] [filter:blur(3px)] will-change-transform [opacity:1] oi-float" style={{ transform: "translateY(-50%) rotate(-40deg)" }}>
+      <div className="framer-1uue3vh aspect-square flex-none [overflow:visible] [z-index:8] [filter:blur(3px)] will-change-transform [opacity:1]" style={{ transform: "translateY(-50%) rotate(-40deg)" }}>
         <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
           <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="2921" height="2921" sizes="250px" srcSet="/site-assets/2b505afd9b61f6ef.avif 512w, /site-assets/1bffb004a1c8c76a.avif 1024w, /site-assets/78c1116f1df875a5.avif 2048w, /site-assets/07d47ede94a12452.avif 2921w" src="/site-assets/07d47ede94a12452.avif" alt="" />
         </div>
       </div>
-      <div className="framer-1i2u684 aspect-square flex-none [overflow:visible] [z-index:0] [filter:blur(3px)] will-change-transform [opacity:1] oi-float" style={{ transform: "rotate(47deg)" }}>
+      <div className="framer-1i2u684 aspect-square flex-none [overflow:visible] [z-index:0] [filter:blur(3px)] will-change-transform [opacity:1]" style={{ transform: "rotate(47deg)" }}>
         <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
           <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="2921" height="2921" sizes="219px" srcSet="/site-assets/2b505afd9b61f6ef.avif 512w, /site-assets/1bffb004a1c8c76a.avif 1024w, /site-assets/78c1116f1df875a5.avif 2048w, /site-assets/07d47ede94a12452.avif 2921w" src="/site-assets/07d47ede94a12452.avif" alt="" />
         </div>
@@ -413,27 +422,27 @@ function ImportedDivDesktop2() {
       <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
         <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="4096" height="4096" sizes="1100px" srcSet="/site-assets/c0bb516676d07043.webp 512w, /site-assets/d1e862df2776c8bb.avif 1024w, /site-assets/0fd8b04348c248b2.avif 2048w, /site-assets/8ddb7fbaad402fa3.avif 4096w" src="/site-assets/8ddb7fbaad402fa3.avif" alt="" />
       </div>
-      <div className="framer-d1too9 aspect-square flex-none right-[85px] [overflow:visible] [z-index:8] [filter:blur(5px)] will-change-transform [opacity:1] oi-float" style={{ transform: "rotate(-37deg)" }}>
+      <div className="framer-d1too9 aspect-square flex-none right-[85px] [overflow:visible] [z-index:8] [filter:blur(5px)] will-change-transform [opacity:1]" style={{ transform: "rotate(-37deg)" }}>
         <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
           <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="2921" height="2921" sizes="83px" srcSet="/site-assets/2b505afd9b61f6ef.avif 512w, /site-assets/1bffb004a1c8c76a.avif 1024w, /site-assets/78c1116f1df875a5.avif 2048w, /site-assets/07d47ede94a12452.avif 2921w" src="/site-assets/07d47ede94a12452.avif" alt="" />
         </div>
       </div>
-      <div className="framer-lt83ag aspect-square flex-none right-[286px] [overflow:visible] [z-index:8] will-change-transform [opacity:1] oi-float" style={{ transform: "rotate(-25deg)" }}>
+      <div className="framer-lt83ag aspect-square flex-none right-[286px] [overflow:visible] [z-index:8] will-change-transform [opacity:1]" style={{ transform: "rotate(-25deg)" }}>
         <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
           <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="2921" height="2921" sizes="136px" srcSet="/site-assets/2b505afd9b61f6ef.avif 512w, /site-assets/1bffb004a1c8c76a.avif 1024w, /site-assets/78c1116f1df875a5.avif 2048w, /site-assets/07d47ede94a12452.avif 2921w" src="/site-assets/07d47ede94a12452.avif" alt="" />
         </div>
       </div>
-      <div className="framer-86ela9 aspect-square flex-none right-[235px] [overflow:visible] [z-index:8] will-change-transform [opacity:1] oi-float" style={{ transform: "rotate(145deg)" }}>
+      <div className="framer-86ela9 aspect-square flex-none right-[235px] [overflow:visible] [z-index:8] will-change-transform [opacity:1]" style={{ transform: "rotate(145deg)" }}>
         <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
           <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="2921" height="2921" sizes="180px" srcSet="/site-assets/2b505afd9b61f6ef.avif 512w, /site-assets/1bffb004a1c8c76a.avif 1024w, /site-assets/78c1116f1df875a5.avif 2048w, /site-assets/07d47ede94a12452.avif 2921w" src="/site-assets/07d47ede94a12452.avif" alt="" />
         </div>
       </div>
-      <div className="framer-1xujcsz aspect-square flex-none [overflow:visible] [z-index:8] will-change-transform [opacity:1] oi-float" style={{ transform: "rotate(240deg)" }}>
+      <div className="framer-1xujcsz aspect-square flex-none [overflow:visible] [z-index:8] will-change-transform [opacity:1]" style={{ transform: "rotate(240deg)" }}>
         <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
           <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="2921" height="2921" sizes="167px" srcSet="/site-assets/2b505afd9b61f6ef.avif 512w, /site-assets/1bffb004a1c8c76a.avif 1024w, /site-assets/78c1116f1df875a5.avif 2048w, /site-assets/07d47ede94a12452.avif 2921w" src="/site-assets/07d47ede94a12452.avif" alt="" />
         </div>
       </div>
-      <div className="framer-1i2u684 aspect-square flex-none [overflow:visible] [z-index:0] [filter:blur(3px)] will-change-transform [opacity:1] oi-float" style={{ transform: "rotate(47deg)" }}>
+      <div className="framer-1i2u684 aspect-square flex-none [overflow:visible] [z-index:0] [filter:blur(3px)] will-change-transform [opacity:1]" style={{ transform: "rotate(47deg)" }}>
         <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
           <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="2921" height="2921" sizes="219px" srcSet="/site-assets/2b505afd9b61f6ef.avif 512w, /site-assets/1bffb004a1c8c76a.avif 1024w, /site-assets/78c1116f1df875a5.avif 2048w, /site-assets/07d47ede94a12452.avif 2921w" src="/site-assets/07d47ede94a12452.avif" alt="" />
         </div>
@@ -741,7 +750,6 @@ function ImportedSectionFeaturedSection() {
 }
 
 function ImportedSectionAllInOneSection() {
-  const [gummyRef, gummyShown] = useInView<HTMLDivElement>();
   return (
     <section className="framer-m7hdsg items-center flex-none flex-col flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [padding:0px]">
       <div className="framer-1n4qav4 items-center flex-none flex-col flex-nowrap min-h-[815px] content-center justify-start [overflow:var(--overflow-clip-fallback,clip)]">
@@ -871,7 +879,7 @@ function ImportedSectionAllInOneSection() {
               </div>
             </div>
             <div className="ssr-variant">
-              <div ref={gummyRef} className={`framer-1vwkisw aspect-square flex-none [overflow:visible] [z-index:8] [@media(max-width:679.98px)]:[order:0] [@media(min-width:680px)_and_(max-width:1199.98px)]:[order:0] will-change-transform [opacity:1] oi-appear ${gummyShown ? "[transform:none]" : "[transform:translate(-100px,-340px)_scale(0.22)] [@media(max-width:679.98px)]:[transform:translateY(-460px)_scale(0.22)]"}`}>
+              <div className={`framer-1vwkisw aspect-square flex-none [overflow:visible] [z-index:8] [@media(max-width:679.98px)]:[order:0] [@media(min-width:680px)_and_(max-width:1199.98px)]:[order:0] will-change-transform [opacity:1]`}>
                 <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
                   <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="2921" height="2921" sizes="425px" srcSet="/site-assets/2b505afd9b61f6ef.avif 512w, /site-assets/1bffb004a1c8c76a.avif 1024w, /site-assets/78c1116f1df875a5.avif 2048w, /site-assets/07d47ede94a12452.avif 2921w" src="/site-assets/07d47ede94a12452.avif" alt="Supplement gummy" />
                 </div>
@@ -932,9 +940,6 @@ function ImportedSectionAllInOneSection() {
 }
 
 function ImportedSectionFeaturesSection() {
-  const [card1Ref, card1Shown] = useInView<HTMLDivElement>();
-  const [reviewRef, reviewShown] = useInView<HTMLDivElement>();
-  const [card3Ref, card3Shown] = useInView<HTMLDivElement>();
   return (
     <section className="framer-ra0yx0 items-start flex-none flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [scroll-margin-top:60px]" id="features">
       <div className="framer-n3g353 items-center flex-none flex-col flex-nowrap place-content-center [overflow:visible]">
@@ -981,7 +986,7 @@ function ImportedSectionFeaturesSection() {
                 <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="4096" height="4096" sizes="max((min(100vw - 120px, 1000px) - 60px) / 2, 1px)" srcSet="/site-assets/ae9aa0f64719e95a.avif 512w, /site-assets/fa68cc73f8e1416a.avif 1024w, /site-assets/a611172e61231f39.avif 2048w, /site-assets/b82866abd015bdcb.webp 4096w" src="/site-assets/b82866abd015bdcb.webp" alt="Person performing yoga" />
               </div>
               <div className="framer-hy5xhy flex-none [overflow:var(--overflow-clip-fallback,clip)] [z-index:1]" />
-              <div ref={card1Ref} className={`framer-1yd27yv items-center flex-none flex-col flex-nowrap place-content-center [backdrop-filter:blur(10px)] [overflow:var(--overflow-clip-fallback,clip)] [z-index:1] [@media(max-width:679.98px)]:right-[20px] ${card1Shown ? "[opacity:1]" : "[opacity:0]"} oi-appear`} style={{ willChange: "transform", translate: card1Shown ? "0 0" : "0 40px" }}>
+              <div className={`framer-1yd27yv items-center flex-none flex-col flex-nowrap place-content-center [backdrop-filter:blur(10px)] [overflow:var(--overflow-clip-fallback,clip)] [z-index:1] [@media(max-width:679.98px)]:right-[20px]`} style={{ willChange: "transform" }}>
                 <div className="framer-1wtmbz6 items-center flex-none flex-row flex-nowrap content-center justify-start [overflow:var(--overflow-clip-fallback,clip)]" data-border="true">
                   <div className="framer-1so6sjr [z-index:2]" style={{ transform: "none" }} data-framer-component-type="RichTextContainer">
                     <p className="framer-text framer-styles-preset-1gnmur6" style={{ "--framer-text-alignment": "left", "--framer-text-color": "var(--token-4d91f15a-be6f-4c68-8d25-3bf02a07afb6, rgb(255, 255, 255))" } as CSSProperties} dir="auto">Effectiveness Comparison</p>
@@ -1034,8 +1039,8 @@ function ImportedSectionFeaturesSection() {
               <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
                 <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="4096" height="4096" sizes="max((min(100vw - 120px, 1000px) - 60px) / 2, 1px)" srcSet="/site-assets/cdb8788da9c9879c.avif 512w, /site-assets/361864e59095202e.avif 1024w, /site-assets/4452f4198f75a26a.avif 2048w, /site-assets/f537768f4661c4c0.webp 4096w" src="/site-assets/f537768f4661c4c0.webp" alt="Supplement container shot" />
               </div>
-              <div ref={reviewRef} className={`framer-sh66ud-container flex-none [z-index:1] will-change-transform ${reviewShown ? "[opacity:1]" : "[opacity:0]"} oi-appear`} style={{ translate: reviewShown ? "0 0" : "0 40px" }}>
-                <div className={`framer-Xaiv6 framer-2BTrO framer-1p9x1rh items-center flex-col flex-nowrap place-content-center [overflow:visible] will-change-transform ${reviewShown ? "[opacity:1]" : "[opacity:0]"} oi-appear`} style={{ translate: reviewShown ? "0 0" : "0 40px" }}>
+              <div className={`framer-sh66ud-container flex-none [z-index:1] will-change-transform`} >
+                <div className={`framer-Xaiv6 framer-2BTrO framer-1p9x1rh items-center flex-col flex-nowrap place-content-center [overflow:visible] will-change-transform`} >
                   <div className="framer-10fdy2 flex-none [overflow:visible] [opacity:1]">
                     <div className="framer-1pjp34d aspect-square bottom-[3px] flex-none [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [z-index:1] [opacity:1]" style={{ "--border-bottom-width": "2px", "--border-color": "rgba(255, 255, 255, 0.5)", "--border-left-width": "2px", "--border-right-width": "2px", "--border-style": "solid", "--border-top-width": "2px", borderRadius: "70px" } as CSSProperties} data-border="true">
                       <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
@@ -1172,7 +1177,7 @@ function ImportedSectionFeaturesSection() {
               <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
                 <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="4096" height="4096" sizes="max((min(100vw - 120px, 1000px) - 60px) / 2, 1px)" srcSet="/site-assets/b004a5ee5988e516.avif 512w, /site-assets/2b422597354be02d.avif 1024w, /site-assets/1a44bd6c6f2eefcf.avif 2048w, /site-assets/f8a0da1ec9a82e66.webp 4096w" src="/site-assets/f8a0da1ec9a82e66.webp" alt="Woman holding a supplement container and smiling" />
               </div>
-              <div ref={card3Ref} className={`framer-qlbbaw items-center flex-none flex-col flex-nowrap place-content-center [backdrop-filter:blur(10px)] [overflow:var(--overflow-clip-fallback,clip)] [z-index:4] [@media(max-width:679.98px)]:right-[20px] ${card3Shown ? "[opacity:1]" : "[opacity:0]"} oi-appear`} style={{ willChange: "transform", translate: card3Shown ? "0 0" : "0 40px" }}>
+              <div className={`framer-qlbbaw items-center flex-none flex-col flex-nowrap place-content-center [backdrop-filter:blur(10px)] [overflow:var(--overflow-clip-fallback,clip)] [z-index:4] [@media(max-width:679.98px)]:right-[20px]`} style={{ willChange: "transform" }}>
                 <div className="framer-x4o5ou items-center flex-none flex-row flex-nowrap content-center justify-start [overflow:var(--overflow-clip-fallback,clip)]" data-border="true">
                   <div className="framer-1x5qqm1 [z-index:2]" style={{ transform: "none" }} data-framer-component-type="RichTextContainer">
                     <p className="framer-text framer-styles-preset-1gnmur6" style={{ "--framer-text-alignment": "left", "--framer-text-color": "var(--token-4d91f15a-be6f-4c68-8d25-3bf02a07afb6, rgb(255, 255, 255))" } as CSSProperties} dir="auto">Ingredient Profile</p>
@@ -1234,22 +1239,21 @@ function ImportedSectionFeaturesSection() {
 }
 
 function ImportedSectionIntroduceSection() {
-  const [introRef, introShown] = useInView<HTMLDivElement>();
   return (
     <section className="framer-y047zk items-center flex-none flex-col flex-nowrap content-center justify-start [mask:linear-gradient(rgb(0,0,0)_0%,rgba(0,0,0,0.96)_73%,rgba(0,0,0,0)_100%)] [overflow:visible]" id="introduction">
-      <div ref={introRef} className="framer-ipe1eq items-center flex-none flex-col flex-nowrap place-content-center [overflow:visible] [z-index:1] will-change-transform [opacity:1] oi-appear" style={{ transform: introShown ? "translateY(-100px)" : "none" }}>
+      <div className="framer-ipe1eq items-center flex-none flex-col flex-nowrap place-content-center [overflow:visible] [z-index:1] will-change-transform [opacity:1]">
         <div className="framer-1q31ivl items-center flex-none flex-col flex-nowrap place-content-center [overflow:visible]">
           <div className="framer-7xe7aq wrap-break-word [word-break:break-word] [z-index:2]" style={{ transform: "none" }} data-framer-component-type="RichTextContainer">
-            <h2 className="framer-text framer-styles-preset-8hagcl" style={{ "--framer-text-alignment": "center" } as CSSProperties} dir="auto"><span className="[opacity:1] will-change-transform" style={{ display: "inline-block", filter: "blur(0px)", transform: "none" } as CSSProperties} data-site-import-responsive="622">Introducing</span> <span className="[opacity:1] will-change-transform" style={{ display: "inline-block", filter: "blur(0px)", transform: "none" } as CSSProperties} data-site-import-responsive="623" /></h2>
+            <h2 className="framer-text framer-styles-preset-8hagcl" style={{ "--framer-text-alignment": "center" } as CSSProperties} dir="auto"><span data-fx-word="" className="[opacity:1] will-change-transform" style={{ display: "inline-block", filter: "blur(0px)", transform: "none" } as CSSProperties} data-site-import-responsive="622">Introducing</span> <span data-fx-word="" className="[opacity:1] will-change-transform" style={{ display: "inline-block", filter: "blur(0px)", transform: "none" } as CSSProperties} data-site-import-responsive="623" /></h2>
           </div>
           <div className="framer-1cz438u wrap-break-word [word-break:break-word] [z-index:2]" style={{ transform: "none" }} data-framer-component-type="RichTextContainer">
             <h2 className="framer-text framer-styles-preset-8hagcl" style={{ "--framer-text-alignment": "center" } as CSSProperties} dir="auto">
-              <span className="[opacity:1] will-change-transform" style={{ display: "inline-block", filter: "blur(0px)", transform: "none" } as CSSProperties} data-site-import-responsive="626">OneThing</span>
+              <span data-fx-word="" className="[opacity:1] will-change-transform" style={{ display: "inline-block", filter: "blur(0px)", transform: "none" } as CSSProperties} data-site-import-responsive="626">OneThing</span>
             </h2>
           </div>
         </div>
         <div className="framer-6izyhc wrap-break-word [word-break:break-word] [z-index:2]" style={{ transform: "none" }} data-framer-component-type="RichTextContainer">
-          <p className="framer-text framer-styles-preset-w9kn3e" dir="auto"><span className="[opacity:1] will-change-transform" style={{ display: "inline-block", filter: "blur(0px)", transform: "none" } as CSSProperties} data-site-import-responsive="629" /> <span className="[opacity:1] will-change-transform" style={{ display: "inline-block", filter: "blur(0px)", transform: "none" } as CSSProperties} data-site-import-responsive="630">GUMMIES</span></p>
+          <p className="framer-text framer-styles-preset-w9kn3e" dir="auto"><span data-fx-word="" className="[opacity:1] will-change-transform" style={{ display: "inline-block", filter: "blur(0px)", transform: "none" } as CSSProperties} data-site-import-responsive="629" /> <span data-fx-word="" className="[opacity:1] will-change-transform" style={{ display: "inline-block", filter: "blur(0px)", transform: "none" } as CSSProperties} data-site-import-responsive="630">GUMMIES</span></p>
         </div>
       </div>
       <div className="ssr-variant">
@@ -1375,7 +1379,7 @@ function ImportedSectionBuySection() {
   const [openDetails, setOpenDetails] = useState<number[]>([]);
   const activeSlide = PRODUCT_SLIDES[slide] ?? FIRST_PRODUCT_SLIDE;
   useEffect(() => {
-    const timer = window.setTimeout(() => setSlide((current) => (current + 1) % PRODUCT_SLIDES.length), 3750);
+    const timer = window.setTimeout(() => setSlide((current) => (current + 1) % PRODUCT_SLIDES.length), 3800);
     return () => window.clearTimeout(timer);
   }, [slide]);
   return (
@@ -1385,7 +1389,7 @@ function ImportedSectionBuySection() {
           <div className="framer-wtclw1-container [z-index:1] [@media(max-width:679.98px)]:[order:0] [@media(min-width:680px)_and_(max-width:1199.98px)]:[order:0] will-change-transform [opacity:1]" style={{ transform: "none" }}>
             <div className="framer-L6REA framer-Jf64E framer-1vhsrli items-center flex-col flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]" style={{ width: "100%" }}>
               <div className="framer-14bx2df items-center aspect-square flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: "var(--token-7dec4550-2ba6-4025-bfd1-f0cbf4c0a7c9, rgb(247, 247, 247))", borderRadius: "25px" }}>
-                <div key={slide} className={`${activeSlide.className} oi-slide-in ${activeSlide.shadow ? "[box-shadow:rgba(0,_0,_0,_0.15)_0px_5px_5px_0px]" : ""} [opacity:1]`} style={{ borderRadius: "25px" }}>
+                <div key={slide} className={`${activeSlide.className} ${activeSlide.shadow ? "[box-shadow:rgba(0,_0,_0,_0.15)_0px_5px_5px_0px]" : ""} [opacity:1]`} style={{ borderRadius: "25px" }}>
                   <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
                     <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="3712" height="4608" sizes="max((min(100vw - 120px, 1200px) - 60px) / 2, 1px)" srcSet={activeSlide.srcSet} src={activeSlide.src} alt="Supplement product shot" />
                   </div>
@@ -1594,7 +1598,7 @@ function ImportedSectionBuySection() {
           <div className="framer-1v4bc7 items-center flex-none flex-col flex-nowrap place-content-center [overflow:visible]">
             <div className="ssr-variant">
               <div className="framer-15znfnl-container">
-                <div className={`framer-HvOY4 framer-qhMV1 framer-odhqv7 ${openDetails.includes(0) ? "framer-v-odhqv7" : "framer-v-1ocuso8"} items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]`} style={{ backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", width: "100%", borderRadius: "12px" }} tabIndex={0} role="button" aria-expanded={openDetails.includes(0)} onClick={() => setOpenDetails((list) => toggleIndex(list, 0))} onKeyDown={activateOnKey(() => setOpenDetails((list) => toggleIndex(list, 0)))}>
+                <div className={`framer-HvOY4 framer-qhMV1 framer-odhqv7 ${openDetails.includes(0) ? "framer-v-odhqv7" : "framer-v-1ocuso8"} items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]`} style={{ backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", width: "100%", borderRadius: "12px" }} tabIndex={0} role="button" aria-expanded={openDetails.includes(0)} onClick={(event) => animateLayoutHeight(event.currentTarget, () => setOpenDetails((list) => toggleIndex(list, 0)), DETAILS_SPRING)} onKeyDown={(event) => { const box = event.currentTarget; activateOnKey(() => animateLayoutHeight(box, () => setOpenDetails((list) => toggleIndex(list, 0)), DETAILS_SPRING))(event); }}>
                   <div className="framer-85xd3t items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]">
                     <div className="framer-yoQJ9 framer-13t4c2t aspect-square flex-none [opacity:1]" style={{ "--f5srmm": "var(--token-220b89ed-795b-40ee-a164-3b3423c23e62, rgba(0, 0, 0, 0.7))" } as CSSProperties} />
                     <div className="framer-nt8qln wrap-break-word select-none [word-break:break-word] [opacity:1]" style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" } as CSSProperties} data-framer-component-type="RichTextContainer">
@@ -1614,7 +1618,7 @@ function ImportedSectionBuySection() {
             </div>
             <div className="ssr-variant">
               <div className="framer-ip2fzl-container">
-                <div className={`framer-HvOY4 framer-qhMV1 framer-odhqv7 ${openDetails.includes(1) ? "framer-v-odhqv7" : "framer-v-1ocuso8"} items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]`} style={{ backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", width: "100%", borderRadius: "12px" }} tabIndex={0} role="button" aria-expanded={openDetails.includes(1)} onClick={() => setOpenDetails((list) => toggleIndex(list, 1))} onKeyDown={activateOnKey(() => setOpenDetails((list) => toggleIndex(list, 1)))}>
+                <div className={`framer-HvOY4 framer-qhMV1 framer-odhqv7 ${openDetails.includes(1) ? "framer-v-odhqv7" : "framer-v-1ocuso8"} items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]`} style={{ backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", width: "100%", borderRadius: "12px" }} tabIndex={0} role="button" aria-expanded={openDetails.includes(1)} onClick={(event) => animateLayoutHeight(event.currentTarget, () => setOpenDetails((list) => toggleIndex(list, 1)), DETAILS_SPRING)} onKeyDown={(event) => { const box = event.currentTarget; activateOnKey(() => animateLayoutHeight(box, () => setOpenDetails((list) => toggleIndex(list, 1)), DETAILS_SPRING))(event); }}>
                   <div className="framer-85xd3t items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]">
                     <div className="framer-AvdJx framer-13t4c2t aspect-square flex-none [opacity:1]" style={{ "--f5srmm": "var(--token-220b89ed-795b-40ee-a164-3b3423c23e62, rgba(0, 0, 0, 0.7))" } as CSSProperties} />
                     <div className="framer-nt8qln wrap-break-word select-none [word-break:break-word] [opacity:1]" style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" } as CSSProperties} data-framer-component-type="RichTextContainer">
@@ -1634,7 +1638,7 @@ function ImportedSectionBuySection() {
             </div>
             <div className="ssr-variant">
               <div className="framer-1qiln8x-container">
-                <div className={`framer-HvOY4 framer-qhMV1 framer-odhqv7 ${openDetails.includes(2) ? "framer-v-odhqv7" : "framer-v-1ocuso8"} items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]`} style={{ backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", width: "100%", borderRadius: "12px" }} tabIndex={0} role="button" aria-expanded={openDetails.includes(2)} onClick={() => setOpenDetails((list) => toggleIndex(list, 2))} onKeyDown={activateOnKey(() => setOpenDetails((list) => toggleIndex(list, 2)))}>
+                <div className={`framer-HvOY4 framer-qhMV1 framer-odhqv7 ${openDetails.includes(2) ? "framer-v-odhqv7" : "framer-v-1ocuso8"} items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]`} style={{ backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", width: "100%", borderRadius: "12px" }} tabIndex={0} role="button" aria-expanded={openDetails.includes(2)} onClick={(event) => animateLayoutHeight(event.currentTarget, () => setOpenDetails((list) => toggleIndex(list, 2)), DETAILS_SPRING)} onKeyDown={(event) => { const box = event.currentTarget; activateOnKey(() => animateLayoutHeight(box, () => setOpenDetails((list) => toggleIndex(list, 2)), DETAILS_SPRING))(event); }}>
                   <div className="framer-85xd3t items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]">
                     <div className="framer-zRbQg framer-13t4c2t aspect-square flex-none [opacity:1]" style={{ "--f5srmm": "var(--token-220b89ed-795b-40ee-a164-3b3423c23e62, rgba(0, 0, 0, 0.7))" } as CSSProperties} />
                     <div className="framer-nt8qln wrap-break-word select-none [word-break:break-word] [opacity:1]" style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" } as CSSProperties} data-framer-component-type="RichTextContainer">
@@ -1681,7 +1685,7 @@ function ImportedSectionFAQSection() {
           <div className="framer-rbzvac items-center flex-none flex-col flex-nowrap place-content-center [overflow:visible]">
             <div className="ssr-variant">
               <div className="framer-6gdc90-container will-change-transform [opacity:1]" style={{ transform: "none" }}>
-                <div className={`framer-h9poP framer-FaBO9 framer-qhMV1 framer-11vn5nc ${openFaqs.includes(0) ? "framer-v-11vn5nc" : "framer-v-1rhfu2w"} items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]`} style={{ backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", width: "100%", borderRadius: "12px" }} tabIndex={0} role="button" aria-expanded={openFaqs.includes(0)} onClick={() => setOpenFaqs((list) => toggleIndex(list, 0))} onKeyDown={activateOnKey(() => setOpenFaqs((list) => toggleIndex(list, 0)))}>
+                <div className={`framer-h9poP framer-FaBO9 framer-qhMV1 framer-11vn5nc ${openFaqs.includes(0) ? "framer-v-11vn5nc" : "framer-v-1rhfu2w"} items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]`} style={{ backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", width: "100%", borderRadius: "12px" }} tabIndex={0} role="button" aria-expanded={openFaqs.includes(0)} onClick={(event) => animateLayoutHeight(event.currentTarget, () => setOpenFaqs((list) => toggleIndex(list, 0)), FAQ_SPRING)} onKeyDown={(event) => { const box = event.currentTarget; activateOnKey(() => animateLayoutHeight(box, () => setOpenFaqs((list) => toggleIndex(list, 0)), FAQ_SPRING))(event); }}>
                   <div className="framer-18eljuz items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]">
                     <div className="framer-16y69vw wrap-break-word select-none [word-break:break-word] [opacity:1]" style={{ "--extracted-r6o4lv": "var(--token-20520155-1f7c-48bb-bab4-b385c8b0875a, rgb(0, 0, 0))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" } as CSSProperties} data-framer-component-type="RichTextContainer">
                       <p className="framer-text framer-styles-preset-sqgpjx" style={{ "--framer-text-alignment": "left", "--framer-text-color": "var(--extracted-r6o4lv, var(--token-20520155-1f7c-48bb-bab4-b385c8b0875a, rgb(0, 0, 0)))" } as CSSProperties} dir="auto">What does OneThing actually do?</p>
@@ -1700,7 +1704,7 @@ function ImportedSectionFAQSection() {
             </div>
             <div className="ssr-variant">
               <div className="framer-xjn139-container will-change-transform [opacity:1]" style={{ transform: "none" }}>
-                <div className={`framer-h9poP framer-FaBO9 framer-qhMV1 framer-11vn5nc ${openFaqs.includes(1) ? "framer-v-11vn5nc" : "framer-v-1rhfu2w"} items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]`} style={{ backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", width: "100%", borderRadius: "12px" }} tabIndex={0} role="button" aria-expanded={openFaqs.includes(1)} onClick={() => setOpenFaqs((list) => toggleIndex(list, 1))} onKeyDown={activateOnKey(() => setOpenFaqs((list) => toggleIndex(list, 1)))}>
+                <div className={`framer-h9poP framer-FaBO9 framer-qhMV1 framer-11vn5nc ${openFaqs.includes(1) ? "framer-v-11vn5nc" : "framer-v-1rhfu2w"} items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]`} style={{ backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", width: "100%", borderRadius: "12px" }} tabIndex={0} role="button" aria-expanded={openFaqs.includes(1)} onClick={(event) => animateLayoutHeight(event.currentTarget, () => setOpenFaqs((list) => toggleIndex(list, 1)), FAQ_SPRING)} onKeyDown={(event) => { const box = event.currentTarget; activateOnKey(() => animateLayoutHeight(box, () => setOpenFaqs((list) => toggleIndex(list, 1)), FAQ_SPRING))(event); }}>
                   <div className="framer-18eljuz items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]">
                     <div className="framer-16y69vw wrap-break-word select-none [word-break:break-word] [opacity:1]" style={{ "--extracted-r6o4lv": "var(--token-20520155-1f7c-48bb-bab4-b385c8b0875a, rgb(0, 0, 0))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" } as CSSProperties} data-framer-component-type="RichTextContainer">
                       <p className="framer-text framer-styles-preset-sqgpjx" style={{ "--framer-text-alignment": "left", "--framer-text-color": "var(--extracted-r6o4lv, var(--token-20520155-1f7c-48bb-bab4-b385c8b0875a, rgb(0, 0, 0)))" } as CSSProperties} dir="auto">How many gummies do I need to take per day?</p>
@@ -1719,7 +1723,7 @@ function ImportedSectionFAQSection() {
             </div>
             <div className="ssr-variant">
               <div className="framer-btd0cx-container will-change-transform [opacity:1]" style={{ transform: "none" }}>
-                <div className={`framer-h9poP framer-FaBO9 framer-qhMV1 framer-11vn5nc ${openFaqs.includes(2) ? "framer-v-11vn5nc" : "framer-v-1rhfu2w"} items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]`} style={{ backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", width: "100%", borderRadius: "12px" }} tabIndex={0} role="button" aria-expanded={openFaqs.includes(2)} onClick={() => setOpenFaqs((list) => toggleIndex(list, 2))} onKeyDown={activateOnKey(() => setOpenFaqs((list) => toggleIndex(list, 2)))}>
+                <div className={`framer-h9poP framer-FaBO9 framer-qhMV1 framer-11vn5nc ${openFaqs.includes(2) ? "framer-v-11vn5nc" : "framer-v-1rhfu2w"} items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]`} style={{ backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", width: "100%", borderRadius: "12px" }} tabIndex={0} role="button" aria-expanded={openFaqs.includes(2)} onClick={(event) => animateLayoutHeight(event.currentTarget, () => setOpenFaqs((list) => toggleIndex(list, 2)), FAQ_SPRING)} onKeyDown={(event) => { const box = event.currentTarget; activateOnKey(() => animateLayoutHeight(box, () => setOpenFaqs((list) => toggleIndex(list, 2)), FAQ_SPRING))(event); }}>
                   <div className="framer-18eljuz items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]">
                     <div className="framer-16y69vw wrap-break-word select-none [word-break:break-word] [opacity:1]" style={{ "--extracted-r6o4lv": "var(--token-20520155-1f7c-48bb-bab4-b385c8b0875a, rgb(0, 0, 0))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" } as CSSProperties} data-framer-component-type="RichTextContainer">
                       <p className="framer-text framer-styles-preset-sqgpjx" style={{ "--framer-text-alignment": "left", "--framer-text-color": "var(--extracted-r6o4lv, var(--token-20520155-1f7c-48bb-bab4-b385c8b0875a, rgb(0, 0, 0)))" } as CSSProperties} dir="auto">Is it safe to take with other medications?</p>
@@ -1738,7 +1742,7 @@ function ImportedSectionFAQSection() {
             </div>
             <div className="ssr-variant">
               <div className="framer-m31mq9-container will-change-transform [opacity:1]" style={{ transform: "none" }}>
-                <div className={`framer-h9poP framer-FaBO9 framer-qhMV1 framer-11vn5nc ${openFaqs.includes(3) ? "framer-v-11vn5nc" : "framer-v-1rhfu2w"} items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]`} style={{ backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", width: "100%", borderRadius: "12px" }} tabIndex={0} role="button" aria-expanded={openFaqs.includes(3)} onClick={() => setOpenFaqs((list) => toggleIndex(list, 3))} onKeyDown={activateOnKey(() => setOpenFaqs((list) => toggleIndex(list, 3)))}>
+                <div className={`framer-h9poP framer-FaBO9 framer-qhMV1 framer-11vn5nc ${openFaqs.includes(3) ? "framer-v-11vn5nc" : "framer-v-1rhfu2w"} items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]`} style={{ backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", width: "100%", borderRadius: "12px" }} tabIndex={0} role="button" aria-expanded={openFaqs.includes(3)} onClick={(event) => animateLayoutHeight(event.currentTarget, () => setOpenFaqs((list) => toggleIndex(list, 3)), FAQ_SPRING)} onKeyDown={(event) => { const box = event.currentTarget; activateOnKey(() => animateLayoutHeight(box, () => setOpenFaqs((list) => toggleIndex(list, 3)), FAQ_SPRING))(event); }}>
                   <div className="framer-18eljuz items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]">
                     <div className="framer-16y69vw wrap-break-word select-none [word-break:break-word] [opacity:1]" style={{ "--extracted-r6o4lv": "var(--token-20520155-1f7c-48bb-bab4-b385c8b0875a, rgb(0, 0, 0))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" } as CSSProperties} data-framer-component-type="RichTextContainer">
                       <p className="framer-text framer-styles-preset-sqgpjx" style={{ "--framer-text-alignment": "left", "--framer-text-color": "var(--extracted-r6o4lv, var(--token-20520155-1f7c-48bb-bab4-b385c8b0875a, rgb(0, 0, 0)))" } as CSSProperties} dir="auto">How long before I start seeing results?</p>
@@ -1757,7 +1761,7 @@ function ImportedSectionFAQSection() {
             </div>
             <div className="ssr-variant">
               <div className="framer-1teae2x-container will-change-transform [opacity:1]" style={{ transform: "none" }}>
-                <div className={`framer-h9poP framer-FaBO9 framer-qhMV1 framer-11vn5nc ${openFaqs.includes(4) ? "framer-v-11vn5nc" : "framer-v-1rhfu2w"} items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]`} style={{ backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", width: "100%", borderRadius: "12px" }} tabIndex={0} role="button" aria-expanded={openFaqs.includes(4)} onClick={() => setOpenFaqs((list) => toggleIndex(list, 4))} onKeyDown={activateOnKey(() => setOpenFaqs((list) => toggleIndex(list, 4)))}>
+                <div className={`framer-h9poP framer-FaBO9 framer-qhMV1 framer-11vn5nc ${openFaqs.includes(4) ? "framer-v-11vn5nc" : "framer-v-1rhfu2w"} items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]`} style={{ backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", width: "100%", borderRadius: "12px" }} tabIndex={0} role="button" aria-expanded={openFaqs.includes(4)} onClick={(event) => animateLayoutHeight(event.currentTarget, () => setOpenFaqs((list) => toggleIndex(list, 4)), FAQ_SPRING)} onKeyDown={(event) => { const box = event.currentTarget; activateOnKey(() => animateLayoutHeight(box, () => setOpenFaqs((list) => toggleIndex(list, 4)), FAQ_SPRING))(event); }}>
                   <div className="framer-18eljuz items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]">
                     <div className="framer-16y69vw wrap-break-word select-none [word-break:break-word] [opacity:1]" style={{ "--extracted-r6o4lv": "var(--token-20520155-1f7c-48bb-bab4-b385c8b0875a, rgb(0, 0, 0))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" } as CSSProperties} data-framer-component-type="RichTextContainer">
                       <p className="framer-text framer-styles-preset-sqgpjx" style={{ "--framer-text-alignment": "left", "--framer-text-color": "var(--extracted-r6o4lv, var(--token-20520155-1f7c-48bb-bab4-b385c8b0875a, rgb(0, 0, 0)))" } as CSSProperties} dir="auto">What happens if it doesn't work for me?</p>
@@ -1776,7 +1780,7 @@ function ImportedSectionFAQSection() {
             </div>
             <div className="ssr-variant">
               <div className="framer-1rvv2kb-container will-change-transform [opacity:1]" style={{ transform: "none" }}>
-                <div className={`framer-h9poP framer-FaBO9 framer-qhMV1 framer-11vn5nc ${openFaqs.includes(5) ? "framer-v-11vn5nc" : "framer-v-1rhfu2w"} items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]`} style={{ backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", width: "100%", borderRadius: "12px" }} tabIndex={0} role="button" aria-expanded={openFaqs.includes(5)} onClick={() => setOpenFaqs((list) => toggleIndex(list, 5))} onKeyDown={activateOnKey(() => setOpenFaqs((list) => toggleIndex(list, 5)))}>
+                <div className={`framer-h9poP framer-FaBO9 framer-qhMV1 framer-11vn5nc ${openFaqs.includes(5) ? "framer-v-11vn5nc" : "framer-v-1rhfu2w"} items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]`} style={{ backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", width: "100%", borderRadius: "12px" }} tabIndex={0} role="button" aria-expanded={openFaqs.includes(5)} onClick={(event) => animateLayoutHeight(event.currentTarget, () => setOpenFaqs((list) => toggleIndex(list, 5)), FAQ_SPRING)} onKeyDown={(event) => { const box = event.currentTarget; activateOnKey(() => animateLayoutHeight(box, () => setOpenFaqs((list) => toggleIndex(list, 5)), FAQ_SPRING))(event); }}>
                   <div className="framer-18eljuz items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]">
                     <div className="framer-16y69vw wrap-break-word select-none [word-break:break-word] [opacity:1]" style={{ "--extracted-r6o4lv": "var(--token-20520155-1f7c-48bb-bab4-b385c8b0875a, rgb(0, 0, 0))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" } as CSSProperties} data-framer-component-type="RichTextContainer">
                       <p className="framer-text framer-styles-preset-sqgpjx" style={{ "--framer-text-alignment": "left", "--framer-text-color": "var(--extracted-r6o4lv, var(--token-20520155-1f7c-48bb-bab4-b385c8b0875a, rgb(0, 0, 0)))" } as CSSProperties} dir="auto">Is it vegan and allergen-friendly?</p>
@@ -2281,32 +2285,6 @@ function ImportedFooterFooterSection() {
       </div>
     </footer>
   );
-}
-
-
-function useInView<T extends HTMLElement>() {
-  const ref = useRef<T>(null);
-  const [inView, setInView] = useState(false);
-  useEffect(() => {
-    const node = ref.current;
-    if (!node) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) {
-      setInView(true);
-      return;
-    }
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry?.isIntersecting) {
-          setInView(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: "0px 0px -10% 0px" },
-    );
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, []);
-  return [ref, inView] as const;
 }
 
 
