@@ -5,6 +5,7 @@
  * Timings use the same spring maths as Framer Motion so curves match the source site.
  */
 import { useEffect } from "react";
+import { flushSync } from "react-dom";
 
 export type FxValues = { x?: number; y?: number; scale?: number; rotate?: number; opacity?: number; blur?: number };
 export type FxTransition =
@@ -142,6 +143,21 @@ export function cssTransitionTiming(tr: FxTransition, points = 40) {
   const stops: string[] = [];
   for (let i = 0; i <= points; i++) stops.push((Math.round(curve.at((curve.duration * i) / points) * 10000) / 10000).toString());
   return { duration: `${Math.round(curve.duration)}ms`, easing: `linear(${stops.join(", ")})` };
+}
+
+/** Animates an element's height between its before/after layout like a Framer variant change. */
+export function animateLayoutHeight(el: HTMLElement | null, update: () => void, tr: FxTransition) {
+  if (!el || matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    update();
+    return;
+  }
+  el.getAnimations().forEach((a) => a.cancel());
+  const from = el.getBoundingClientRect().height;
+  flushSync(update);
+  const to = el.getBoundingClientRect().height;
+  if (Math.abs(to - from) < 0.5) return;
+  const timing = cssTransitionTiming(tr, 60);
+  el.animate([{ height: `${from}px` }, { height: `${to}px` }], { duration: parseFloat(timing.duration), easing: timing.easing });
 }
 
 /* ---------------- runtime ---------------- */
