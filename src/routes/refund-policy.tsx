@@ -181,7 +181,7 @@ function ImportedDivOfferNav() {
       </div>
       <div className="framer-grv9nz-container flex-none">
         <div className="ssr-variant">
-          <nav className="framer-mV9bZ framer-Jf64E framer-opbmt framer-115fwyv" style={{ "--border-bottom-width": "1px", "--border-color": "rgba(255, 255, 255, 0)", "--border-left-width": "0px", "--border-right-width": "0px", "--border-style": "solid", "--border-top-width": "0px", backdropFilter: "blur(5px)", background: "linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 100%)", width: "100%", boxShadow: "rgba(0, 0, 0, 0) 0px 0px 0px 0px", opacity: "1", willChange: "auto" } as CSSProperties} data-border="true" data-site-import-scroll-header={"{\"desktop\":{\"added\":[\"framer-v-115fwyv\"],\"removed\":[\"framer-v-1sgftv0\"],\"threshold\":648},\"mobile\":{\"added\":[\"framer-v-a3dwaf\"],\"removed\":[\"framer-v-1lacu8\"],\"threshold\":633}}"}>
+          <nav data-fx-nav="desktop" className="framer-mV9bZ framer-Jf64E framer-opbmt framer-115fwyv framer-v-1sgftv0" style={{ "--border-bottom-width": "1px", "--border-color": "var(--oi-nav-border)", "--border-left-width": "0px", "--border-right-width": "0px", "--border-style": "solid", "--border-top-width": "0px", backdropFilter: "blur(5px)", background: "linear-gradient(180deg, var(--oi-nav-c1) 0%, var(--oi-nav-c2) 100%)", width: "100%", boxShadow: "0px 2px 3px 0px var(--oi-nav-shadow)", opacity: "1", willChange: "auto" } as CSSProperties} data-border="true">
             <div className="framer-1uparzb" style={{ opacity: "1" }}>
               <div className="framer-5m92od" style={{ opacity: "1" }}>
                 <div className="framer-10nqhn5" style={{ opacity: "1" }}>
@@ -306,7 +306,7 @@ function ImportedDivOfferNav2() {
       </div>
       <div className="framer-grv9nz-container flex-none">
         <div className="ssr-variant">
-          <nav className="framer-mV9bZ framer-Jf64E framer-opbmt framer-115fwyv framer-v-1lacu8" style={{ "--border-bottom-width": "1px", "--border-color": "rgba(255, 255, 255, 0)", "--border-left-width": "0px", "--border-right-width": "0px", "--border-style": "solid", "--border-top-width": "0px", backdropFilter: "blur(5px)", background: "linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 100%)", width: "100%", boxShadow: "rgba(0, 0, 0, 0) 0px 0px 0px 0px", opacity: "1", willChange: "auto" } as CSSProperties} data-border="true" data-site-import-scroll-header={"{\"desktop\":{\"added\":[\"framer-v-115fwyv\"],\"removed\":[\"framer-v-1sgftv0\"],\"threshold\":648},\"mobile\":{\"added\":[\"framer-v-a3dwaf\"],\"removed\":[\"framer-v-1lacu8\"],\"threshold\":633}}"}>
+          <nav data-fx-nav="phone" className="framer-mV9bZ framer-Jf64E framer-opbmt framer-115fwyv framer-v-1lacu8" style={{ "--border-bottom-width": "1px", "--border-color": "var(--oi-nav-border)", "--border-left-width": "0px", "--border-right-width": "0px", "--border-style": "solid", "--border-top-width": "0px", backdropFilter: "blur(5px)", background: "linear-gradient(180deg, var(--oi-nav-c1) 0%, var(--oi-nav-c2) 100%)", width: "100%", boxShadow: "0px 2px 3px 0px var(--oi-nav-shadow)", opacity: "1", willChange: "auto" } as CSSProperties} data-border="true">
             <div className="framer-1uparzb" style={{ opacity: "1" }}>
               <div className="framer-5m92od" style={{ opacity: "1" }}>
                 <div className="framer-10nqhn5" style={{ opacity: "1" }}>
