@@ -12,7 +12,7 @@ export type FxTransition =
   | { type: "spring"; duration?: number; bounce?: number; stiffness?: number; damping?: number; mass?: number; delay?: number }
   | { type: "tween"; duration: number; ease?: [number, number, number, number]; delay?: number };
 
-export type FxBase = { template?: string; x?: number; y?: number; scale?: number; rotate?: number };
+export type FxBase = { template?: string | undefined; x?: number; y?: number; scale?: number; rotate?: number };
 
 export type FxEffect = {
   selector: string;
@@ -236,7 +236,7 @@ type Live = {
   appear?: { start: number; delta: Channel; curve: Curve; delay: number; started: boolean; done: boolean };
   loop?: { start: number; curve: Curve; delay: number; active: boolean; to: Channel };
   parallaxY: number;
-  st?: { value: number; velocity: number; target: number; from: Channel; to: Channel; spring?: { k: number; c: number; m: number } };
+  st?: { value: number; velocity: number; target: number; from: Channel; to: Channel; spring?: { k: number; c: number; m: number } | undefined };
   words?: { spans: HTMLElement[]; start: number; curve: Curve; delta: Channel; started: boolean; done: boolean };
   layoutTop: number;
   height: number;
@@ -324,7 +324,7 @@ export function useFramerEffects(config: FxConfig) {
       for (const live of lives) {
         const io = new IntersectionObserver(
           ([entry]) => {
-            live.inView = entry.isIntersecting;
+            live.inView = !!entry?.isIntersecting;
             const now = performance.now();
             if (live.inView) {
               if (live.appear && !live.appear.started && live.fx.appear?.trigger === "inView") {
@@ -561,7 +561,7 @@ function createTicker(container: HTMLElement, def: FxTicker, kick: () => void): 
     }
   }
   const io = new IntersectionObserver(([entry]) => {
-    inView = entry.isIntersecting;
+    inView = !!entry?.isIntersecting;
     if (inView) kick();
   });
   io.observe(container);
