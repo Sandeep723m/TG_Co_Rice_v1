@@ -1,0 +1,308 @@
+{
+ "source": "https://onething.framer.ai/",
+ "preview": "http://localhost:8080",
+ "results": {
+  "d": [
+   {
+    "route": "/",
+    "viewport": "d",
+    "control": "hero product image",
+    "expected": "visible in first screen",
+    "observed": "[[260, 1100]]",
+    "status": "pass",
+    "screenshot": "d_hero.png"
+   },
+   {
+    "route": "/",
+    "viewport": "d",
+    "control": "hero CTA",
+    "expected": "links to buy section",
+    "observed": "/#buy-product",
+    "status": "pass",
+    "screenshot": null
+   },
+   {
+    "route": "/",
+    "viewport": "d",
+    "control": "nav Benefits",
+    "expected": "scrolls to #benefits",
+    "observed": "url=http://localhost:8080/#benefits sectionTop=60",
+    "status": "pass",
+    "screenshot": null
+   },
+   {
+    "route": "/",
+    "viewport": "d",
+    "control": "nav Effects Timeline",
+    "expected": "scrolls to #effects-timeline",
+    "observed": "url=http://localhost:8080/#effects-timeline sectionTop=60",
+    "status": "pass",
+    "screenshot": null
+   },
+   {
+    "route": "/",
+    "viewport": "d",
+    "control": "nav Ingredients",
+    "expected": "scrolls to #ingredients",
+    "observed": "url=http://localhost:8080/#ingredients sectionTop=120",
+    "status": "pass",
+    "screenshot": null
+   },
+   {
+    "route": "/",
+    "viewport": "d",
+    "control": "nav FAQ",
+    "expected": "scrolls to #faq",
+    "observed": "url=http://localhost:8080/#faq sectionTop=60",
+    "status": "pass",
+    "screenshot": null
+   },
+   {
+    "route": "/",
+    "viewport": "d",
+    "control": "header Buy Now",
+    "expected": "links to home page '/' (source href './')",
+    "observed": "url=http://localhost:8080/ top=7103",
+    "status": "pass",
+    "screenshot": null
+   },
+   {
+    "route": "/",
+    "viewport": "d",
+    "control": "scroll-in cards, big gummy, intro title",
+    "expected": "opacity 1, settled transforms",
+    "observed": "framer-1vwkisw:1:none:none; framer-1yd27yv:1:matrix(1, 0, 0, 1, -177.5, -144.406):0px; framer-sh66ud-container:1:none:0px; framer-qlbbaw:1:matrix(1, 0, 0, 1, -175.5, -128.094):0px; framer-ipe1eq:1:matrix(1, 0, 0, 1, 0, -100):none",
+    "status": "pass",
+    "screenshot": null
+   },
+   {
+    "route": "/",
+    "viewport": "d",
+    "control": "FAQ item open",
+    "expected": "answer visible",
+    "observed": "visible=True aria-expanded=true",
+    "status": "pass",
+    "screenshot": "d_faq_open.png"
+   },
+   {
+    "route": "/",
+    "viewport": "d",
+    "control": "FAQ item close",
+    "expected": "answer hidden",
+    "observed": "count=0",
+    "status": "pass",
+    "screenshot": null
+   },
+   {
+    "route": "/",
+    "viewport": "d",
+    "control": "FAQ keyboard Enter",
+    "expected": "answer visible",
+    "observed": "True",
+    "status": "pass",
+    "screenshot": null
+   },
+   {
+    "route": "/",
+    "viewport": "d",
+    "control": "product detail 'What's inside?'",
+    "expected": "detail text visible",
+    "observed": "True",
+    "status": "pass",
+    "screenshot": null
+   },
+   {
+    "route": "/",
+    "viewport": "d",
+    "control": "plan option One-Time Purchase",
+    "expected": "selected; button reads One-Time Purchase",
+    "observed": "aria-checked=true cta=One-Time Purchase",
+    "status": "pass",
+    "screenshot": "d_onetime.png"
+   },
+   {
+    "route": "/",
+    "viewport": "d",
+    "control": "product slideshow",
+    "expected": "advances every ~3.75s; bar click selects",
+    "observed": "/ 04 -> / 01; click 4 -> / 04; img 1a397b7d0f239ee1.avif 550",
+    "status": "pass",
+    "screenshot": null
+   },
+   {
+    "route": "/",
+    "viewport": "d",
+    "control": "footer Privacy Policy",
+    "expected": "opens /privacy-policy on this site",
+    "observed": "http://localhost:8080/privacy-policy title=OneThing - Privacy Policy",
+    "status": "pass",
+    "screenshot": null
+   }
+  ],
+  "m": [
+   {
+    "route": "/",
+    "viewport": "m",
+    "control": "hero product image",
+    "expected": "visible in first screen",
+    "observed": "[[264, 816]]",
+    "status": "pass",
+    "screenshot": "m_hero.png"
+   },
+   {
+    "route": "/",
+    "viewport": "m",
+    "control": "hero CTA",
+    "expected": "links to buy section",
+    "observed": "/#buy-product",
+    "status": "pass",
+    "screenshot": null
+   },
+   {
+    "route": "/",
+    "viewport": "m",
+    "control": "header Buy Now",
+    "expected": "links to home page '/' (source href './')",
+    "observed": "url=http://localhost:8080/ top=8826",
+    "status": "pass",
+    "screenshot": null
+   },
+   {
+    "route": "/",
+    "viewport": "m",
+    "control": "scroll-in cards, big gummy, intro title",
+    "expected": "opacity 1, settled transforms",
+    "observed": "framer-1vwkisw:1:none:none; framer-1yd27yv:1:matrix(1, 0, 0, 1, 0, -133.656):0px; framer-sh66ud-container:1:matrix(1, 0, 0, 1, -98, 0):0px; framer-qlbbaw:1:matrix(1, 0, 0, 1, 0, -127.344):0px; framer-ipe1eq:1:matrix(1, 0, 0, 1, 0, -100):none",
+    "status": "pass",
+    "screenshot": null
+   },
+   {
+    "route": "/",
+    "viewport": "m",
+    "control": "FAQ item open",
+    "expected": "answer visible",
+    "observed": "visible=True aria-expanded=true",
+    "status": "pass",
+    "screenshot": "m_faq_open.png"
+   },
+   {
+    "route": "/",
+    "viewport": "m",
+    "control": "FAQ item close",
+    "expected": "answer hidden",
+    "observed": "count=0",
+    "status": "pass",
+    "screenshot": null
+   },
+   {
+    "route": "/",
+    "viewport": "m",
+    "control": "FAQ keyboard Enter",
+    "expected": "answer visible",
+    "observed": "True",
+    "status": "pass",
+    "screenshot": null
+   },
+   {
+    "route": "/",
+    "viewport": "m",
+    "control": "product detail 'What's inside?'",
+    "expected": "detail text visible",
+    "observed": "True",
+    "status": "pass",
+    "screenshot": null
+   },
+   {
+    "route": "/",
+    "viewport": "m",
+    "control": "plan option One-Time Purchase",
+    "expected": "selected; button reads One-Time Purchase",
+    "observed": "aria-checked=true cta=One-Time Purchase",
+    "status": "pass",
+    "screenshot": "m_onetime.png"
+   },
+   {
+    "route": "/",
+    "viewport": "m",
+    "control": "product slideshow",
+    "expected": "advances every ~3.75s; bar click selects",
+    "observed": "/ 04 -> / 01; click 4 -> / 04; img 1a397b7d0f239ee1.avif 105",
+    "status": "pass",
+    "screenshot": null
+   },
+   {
+    "route": "/",
+    "viewport": "m",
+    "control": "footer Privacy Policy",
+    "expected": "opens /privacy-policy on this site",
+    "observed": "http://localhost:8080/privacy-policy title=OneThing - Privacy Policy",
+    "status": "pass",
+    "screenshot": null
+   }
+  ]
+ },
+ "policy_pages": [
+  {
+   "route": "/privacy-policy",
+   "viewport": "d",
+   "control": "header link (FAQ desktop / Buy Now phone)",
+   "expected": "same-site destination on preview origin",
+   "observed": "navigates to /#faq or /",
+   "status": "pass"
+  },
+  {
+   "route": "/privacy-policy",
+   "viewport": "m",
+   "control": "header link (FAQ desktop / Buy Now phone)",
+   "expected": "same-site destination on preview origin",
+   "observed": "navigates to /#faq or /",
+   "status": "pass"
+  },
+  {
+   "route": "/refund-policy",
+   "viewport": "d",
+   "control": "header link (FAQ desktop / Buy Now phone)",
+   "expected": "same-site destination on preview origin",
+   "observed": "navigates to /#faq or /",
+   "status": "pass"
+  },
+  {
+   "route": "/refund-policy",
+   "viewport": "m",
+   "control": "header link (FAQ desktop / Buy Now phone)",
+   "expected": "same-site destination on preview origin",
+   "observed": "navigates to /#faq or /",
+   "status": "pass"
+  },
+  {
+   "route": "/terms-conditions",
+   "viewport": "d",
+   "control": "header link (FAQ desktop / Buy Now phone)",
+   "expected": "same-site destination on preview origin",
+   "observed": "navigates to /#faq or /",
+   "status": "pass"
+  },
+  {
+   "route": "/terms-conditions",
+   "viewport": "m",
+   "control": "header link (FAQ desktop / Buy Now phone)",
+   "expected": "same-site destination on preview origin",
+   "observed": "navigates to /#faq or /",
+   "status": "pass"
+  }
+ ],
+ "assets_added": {
+  "https://framerusercontent.com/images/AXYob7nSwersT77wVhPTOqFt1w.png?scale-down-to=1024": "/site-assets/product-slide-1.webp",
+  "https://framerusercontent.com/images/hI8hKMmyhyo2n62rNS0VtX6HY.png?scale-down-to=1024": "/site-assets/product-slide-2.webp",
+  "https://framerusercontent.com/images/vLFujiGa0gw4b4xFEATrtkyE.png?scale-down-to=1024": "/site-assets/product-slide-3.webp"
+ },
+ "open_state_dom": "dom/",
+ "not_imported": [
+  "/404 (site 404 page; this app shows its own not-found page)"
+ ],
+ "known_gaps": [
+  "Per-word blur reveal on 'Introducing OneThing' title shown in settled state",
+  "Buy section appear-on-scroll fade not reproduced (content always visible)",
+  "Marquee/review strips scroll but start offsets differ"
+ ]
+}
