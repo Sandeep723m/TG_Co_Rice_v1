@@ -1,5 +1,5 @@
 import type { CSSProperties } from "react";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import capturedCSS from "../styles/pages/index.css?raw";
 
@@ -22,12 +22,12 @@ function Index() {
             <main className="framer-1nmhst2 items-center flex-none flex-col flex-nowrap content-center justify-start [overflow:var(--overflow-clip-fallback,clip)]">
               <ImportedDivContentStack />
               <div className="ssr-variant" data-site-import-desktop-variant="">
-                <div className="framer-w7ue3b-container aspect-square flex-none [z-index:1] [opacity:1]" style={{ transform: "translate(-50%, -50%)", willChange: "transform" }}>
+                <div className="framer-w7ue3b-container aspect-square flex-none [z-index:1] [opacity:1]" style={{ willChange: "transform" }}>
                   <ImportedDivDesktop />
                 </div>
               </div>
               <div className="ssr-variant" style={{ "--site-import-responsive-display": "contents" } as CSSProperties} data-site-import-mobile-variant="">
-                <div className="framer-w7ue3b-container aspect-square flex-none [z-index:1] [opacity:1]" style={{ transform: "translate(-50%, -50%)", willChange: "transform" }}>
+                <div className="framer-w7ue3b-container aspect-square flex-none [z-index:1] [opacity:1]" style={{ willChange: "transform" }}>
                   <ImportedDivDesktop2 />
                 </div>
               </div>
@@ -359,37 +359,37 @@ function ImportedDivDesktop() {
       <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
         <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="4096" height="4096" sizes="1100px" srcSet="/site-assets/c0bb516676d07043.webp 512w, /site-assets/d1e862df2776c8bb.avif 1024w, /site-assets/0fd8b04348c248b2.avif 2048w, /site-assets/8ddb7fbaad402fa3.avif 4096w" src="/site-assets/8ddb7fbaad402fa3.avif" alt="" />
       </div>
-      <div className="framer-d1too9 aspect-square flex-none right-[85px] [overflow:visible] [z-index:8] [filter:blur(5px)] will-change-transform [opacity:1]" style={{ transform: "translateY(-50%) translateY(46.2583px) rotate(-59deg)" }}>
+      <div className="framer-d1too9 aspect-square flex-none right-[85px] [overflow:visible] [z-index:8] [filter:blur(5px)] will-change-transform [opacity:1] oi-float" style={{ transform: "translateY(-50%) rotate(-59deg)" }}>
         <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
           <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="2921" height="2921" sizes="83px" srcSet="/site-assets/2b505afd9b61f6ef.avif 512w, /site-assets/1bffb004a1c8c76a.avif 1024w, /site-assets/78c1116f1df875a5.avif 2048w, /site-assets/07d47ede94a12452.avif 2921w" src="/site-assets/07d47ede94a12452.avif" alt="" />
         </div>
       </div>
-      <div className="framer-1twa8cg aspect-square flex-none right-[43px] [overflow:visible] [z-index:8] [filter:blur(5px)] will-change-transform [opacity:1]" style={{ transform: "translateY(46.25px) rotate(53deg)" }}>
+      <div className="framer-1twa8cg aspect-square flex-none right-[43px] [overflow:visible] [z-index:8] [filter:blur(5px)] will-change-transform [opacity:1] oi-float" style={{ transform: "rotate(53deg)" }}>
         <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
           <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="2921" height="2921" sizes="150px" srcSet="/site-assets/2b505afd9b61f6ef.avif 512w, /site-assets/1bffb004a1c8c76a.avif 1024w, /site-assets/78c1116f1df875a5.avif 2048w, /site-assets/07d47ede94a12452.avif 2921w" src="/site-assets/07d47ede94a12452.avif" alt="" />
         </div>
       </div>
-      <div className="framer-lt83ag aspect-square flex-none right-[286px] [overflow:visible] [z-index:8] will-change-transform [opacity:1]" style={{ transform: "translateY(-50%) translateY(46.2583px) rotate(-32deg)" }}>
+      <div className="framer-lt83ag aspect-square flex-none right-[286px] [overflow:visible] [z-index:8] will-change-transform [opacity:1] oi-float" style={{ transform: "translateY(-50%) rotate(-32deg)" }}>
         <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
           <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="2921" height="2921" sizes="136px" srcSet="/site-assets/2b505afd9b61f6ef.avif 512w, /site-assets/1bffb004a1c8c76a.avif 1024w, /site-assets/78c1116f1df875a5.avif 2048w, /site-assets/07d47ede94a12452.avif 2921w" src="/site-assets/07d47ede94a12452.avif" alt="" />
         </div>
       </div>
-      <div className="framer-86ela9 aspect-square flex-none right-[235px] [overflow:visible] [z-index:8] will-change-transform [opacity:1]" style={{ transform: "translateY(46.25px) rotate(145deg)" }}>
+      <div className="framer-86ela9 aspect-square flex-none right-[235px] [overflow:visible] [z-index:8] will-change-transform [opacity:1] oi-float" style={{ transform: "rotate(145deg)" }}>
         <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
           <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="2921" height="2921" sizes="180px" srcSet="/site-assets/2b505afd9b61f6ef.avif 512w, /site-assets/1bffb004a1c8c76a.avif 1024w, /site-assets/78c1116f1df875a5.avif 2048w, /site-assets/07d47ede94a12452.avif 2921w" src="/site-assets/07d47ede94a12452.avif" alt="" />
         </div>
       </div>
-      <div className="framer-1xujcsz aspect-square flex-none [overflow:visible] [z-index:8] will-change-transform [opacity:1]" style={{ transform: "translateY(46.25px) rotate(285deg)" }}>
+      <div className="framer-1xujcsz aspect-square flex-none [overflow:visible] [z-index:8] will-change-transform [opacity:1] oi-float" style={{ transform: "rotate(285deg)" }}>
         <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
           <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="2921" height="2921" sizes="167px" srcSet="/site-assets/2b505afd9b61f6ef.avif 512w, /site-assets/1bffb004a1c8c76a.avif 1024w, /site-assets/78c1116f1df875a5.avif 2048w, /site-assets/07d47ede94a12452.avif 2921w" src="/site-assets/07d47ede94a12452.avif" alt="" />
         </div>
       </div>
-      <div className="framer-1uue3vh aspect-square flex-none [overflow:visible] [z-index:8] [filter:blur(3px)] will-change-transform [opacity:1]" style={{ transform: "translateY(-50%) translateY(46.2583px) rotate(-40deg)" }}>
+      <div className="framer-1uue3vh aspect-square flex-none [overflow:visible] [z-index:8] [filter:blur(3px)] will-change-transform [opacity:1] oi-float" style={{ transform: "translateY(-50%) rotate(-40deg)" }}>
         <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
           <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="2921" height="2921" sizes="250px" srcSet="/site-assets/2b505afd9b61f6ef.avif 512w, /site-assets/1bffb004a1c8c76a.avif 1024w, /site-assets/78c1116f1df875a5.avif 2048w, /site-assets/07d47ede94a12452.avif 2921w" src="/site-assets/07d47ede94a12452.avif" alt="" />
         </div>
       </div>
-      <div className="framer-1i2u684 aspect-square flex-none [overflow:visible] [z-index:0] [filter:blur(3px)] will-change-transform [opacity:1]" style={{ transform: "translateY(46.2583px) rotate(47deg)" }}>
+      <div className="framer-1i2u684 aspect-square flex-none [overflow:visible] [z-index:0] [filter:blur(3px)] will-change-transform [opacity:1] oi-float" style={{ transform: "rotate(47deg)" }}>
         <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
           <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="2921" height="2921" sizes="219px" srcSet="/site-assets/2b505afd9b61f6ef.avif 512w, /site-assets/1bffb004a1c8c76a.avif 1024w, /site-assets/78c1116f1df875a5.avif 2048w, /site-assets/07d47ede94a12452.avif 2921w" src="/site-assets/07d47ede94a12452.avif" alt="" />
         </div>
@@ -400,41 +400,31 @@ function ImportedDivDesktop() {
 
 function ImportedDivDesktop2() {
   return (
-    <div className="framer-jAeYy framer-hz6668 [overflow:visible] [opacity:1]" style={{ height: "100%", width: "100%" }}>
+    <div className="framer-jAeYy framer-hz6668 framer-v-1g7gamr [overflow:visible] [opacity:1]" style={{ height: "100%", width: "100%" }}>
       <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
         <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="4096" height="4096" sizes="1100px" srcSet="/site-assets/c0bb516676d07043.webp 512w, /site-assets/d1e862df2776c8bb.avif 1024w, /site-assets/0fd8b04348c248b2.avif 2048w, /site-assets/8ddb7fbaad402fa3.avif 4096w" src="/site-assets/8ddb7fbaad402fa3.avif" alt="" />
       </div>
-      <div className="framer-d1too9 aspect-square flex-none right-[85px] [overflow:visible] [z-index:8] [filter:blur(5px)] will-change-transform [opacity:1]" style={{ transform: "translateY(-50%) translateY(26.05px) rotate(-59deg)" }}>
+      <div className="framer-d1too9 aspect-square flex-none right-[85px] [overflow:visible] [z-index:8] [filter:blur(5px)] will-change-transform [opacity:1] oi-float" style={{ transform: "rotate(-37deg)" }}>
         <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
           <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="2921" height="2921" sizes="83px" srcSet="/site-assets/2b505afd9b61f6ef.avif 512w, /site-assets/1bffb004a1c8c76a.avif 1024w, /site-assets/78c1116f1df875a5.avif 2048w, /site-assets/07d47ede94a12452.avif 2921w" src="/site-assets/07d47ede94a12452.avif" alt="" />
         </div>
       </div>
-      <div className="framer-1twa8cg aspect-square flex-none right-[43px] [overflow:visible] [z-index:8] [filter:blur(5px)] will-change-transform [opacity:1]" style={{ transform: "translateY(26.0583px) rotate(53deg)" }}>
-        <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
-          <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="2921" height="2921" sizes="150px" srcSet="/site-assets/2b505afd9b61f6ef.avif 512w, /site-assets/1bffb004a1c8c76a.avif 1024w, /site-assets/78c1116f1df875a5.avif 2048w, /site-assets/07d47ede94a12452.avif 2921w" src="/site-assets/07d47ede94a12452.avif" alt="" />
-        </div>
-      </div>
-      <div className="framer-lt83ag aspect-square flex-none right-[286px] [overflow:visible] [z-index:8] will-change-transform [opacity:1]" style={{ transform: "translateY(-50%) rotate(-32deg)" }}>
+      <div className="framer-lt83ag aspect-square flex-none right-[286px] [overflow:visible] [z-index:8] will-change-transform [opacity:1] oi-float" style={{ transform: "rotate(-25deg)" }}>
         <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
           <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="2921" height="2921" sizes="136px" srcSet="/site-assets/2b505afd9b61f6ef.avif 512w, /site-assets/1bffb004a1c8c76a.avif 1024w, /site-assets/78c1116f1df875a5.avif 2048w, /site-assets/07d47ede94a12452.avif 2921w" src="/site-assets/07d47ede94a12452.avif" alt="" />
         </div>
       </div>
-      <div className="framer-86ela9 aspect-square flex-none right-[235px] [overflow:visible] [z-index:8] will-change-transform [opacity:1]" style={{ transform: "rotate(145deg)" }}>
+      <div className="framer-86ela9 aspect-square flex-none right-[235px] [overflow:visible] [z-index:8] will-change-transform [opacity:1] oi-float" style={{ transform: "rotate(145deg)" }}>
         <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
           <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="2921" height="2921" sizes="180px" srcSet="/site-assets/2b505afd9b61f6ef.avif 512w, /site-assets/1bffb004a1c8c76a.avif 1024w, /site-assets/78c1116f1df875a5.avif 2048w, /site-assets/07d47ede94a12452.avif 2921w" src="/site-assets/07d47ede94a12452.avif" alt="" />
         </div>
       </div>
-      <div className="framer-1xujcsz aspect-square flex-none [overflow:visible] [z-index:8] will-change-transform [opacity:1]" style={{ transform: "rotate(285deg)" }}>
+      <div className="framer-1xujcsz aspect-square flex-none [overflow:visible] [z-index:8] will-change-transform [opacity:1] oi-float" style={{ transform: "rotate(240deg)" }}>
         <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
           <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="2921" height="2921" sizes="167px" srcSet="/site-assets/2b505afd9b61f6ef.avif 512w, /site-assets/1bffb004a1c8c76a.avif 1024w, /site-assets/78c1116f1df875a5.avif 2048w, /site-assets/07d47ede94a12452.avif 2921w" src="/site-assets/07d47ede94a12452.avif" alt="" />
         </div>
       </div>
-      <div className="framer-1uue3vh aspect-square flex-none [overflow:visible] [z-index:8] [filter:blur(3px)] will-change-transform [opacity:1]" style={{ transform: "translateY(-50%) rotate(-40deg)" }}>
-        <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
-          <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="2921" height="2921" sizes="250px" srcSet="/site-assets/2b505afd9b61f6ef.avif 512w, /site-assets/1bffb004a1c8c76a.avif 1024w, /site-assets/78c1116f1df875a5.avif 2048w, /site-assets/07d47ede94a12452.avif 2921w" src="/site-assets/07d47ede94a12452.avif" alt="" />
-        </div>
-      </div>
-      <div className="framer-1i2u684 aspect-square flex-none [overflow:visible] [z-index:0] [filter:blur(3px)] will-change-transform [opacity:1]" style={{ transform: "rotate(47deg)" }}>
+      <div className="framer-1i2u684 aspect-square flex-none [overflow:visible] [z-index:0] [filter:blur(3px)] will-change-transform [opacity:1] oi-float" style={{ transform: "rotate(47deg)" }}>
         <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
           <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="2921" height="2921" sizes="219px" srcSet="/site-assets/2b505afd9b61f6ef.avif 512w, /site-assets/1bffb004a1c8c76a.avif 1024w, /site-assets/78c1116f1df875a5.avif 2048w, /site-assets/07d47ede94a12452.avif 2921w" src="/site-assets/07d47ede94a12452.avif" alt="" />
         </div>
