@@ -402,14 +402,14 @@ function ImportedDivCTASection() {
         </div>
         <div className="framer-1grnsct [overflow:var(--overflow-clip-fallback,clip)]">
           <div className="framer-mdv6xc-container flex-none [z-index:2]">
-            <a className="framer-6dH45 framer-FaBO9 framer-Jf64E framer-7z2klu framer-wcun84 [backdrop-filter:none] [border-radius:99px] [opacity:1]" style={{ backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))" }} href="/">
+            <a className="framer-6dH45 framer-FaBO9 framer-Jf64E framer-7z2klu framer-wcun84 [backdrop-filter:none] [border-radius:99px] [opacity:1]" style={{ width: "100%", backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))" }} href="/">
               <div className="framer-x7c3yg [opacity:1]" style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" } as CSSProperties} data-framer-component-type="RichTextContainer">
                 <p className="framer-text framer-styles-preset-sqgpjx" dir="auto">Get Supplement</p>
               </div>
             </a>
           </div>
           <div className="framer-1acd4v7-container flex-none [z-index:2]">
-            <a className="framer-6dH45 framer-FaBO9 framer-Jf64E framer-7z2klu framer-wcun84 [backdrop-filter:blur(10px)] [border-radius:99px] [opacity:1]" style={{ backgroundColor: "rgba(255, 255, 255, 0.1)" }} href="/#ingredients">
+            <a className="framer-6dH45 framer-FaBO9 framer-Jf64E framer-7z2klu framer-wcun84 [backdrop-filter:blur(10px)] [border-radius:99px] [opacity:1]" style={{ width: "100%", backgroundColor: "rgba(255, 255, 255, 0.1)" }} href="/#ingredients">
               <div className="framer-x7c3yg [opacity:1]" style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--extracted-r6o4lv": "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", transform: "none" } as CSSProperties} data-framer-component-type="RichTextContainer">
                 <p className="framer-text framer-styles-preset-sqgpjx" style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255)))" } as CSSProperties} dir="auto">See Ingredients</p>
               </div>
