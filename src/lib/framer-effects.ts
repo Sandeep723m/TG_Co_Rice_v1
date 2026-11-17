@@ -29,7 +29,7 @@ export type FxScrollClass = {
   selector: string;
   trigger: string;
   activeClass: string;
-  variants?: { media: string; active: string; inactive: string }[];
+  variants?: { selector: string; active: string; inactive: string }[];
 };
 export type FxConfig = { effects: FxEffect[]; tickers?: FxTicker[]; scrollClasses?: FxScrollClass[] };
 
@@ -366,9 +366,7 @@ export function useFramerEffects(config: FxConfig) {
         for (const el of Array.from(document.querySelectorAll<HTMLElement>(sc.selector))) {
           el.classList.toggle(sc.activeClass, active);
           for (const v of sc.variants ?? []) {
-            if (!el.classList.contains(v.active) && !el.classList.contains(v.inactive)) continue;
-            const on = matchMedia(v.media).matches;
-            if (!on) continue;
+            if (!el.matches(v.selector)) continue;
             el.classList.toggle(v.active, active);
             el.classList.toggle(v.inactive, !active);
           }
