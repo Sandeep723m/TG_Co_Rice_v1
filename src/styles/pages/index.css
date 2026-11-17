@@ -4721,3 +4721,11 @@ html body { background: rgb(255, 255, 255); }
   .oi-appear { transition: none; }
   .oi-float { animation: none; }
 }
+@keyframes oi-slide-in { from { opacity: 0; } to { opacity: 1; } }
+.oi-slide-in { animation: oi-slide-in 0.4s ease-out both; }
+@keyframes oi-progress { from { transform: translateX(-100%); } to { transform: none; } }
+.oi-progress { animation: oi-progress 3.75s linear both; }
+.framer-h9poP[role="button"], .framer-HvOY4[role="button"], .framer-6BFw0[role="radio"] { cursor: pointer; }
+@media (prefers-reduced-motion: reduce) {
+  .oi-slide-in, .oi-progress { animation: none; }
+}

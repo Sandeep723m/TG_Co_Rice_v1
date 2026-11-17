@@ -1,4 +1,4 @@
-import type { CSSProperties } from "react";
+import type { CSSProperties, KeyboardEvent } from "react";
 import { useEffect, useRef, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import capturedCSS from "../styles/pages/index.css?raw";
@@ -1327,7 +1327,46 @@ function ImportedSectionIntroduceSection() {
   );
 }
 
+const PRODUCT_SLIDES = [
+  { className: "framer-98kjiw", src: "/site-assets/product-slide-1.webp", srcSet: undefined, shadow: false },
+  { className: "framer-1j9k9hh", src: "/site-assets/product-slide-2.webp", srcSet: undefined, shadow: true },
+  { className: "framer-1qs3wq8", src: "/site-assets/product-slide-3.webp", srcSet: undefined, shadow: true },
+  {
+    className: "framer-vo0dng",
+    src: "/site-assets/6fffde9e9f41bb02.avif",
+    srcSet: "/site-assets/1a397b7d0f239ee1.avif 824w, /site-assets/b987771c43b98dba.avif 1649w, /site-assets/3cc6c818f85adfee.avif 3299w, /site-assets/6fffde9e9f41bb02.avif 3712w",
+    shadow: true,
+  },
+];
+const PRODUCT_SLIDE_FILLS = ["framer-199ya20", "framer-441kts", "framer-eb6507", "framer-1v91fxi"];
+const PRODUCT_DETAILS = [
+  "Each gummy contains a precision blend of Vitamin D3, Zinc, Ashwagandha, L-Theanine, and Elderberry Extract. Every ingredient is third-party tested and dosed at clinically effective levels, no pixie dusting, no fillers. Coated in natural citrus sugar for taste, not to hide anything.",
+  "Take one gummy daily, morning or evening, with or without food. Chew thoroughly before swallowing. Consistency is key,  best results after 30+ days of daily use. Do not exceed the recommended dose.",
+  "Free standard shipping on all orders. Express delivery available at checkout. Every order is backed by our 60-day money-back guarantee, if you don't feel a difference, we'll refund you. No questions asked.",
+];
+
+function activateOnKey(action: () => void) {
+  return (event: KeyboardEvent<HTMLElement>) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      action();
+    }
+  };
+}
+
+function toggleIndex(list: number[], index: number) {
+  return list.includes(index) ? list.filter((item) => item !== index) : [...list, index];
+}
+
+
 function ImportedSectionBuySection() {
+  const [plan, setPlan] = useState<"subscribe" | "one-time">("subscribe");
+  const [slide, setSlide] = useState(0);
+  const [openDetails, setOpenDetails] = useState<number[]>([]);
+  useEffect(() => {
+    const timer = window.setTimeout(() => setSlide((current) => (current + 1) % PRODUCT_SLIDES.length), 3750);
+    return () => window.clearTimeout(timer);
+  }, [slide]);
   return (
     <section className="framer-5z1pl3 items-center flex-none flex-col flex-nowrap place-content-center [overflow:visible] [scroll-margin-top:120px]" id="buy-product">
       <div className="framer-v127ei max-w-[1200px] [overflow:visible]">
@@ -1335,23 +1374,29 @@ function ImportedSectionBuySection() {
           <div className="framer-wtclw1-container [z-index:1] [@media(max-width:679.98px)]:[order:0] [@media(min-width:680px)_and_(max-width:1199.98px)]:[order:0] will-change-transform [opacity:1]" style={{ transform: "none" }}>
             <div className="framer-L6REA framer-Jf64E framer-1vhsrli items-center flex-col flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]" style={{ width: "100%" }}>
               <div className="framer-14bx2df items-center aspect-square flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: "var(--token-7dec4550-2ba6-4025-bfd1-f0cbf4c0a7c9, rgb(247, 247, 247))", borderRadius: "25px" }}>
-                <div className="framer-vo0dng [box-shadow:rgba(0,_0,_0,_0.15)_0px_5px_5px_0px] [opacity:1]" style={{ borderRadius: "25px" }}>
+                <div key={slide} className={`${PRODUCT_SLIDES[slide].className} oi-slide-in ${PRODUCT_SLIDES[slide].shadow ? "[box-shadow:rgba(0,_0,_0,_0.15)_0px_5px_5px_0px]" : ""} [opacity:1]`} style={{ borderRadius: "25px" }}>
                   <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
-                    <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="3712" height="4608" sizes="max((min(100vw - 120px, 1200px) - 60px) / 2, 1px)" srcSet="/site-assets/1a397b7d0f239ee1.avif 824w, /site-assets/b987771c43b98dba.avif 1649w, /site-assets/3cc6c818f85adfee.avif 3299w, /site-assets/6fffde9e9f41bb02.avif 3712w" src="/site-assets/6fffde9e9f41bb02.avif" alt="Supplement product shot" />
+                    <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="3712" height="4608" sizes="max((min(100vw - 120px, 1200px) - 60px) / 2, 1px)" srcSet={PRODUCT_SLIDES[slide].srcSet} src={PRODUCT_SLIDES[slide].src} alt="Supplement product shot" />
                   </div>
                 </div>
               </div>
               <div className="framer-1n7incv items-center flex-none flex-row flex-nowrap place-content-center [overflow:visible] [opacity:1]">
                 <div className="framer-ryr2qn items-center flex-[1_0_0px] flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]">
-                  <div className="framer-1flf8qw items-center flex-[1_0_0px] flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: "var(--token-7dec4550-2ba6-4025-bfd1-f0cbf4c0a7c9, rgb(247, 247, 247))", borderRadius: "11px" }} tabIndex={0} />
-                  <div className="framer-vmnse3 items-center flex-[1_0_0px] flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: "var(--token-7dec4550-2ba6-4025-bfd1-f0cbf4c0a7c9, rgb(247, 247, 247))", borderRadius: "99px" }} tabIndex={0} />
-                  <div className="framer-16r64xr items-center flex-[1_0_0px] flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: "var(--token-7dec4550-2ba6-4025-bfd1-f0cbf4c0a7c9, rgb(247, 247, 247))", borderRadius: "11px" }} tabIndex={0} />
-                  <div className="framer-plonj5 items-center flex-[1_0_0px] flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: "var(--token-7dec4550-2ba6-4025-bfd1-f0cbf4c0a7c9, rgb(247, 247, 247))", borderRadius: "11px" }} tabIndex={0}>
-                    <div className="framer-1v91fxi will-change-transform [opacity:1]" style={{ backgroundColor: "var(--token-f08ec090-da0b-4cc1-81bf-083f98422979, rgba(0, 0, 0, 0.25))", transform: "none" }} />
+                  <div className="framer-1flf8qw items-center flex-[1_0_0px] flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: "var(--token-7dec4550-2ba6-4025-bfd1-f0cbf4c0a7c9, rgb(247, 247, 247))", borderRadius: "11px" }} tabIndex={0} role="button" aria-label="Show product image 1" aria-pressed={slide === 0} onClick={() => setSlide(0)} onKeyDown={activateOnKey(() => setSlide(0))}>
+                    {slide === 0 && <div className={`${PRODUCT_SLIDE_FILLS[0]} oi-progress will-change-transform [opacity:1]`} style={{ backgroundColor: "var(--token-f08ec090-da0b-4cc1-81bf-083f98422979, rgba(0, 0, 0, 0.25))" }} />}
+                  </div>
+                  <div className="framer-vmnse3 items-center flex-[1_0_0px] flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: "var(--token-7dec4550-2ba6-4025-bfd1-f0cbf4c0a7c9, rgb(247, 247, 247))", borderRadius: "99px" }} tabIndex={0} role="button" aria-label="Show product image 2" aria-pressed={slide === 1} onClick={() => setSlide(1)} onKeyDown={activateOnKey(() => setSlide(1))}>
+                    {slide === 1 && <div className={`${PRODUCT_SLIDE_FILLS[1]} oi-progress will-change-transform [opacity:1]`} style={{ backgroundColor: "var(--token-f08ec090-da0b-4cc1-81bf-083f98422979, rgba(0, 0, 0, 0.25))" }} />}
+                  </div>
+                  <div className="framer-16r64xr items-center flex-[1_0_0px] flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: "var(--token-7dec4550-2ba6-4025-bfd1-f0cbf4c0a7c9, rgb(247, 247, 247))", borderRadius: "11px" }} tabIndex={0} role="button" aria-label="Show product image 3" aria-pressed={slide === 2} onClick={() => setSlide(2)} onKeyDown={activateOnKey(() => setSlide(2))}>
+                    {slide === 2 && <div className={`${PRODUCT_SLIDE_FILLS[2]} oi-progress will-change-transform [opacity:1]`} style={{ backgroundColor: "var(--token-f08ec090-da0b-4cc1-81bf-083f98422979, rgba(0, 0, 0, 0.25))" }} />}
+                  </div>
+                  <div className="framer-plonj5 items-center flex-[1_0_0px] flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: "var(--token-7dec4550-2ba6-4025-bfd1-f0cbf4c0a7c9, rgb(247, 247, 247))", borderRadius: "11px" }} tabIndex={0} role="button" aria-label="Show product image 4" aria-pressed={slide === 3} onClick={() => setSlide(3)} onKeyDown={activateOnKey(() => setSlide(3))}>
+                    {slide === 3 && <div className={`${PRODUCT_SLIDE_FILLS[3]} oi-progress will-change-transform [opacity:1]`} style={{ backgroundColor: "var(--token-f08ec090-da0b-4cc1-81bf-083f98422979, rgba(0, 0, 0, 0.25))" }} />}
                   </div>
                 </div>
                 <div className="framer-1n8oqsr [opacity:1]" style={{ "--extracted-r6o4lv": "var(--token-2d481a32-3657-4b5d-beb2-8e8433a83f75, rgba(0, 0, 0, 0.3))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" } as CSSProperties} data-framer-component-type="RichTextContainer">
-                  <p className="framer-text framer-styles-preset-wqeyn7" style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-2d481a32-3657-4b5d-beb2-8e8433a83f75, rgba(0, 0, 0, 0.3)))" } as CSSProperties} dir="auto">/ 04</p>
+                  <p className="framer-text framer-styles-preset-wqeyn7" style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-2d481a32-3657-4b5d-beb2-8e8433a83f75, rgba(0, 0, 0, 0.3)))" } as CSSProperties} dir="auto">/ 0{slide + 1}</p>
                 </div>
               </div>
             </div>
@@ -1391,8 +1436,8 @@ function ImportedSectionBuySection() {
             <div className="framer-1vn4wu-container" data-site-import-desktop-variant="">
               <div className="framer-loDpe framer-uvfdka items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]" style={{ width: "100%" }} data-site-import-responsive="693">
                 <div className="framer-19l9nlv items-center flex-none flex-col flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: "var(--token-7dec4550-2ba6-4025-bfd1-f0cbf4c0a7c9, rgb(247, 247, 247))", borderRadius: "15px" }}>
-                  <div className="framer-1fylbk7-container flex-none [opacity:1]">
-                    <div className="framer-6BFw0 framer-2BTrO framer-XAi7s framer-1i4y0kw items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", width: "100%", borderRadius: "12px" }} tabIndex={0}>
+                  <div className={`framer-1fylbk7-container flex-none ${plan === "subscribe" ? "[opacity:1]" : "[opacity:0.7]"}`}>
+                    <div className="framer-6BFw0 framer-2BTrO framer-XAi7s framer-1i4y0kw items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: plan === "subscribe" ? "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))" : "rgba(255, 255, 255, 0)", width: "100%", borderRadius: "12px" }} tabIndex={0} role="radio" aria-checked={plan === "subscribe"} onClick={() => setPlan("subscribe")} onKeyDown={activateOnKey(() => setPlan("subscribe"))}>
                       <div className="framer-17xjxmt items-center flex-none flex-row flex-nowrap content-center justify-between [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]">
                         <div className="framer-1h3z5e8 [opacity:1]" style={{ "--extracted-r6o4lv": "var(--token-52e79835-e8e9-4a84-ae4b-bf400f45d0cf, rgba(0, 0, 0, 0.7))", transform: "none" } as CSSProperties} data-framer-component-type="RichTextContainer">
                           <p className="framer-text framer-styles-preset-51skty" style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-52e79835-e8e9-4a84-ae4b-bf400f45d0cf, rgba(0, 0, 0, 0.7)))" } as CSSProperties} dir="auto">Pay monthly &amp; Save 20%</p>
@@ -1403,8 +1448,8 @@ function ImportedSectionBuySection() {
                       </div>
                       <div className="framer-1k6xi3r items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]">
                         <div className="framer-hsuov0 items-center flex-[1_0_0px] flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]">
-                          <div className="framer-1imtrad items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b003f52b-7399-44f9-b6bd-f77049d374cf, rgba(0, 0, 0, 0.5))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", borderRadius: "99px" } as CSSProperties} data-border="true">
-                            <div className="framer-1caz9sd flex-none [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: "var(--token-a5917666-de48-475a-8244-858af9f157b1, rgb(0, 0, 0))", borderRadius: "99px" }} />
+                          <div className={`framer-1imtrad items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] ${plan === "subscribe" ? "[opacity:1]" : "[opacity:0.4]"}`} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b003f52b-7399-44f9-b6bd-f77049d374cf, rgba(0, 0, 0, 0.5))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", borderRadius: "99px" } as CSSProperties} data-border="true">
+                            <div className={`framer-1caz9sd flex-none [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] ${plan === "subscribe" ? "[opacity:1]" : "[opacity:0]"}`} style={{ backgroundColor: "var(--token-a5917666-de48-475a-8244-858af9f157b1, rgb(0, 0, 0))", borderRadius: "99px" }} />
                           </div>
                           <div className="framer-oupbtf [z-index:2] [opacity:1]" style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" } as CSSProperties} data-framer-component-type="RichTextContainer">
                             <p className="framer-text framer-styles-preset-v37sa" dir="auto">Subscribe</p>
@@ -1421,11 +1466,13 @@ function ImportedSectionBuySection() {
                       </div>
                     </div>
                   </div>
-                  <div className="framer-42csh1-container flex-none [opacity:0.7]">
-                    <div className="framer-6BFw0 framer-2BTrO framer-XAi7s framer-1i4y0kw items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: "rgba(255, 255, 255, 0)", width: "100%", borderRadius: "12px" }} tabIndex={0}>
+                  <div className={`framer-42csh1-container flex-none ${plan === "one-time" ? "[opacity:1]" : "[opacity:0.7]"}`}>
+                    <div className="framer-6BFw0 framer-2BTrO framer-XAi7s framer-1i4y0kw items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: plan === "one-time" ? "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))" : "rgba(255, 255, 255, 0)", width: "100%", borderRadius: "12px" }} tabIndex={0} role="radio" aria-checked={plan === "one-time"} onClick={() => setPlan("one-time")} onKeyDown={activateOnKey(() => setPlan("one-time"))}>
                       <div className="framer-1k6xi3r items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]">
                         <div className="framer-hsuov0 items-center flex-[1_0_0px] flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]">
-                          <div className="framer-1imtrad items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:0.4]" style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b003f52b-7399-44f9-b6bd-f77049d374cf, rgba(0, 0, 0, 0.5))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", borderRadius: "99px" } as CSSProperties} data-border="true" />
+                          <div className={`framer-1imtrad items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] ${plan === "one-time" ? "[opacity:1]" : "[opacity:0.4]"}`} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b003f52b-7399-44f9-b6bd-f77049d374cf, rgba(0, 0, 0, 0.5))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", borderRadius: "99px" } as CSSProperties} data-border="true">
+                            <div className={`framer-1caz9sd flex-none [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] ${plan === "one-time" ? "[opacity:1]" : "[opacity:0]"}`} style={{ backgroundColor: "var(--token-a5917666-de48-475a-8244-858af9f157b1, rgb(0, 0, 0))", borderRadius: "99px" }} />
+                          </div>
                           <div className="framer-oupbtf [z-index:2] [opacity:1]" style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" } as CSSProperties} data-framer-component-type="RichTextContainer">
                             <p className="framer-text framer-styles-preset-v37sa" dir="auto">One-Time Purchase</p>
                           </div>
@@ -1442,7 +1489,7 @@ function ImportedSectionBuySection() {
                 <div className="framer-1qssmuj-container flex-none [opacity:1]">
                   <a className="framer-6dH45 framer-FaBO9 framer-Jf64E framer-7z2klu framer-wcun84 [backdrop-filter:none] [opacity:1]" style={{ backgroundColor: "var(--token-a5917666-de48-475a-8244-858af9f157b1, rgb(0, 0, 0))", width: "100%", borderRadius: "99px" }} href="https://x.com/adheebhameed" rel="noopener">
                     <div className="framer-x7c3yg [opacity:1]" style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--extracted-r6o4lv": "var(--token-4d91f15a-be6f-4c68-8d25-3bf02a07afb6, rgb(255, 255, 255))", transform: "none" } as CSSProperties} data-framer-component-type="RichTextContainer">
-                      <p className="framer-text framer-styles-preset-sqgpjx" style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-4d91f15a-be6f-4c68-8d25-3bf02a07afb6, rgb(255, 255, 255)))" } as CSSProperties} dir="auto">Subscribe &amp; Save 20%</p>
+                      <p className="framer-text framer-styles-preset-sqgpjx" style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-4d91f15a-be6f-4c68-8d25-3bf02a07afb6, rgb(255, 255, 255)))" } as CSSProperties} dir="auto">{plan === "subscribe" ? "Subscribe & Save 20%" : "One-Time Purchase"}</p>
                     </div>
                   </a>
                 </div>
@@ -1451,8 +1498,8 @@ function ImportedSectionBuySection() {
             <div className="framer-1vn4wu-container" style={{ "--site-import-responsive-display": "block" } as CSSProperties} data-site-import-mobile-variant="">
               <div className="framer-loDpe framer-uvfdka items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]" style={{ width: "100%" }}>
                 <div className="framer-19l9nlv items-center flex-none flex-col flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: "var(--token-7dec4550-2ba6-4025-bfd1-f0cbf4c0a7c9, rgb(247, 247, 247))", borderRadius: "15px" }}>
-                  <div className="framer-1fylbk7-container flex-none [opacity:1]">
-                    <div className="framer-6BFw0 framer-2BTrO framer-XAi7s framer-1i4y0kw items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", width: "100%", borderRadius: "12px" }} tabIndex={0}>
+                  <div className={`framer-1fylbk7-container flex-none ${plan === "subscribe" ? "[opacity:1]" : "[opacity:0.7]"}`}>
+                    <div className="framer-6BFw0 framer-2BTrO framer-XAi7s framer-1i4y0kw items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: plan === "subscribe" ? "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))" : "rgba(255, 255, 255, 0)", width: "100%", borderRadius: "12px" }} tabIndex={0} role="radio" aria-checked={plan === "subscribe"} onClick={() => setPlan("subscribe")} onKeyDown={activateOnKey(() => setPlan("subscribe"))}>
                       <div className="framer-17xjxmt items-center flex-none flex-row flex-nowrap content-center justify-between [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]">
                         <div className="framer-1h3z5e8 [opacity:1]" style={{ "--extracted-r6o4lv": "var(--token-52e79835-e8e9-4a84-ae4b-bf400f45d0cf, rgba(0, 0, 0, 0.7))", transform: "none" } as CSSProperties} data-framer-component-type="RichTextContainer">
                           <p className="framer-text framer-styles-preset-51skty" style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-52e79835-e8e9-4a84-ae4b-bf400f45d0cf, rgba(0, 0, 0, 0.7)))" } as CSSProperties} dir="auto">Pay monthly &amp; Save 20%</p>
@@ -1463,8 +1510,8 @@ function ImportedSectionBuySection() {
                       </div>
                       <div className="framer-1k6xi3r items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]">
                         <div className="framer-hsuov0 items-center flex-[1_0_0px] flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]">
-                          <div className="framer-1imtrad items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b003f52b-7399-44f9-b6bd-f77049d374cf, rgba(0, 0, 0, 0.5))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", borderRadius: "99px" } as CSSProperties} data-border="true">
-                            <div className="framer-1caz9sd flex-none [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: "var(--token-a5917666-de48-475a-8244-858af9f157b1, rgb(0, 0, 0))", borderRadius: "99px" }} />
+                          <div className={`framer-1imtrad items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] ${plan === "subscribe" ? "[opacity:1]" : "[opacity:0.4]"}`} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b003f52b-7399-44f9-b6bd-f77049d374cf, rgba(0, 0, 0, 0.5))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", borderRadius: "99px" } as CSSProperties} data-border="true">
+                            <div className={`framer-1caz9sd flex-none [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] ${plan === "subscribe" ? "[opacity:1]" : "[opacity:0]"}`} style={{ backgroundColor: "var(--token-a5917666-de48-475a-8244-858af9f157b1, rgb(0, 0, 0))", borderRadius: "99px" }} />
                           </div>
                           <div className="framer-oupbtf [z-index:2] [opacity:1]" style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" } as CSSProperties} data-framer-component-type="RichTextContainer">
                             <p className="framer-text framer-styles-preset-v37sa" dir="auto">Subscribe</p>
@@ -1481,11 +1528,13 @@ function ImportedSectionBuySection() {
                       </div>
                     </div>
                   </div>
-                  <div className="framer-42csh1-container flex-none [opacity:0.7]">
-                    <div className="framer-6BFw0 framer-2BTrO framer-XAi7s framer-1i4y0kw items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: "rgba(255, 255, 255, 0)", width: "100%", borderRadius: "12px" }} tabIndex={0}>
+                  <div className={`framer-42csh1-container flex-none ${plan === "one-time" ? "[opacity:1]" : "[opacity:0.7]"}`}>
+                    <div className="framer-6BFw0 framer-2BTrO framer-XAi7s framer-1i4y0kw items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: plan === "one-time" ? "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))" : "rgba(255, 255, 255, 0)", width: "100%", borderRadius: "12px" }} tabIndex={0} role="radio" aria-checked={plan === "one-time"} onClick={() => setPlan("one-time")} onKeyDown={activateOnKey(() => setPlan("one-time"))}>
                       <div className="framer-1k6xi3r items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]">
                         <div className="framer-hsuov0 items-center flex-[1_0_0px] flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]">
-                          <div className="framer-1imtrad items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:0.4]" style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b003f52b-7399-44f9-b6bd-f77049d374cf, rgba(0, 0, 0, 0.5))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", borderRadius: "99px" } as CSSProperties} data-border="true" />
+                          <div className={`framer-1imtrad items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] ${plan === "one-time" ? "[opacity:1]" : "[opacity:0.4]"}`} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b003f52b-7399-44f9-b6bd-f77049d374cf, rgba(0, 0, 0, 0.5))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", borderRadius: "99px" } as CSSProperties} data-border="true">
+                            <div className={`framer-1caz9sd flex-none [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] ${plan === "one-time" ? "[opacity:1]" : "[opacity:0]"}`} style={{ backgroundColor: "var(--token-a5917666-de48-475a-8244-858af9f157b1, rgb(0, 0, 0))", borderRadius: "99px" }} />
+                          </div>
                           <div className="framer-oupbtf [z-index:2] [opacity:1]" style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" } as CSSProperties} data-framer-component-type="RichTextContainer">
                             <p className="framer-text framer-styles-preset-v37sa" dir="auto">One-Time Purchase</p>
                           </div>
@@ -1502,7 +1551,7 @@ function ImportedSectionBuySection() {
                 <div className="framer-1qssmuj-container flex-none [opacity:1]">
                   <a className="framer-6dH45 framer-FaBO9 framer-Jf64E framer-7z2klu framer-wcun84 [backdrop-filter:none] [opacity:1]" style={{ backgroundColor: "var(--token-a5917666-de48-475a-8244-858af9f157b1, rgb(0, 0, 0))", width: "100%", borderRadius: "99px" }} href="https://x.com/adheebhameed" rel="noopener">
                     <div className="framer-x7c3yg [opacity:1]" style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--extracted-r6o4lv": "var(--token-4d91f15a-be6f-4c68-8d25-3bf02a07afb6, rgb(255, 255, 255))", transform: "none" } as CSSProperties} data-framer-component-type="RichTextContainer">
-                      <p className="framer-text framer-styles-preset-sqgpjx" style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-4d91f15a-be6f-4c68-8d25-3bf02a07afb6, rgb(255, 255, 255)))" } as CSSProperties} dir="auto">Subscribe &amp; Save 20%</p>
+                      <p className="framer-text framer-styles-preset-sqgpjx" style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-4d91f15a-be6f-4c68-8d25-3bf02a07afb6, rgb(255, 255, 255)))" } as CSSProperties} dir="auto">{plan === "subscribe" ? "Subscribe & Save 20%" : "One-Time Purchase"}</p>
                     </div>
                   </a>
                 </div>
@@ -1534,46 +1583,61 @@ function ImportedSectionBuySection() {
           <div className="framer-1v4bc7 items-center flex-none flex-col flex-nowrap place-content-center [overflow:visible]">
             <div className="ssr-variant">
               <div className="framer-15znfnl-container">
-                <div className="framer-HvOY4 framer-qhMV1 framer-odhqv7 items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", width: "100%", borderRadius: "12px" }} tabIndex={0}>
+                <div className={`framer-HvOY4 framer-qhMV1 framer-odhqv7 ${openDetails.includes(0) ? `}framer-v-odhqv7" : "framer-v-1ocuso8"} items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", width: "100%", borderRadius: "12px" }} tabIndex={0} role="button" aria-expanded={openDetails.includes(0)} onClick={() => setOpenDetails((list) => toggleIndex(list, 0))} onKeyDown={activateOnKey(() => setOpenDetails((list) => toggleIndex(list, 0)))}>
                   <div className="framer-85xd3t items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]">
                     <div className="framer-yoQJ9 framer-13t4c2t aspect-square flex-none [opacity:1]" style={{ "--f5srmm": "var(--token-220b89ed-795b-40ee-a164-3b3423c23e62, rgba(0, 0, 0, 0.7))" } as CSSProperties} />
                     <div className="framer-nt8qln wrap-break-word select-none [word-break:break-word] [opacity:1]" style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" } as CSSProperties} data-framer-component-type="RichTextContainer">
                       <p className="framer-text framer-styles-preset-1gnmur6" dir="auto">What's inside?</p>
                     </div>
                     <div className="framer-1bpjs6g items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]" style={{ transform: "rotate(-90deg)" }}>
-                      <div className="framer-4dJXD framer-1oe5sxv aspect-square flex-none [opacity:1]" style={{ "--f5srmm": "var(--token-81920546-4d5c-4567-9fb8-0038b4f7b1df, rgba(0, 0, 0, 0.5))", transform: "none" } as CSSProperties} />
+                      <div className="framer-4dJXD framer-1oe5sxv aspect-square flex-none [opacity:1]" style={{ "--f5srmm": "var(--token-81920546-4d5c-4567-9fb8-0038b4f7b1df, rgba(0, 0, 0, 0.5))", transform: openDetails.includes(0) ? "rotate(90deg)" : "none" } as CSSProperties} />
                     </div>
                   </div>
+                  {openDetails.includes(0) && (
+                    <div className="framer-f91glz" style={{ "--extracted-r6o4lv": "var(--token-52e79835-e8e9-4a84-ae4b-bf400f45d0cf, rgba(0, 0, 0, 0.7))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" } as CSSProperties} data-framer-component-type="RichTextContainer">
+                      <p className="framer-text framer-styles-preset-1gnmur6" style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-52e79835-e8e9-4a84-ae4b-bf400f45d0cf, rgba(0, 0, 0, 0.7)))" } as CSSProperties} dir="auto">{PRODUCT_DETAILS[0]}</p>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
             <div className="ssr-variant">
               <div className="framer-ip2fzl-container">
-                <div className="framer-HvOY4 framer-qhMV1 framer-odhqv7 items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", width: "100%", borderRadius: "12px" }} tabIndex={0}>
+                <div className={`framer-HvOY4 framer-qhMV1 framer-odhqv7 ${openDetails.includes(1) ? `}framer-v-odhqv7" : "framer-v-1ocuso8"} items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", width: "100%", borderRadius: "12px" }} tabIndex={0} role="button" aria-expanded={openDetails.includes(1)} onClick={() => setOpenDetails((list) => toggleIndex(list, 1))} onKeyDown={activateOnKey(() => setOpenDetails((list) => toggleIndex(list, 1)))}>
                   <div className="framer-85xd3t items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]">
                     <div className="framer-AvdJx framer-13t4c2t aspect-square flex-none [opacity:1]" style={{ "--f5srmm": "var(--token-220b89ed-795b-40ee-a164-3b3423c23e62, rgba(0, 0, 0, 0.7))" } as CSSProperties} />
                     <div className="framer-nt8qln wrap-break-word select-none [word-break:break-word] [opacity:1]" style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" } as CSSProperties} data-framer-component-type="RichTextContainer">
                       <p className="framer-text framer-styles-preset-1gnmur6" dir="auto">How to take</p>
                     </div>
                     <div className="framer-1bpjs6g items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]" style={{ transform: "rotate(-90deg)" }}>
-                      <div className="framer-4dJXD framer-1oe5sxv aspect-square flex-none [opacity:1]" style={{ "--f5srmm": "var(--token-81920546-4d5c-4567-9fb8-0038b4f7b1df, rgba(0, 0, 0, 0.5))", transform: "none" } as CSSProperties} />
+                      <div className="framer-4dJXD framer-1oe5sxv aspect-square flex-none [opacity:1]" style={{ "--f5srmm": "var(--token-81920546-4d5c-4567-9fb8-0038b4f7b1df, rgba(0, 0, 0, 0.5))", transform: openDetails.includes(1) ? "rotate(90deg)" : "none" } as CSSProperties} />
                     </div>
                   </div>
+                  {openDetails.includes(1) && (
+                    <div className="framer-f91glz" style={{ "--extracted-r6o4lv": "var(--token-52e79835-e8e9-4a84-ae4b-bf400f45d0cf, rgba(0, 0, 0, 0.7))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" } as CSSProperties} data-framer-component-type="RichTextContainer">
+                      <p className="framer-text framer-styles-preset-1gnmur6" style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-52e79835-e8e9-4a84-ae4b-bf400f45d0cf, rgba(0, 0, 0, 0.7)))" } as CSSProperties} dir="auto">{PRODUCT_DETAILS[1]}</p>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
             <div className="ssr-variant">
               <div className="framer-1qiln8x-container">
-                <div className="framer-HvOY4 framer-qhMV1 framer-odhqv7 items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", width: "100%", borderRadius: "12px" }} tabIndex={0}>
+                <div className={`framer-HvOY4 framer-qhMV1 framer-odhqv7 ${openDetails.includes(2) ? `}framer-v-odhqv7" : "framer-v-1ocuso8"} items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", width: "100%", borderRadius: "12px" }} tabIndex={0} role="button" aria-expanded={openDetails.includes(2)} onClick={() => setOpenDetails((list) => toggleIndex(list, 2))} onKeyDown={activateOnKey(() => setOpenDetails((list) => toggleIndex(list, 2)))}>
                   <div className="framer-85xd3t items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]">
                     <div className="framer-zRbQg framer-13t4c2t aspect-square flex-none [opacity:1]" style={{ "--f5srmm": "var(--token-220b89ed-795b-40ee-a164-3b3423c23e62, rgba(0, 0, 0, 0.7))" } as CSSProperties} />
                     <div className="framer-nt8qln wrap-break-word select-none [word-break:break-word] [opacity:1]" style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" } as CSSProperties} data-framer-component-type="RichTextContainer">
                       <p className="framer-text framer-styles-preset-1gnmur6" dir="auto">Shipping &amp; returns</p>
                     </div>
                     <div className="framer-1bpjs6g items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]" style={{ transform: "rotate(-90deg)" }}>
-                      <div className="framer-4dJXD framer-1oe5sxv aspect-square flex-none [opacity:1]" style={{ "--f5srmm": "var(--token-81920546-4d5c-4567-9fb8-0038b4f7b1df, rgba(0, 0, 0, 0.5))", transform: "none" } as CSSProperties} />
+                      <div className="framer-4dJXD framer-1oe5sxv aspect-square flex-none [opacity:1]" style={{ "--f5srmm": "var(--token-81920546-4d5c-4567-9fb8-0038b4f7b1df, rgba(0, 0, 0, 0.5))", transform: openDetails.includes(2) ? "rotate(90deg)" : "none" } as CSSProperties} />
                     </div>
                   </div>
+                  {openDetails.includes(2) && (
+                    <div className="framer-f91glz" style={{ "--extracted-r6o4lv": "var(--token-52e79835-e8e9-4a84-ae4b-bf400f45d0cf, rgba(0, 0, 0, 0.7))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" } as CSSProperties} data-framer-component-type="RichTextContainer">
+                      <p className="framer-text framer-styles-preset-1gnmur6" style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-52e79835-e8e9-4a84-ae4b-bf400f45d0cf, rgba(0, 0, 0, 0.7)))" } as CSSProperties} dir="auto">{PRODUCT_DETAILS[2]}</p>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -1584,7 +1648,18 @@ function ImportedSectionBuySection() {
   );
 }
 
+const FAQ_ANSWERS = [
+  "OneThing is a single daily gummy that supports immunity, digestion, sleep, and energy. Instead of taking multiple supplements throughout the day, you get everything in one convenient dose backed by clinically studied ingredients.",
+  "Just one. That's the whole point. Take one gummy in the morning with or without food, and you're covered for the entire day. No complicated routines, no handful of pills.",
+  "OneThing is made with 100% natural ingredients and is third-party tested for purity and potency. However, if you're currently on medication or have a pre-existing condition, we always recommend consulting your doctor before starting any new supplement.",
+  "Most customers notice improved energy and digestion within the first 1–2 weeks. Immune and sleep benefits typically become noticeable after 30 days of consistent daily use. For best results, we recommend a minimum 90-day commitment.",
+  "Every order is backed by a 60-day money-back guarantee. If you don't feel a difference, reach out to our team and we'll refund you — no questions asked, no hoops to jump through.",
+  "Yes. OneThing is 100% vegan, gluten-free, dairy-free, and contains no artificial colors or sweeteners. It's made in a GMP-certified facility and tested for all major allergens.",
+];
+
+
 function ImportedSectionFAQSection() {
+  const [openFaqs, setOpenFaqs] = useState<number[]>([]);
   return (
     <section className="framer-1f7jma3 items-start content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [scroll-margin-top:60px] [will-change:var(--framer-will-change-override,transform)] [z-index:2]" id="faq">
       <div className="framer-bbk154 items-start max-w-[1200px] content-start justify-center [overflow:visible]">
@@ -1595,85 +1670,115 @@ function ImportedSectionFAQSection() {
           <div className="framer-rbzvac items-center flex-none flex-col flex-nowrap place-content-center [overflow:visible]">
             <div className="ssr-variant">
               <div className="framer-6gdc90-container will-change-transform [opacity:1]" style={{ transform: "none" }}>
-                <div className="framer-h9poP framer-FaBO9 framer-qhMV1 framer-11vn5nc items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", width: "100%", borderRadius: "12px" }} tabIndex={0}>
+                <div className={`framer-h9poP framer-FaBO9 framer-qhMV1 framer-11vn5nc ${openFaqs.includes(0) ? `}framer-v-11vn5nc" : "framer-v-1rhfu2w"} items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", width: "100%", borderRadius: "12px" }} tabIndex={0} role="button" aria-expanded={openFaqs.includes(0)} onClick={() => setOpenFaqs((list) => toggleIndex(list, 0))} onKeyDown={activateOnKey(() => setOpenFaqs((list) => toggleIndex(list, 0)))}>
                   <div className="framer-18eljuz items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]">
                     <div className="framer-16y69vw wrap-break-word select-none [word-break:break-word] [opacity:1]" style={{ "--extracted-r6o4lv": "var(--token-20520155-1f7c-48bb-bab4-b385c8b0875a, rgb(0, 0, 0))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" } as CSSProperties} data-framer-component-type="RichTextContainer">
                       <p className="framer-text framer-styles-preset-sqgpjx" style={{ "--framer-text-alignment": "left", "--framer-text-color": "var(--extracted-r6o4lv, var(--token-20520155-1f7c-48bb-bab4-b385c8b0875a, rgb(0, 0, 0)))" } as CSSProperties} dir="auto">What does OneThing actually do?</p>
                     </div>
-                    <div className="framer-q26q4r items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]" style={{ transform: "rotate(-90deg)" }}>
-                      <div className="framer-4dJXD framer-1n78sdg aspect-square flex-none [opacity:1]" style={{ "--f5srmm": "var(--token-220b89ed-795b-40ee-a164-3b3423c23e62, rgba(0, 0, 0, 0.7))", transform: "none" } as CSSProperties} />
+                    <div className="framer-q26q4r items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]" style={{ transform: openFaqs.includes(0) ? "none" : "rotate(-90deg)" }}>
+                      <div className="framer-4dJXD framer-1n78sdg aspect-square flex-none [opacity:1]" style={{ "--f5srmm": "var(--token-220b89ed-795b-40ee-a164-3b3423c23e62, rgba(0, 0, 0, 0.7))", transform: openFaqs.includes(0) ? "rotate(90deg)" : "none" } as CSSProperties} />
                     </div>
                   </div>
+                  {openFaqs.includes(0) && (
+                    <div className="framer-1rf6utj" style={{ "--extracted-r6o4lv": "var(--token-52e79835-e8e9-4a84-ae4b-bf400f45d0cf, rgba(0, 0, 0, 0.7))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" } as CSSProperties} data-framer-component-type="RichTextContainer">
+                      <p className="framer-text framer-styles-preset-1gnmur6" style={{ "--framer-text-alignment": "left", "--framer-text-color": "var(--extracted-r6o4lv, var(--token-52e79835-e8e9-4a84-ae4b-bf400f45d0cf, rgba(0, 0, 0, 0.7)))" } as CSSProperties} dir="auto">{FAQ_ANSWERS[0]}</p>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
             <div className="ssr-variant">
               <div className="framer-xjn139-container will-change-transform [opacity:1]" style={{ transform: "none" }}>
-                <div className="framer-h9poP framer-FaBO9 framer-qhMV1 framer-11vn5nc items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", width: "100%", borderRadius: "12px" }} tabIndex={0}>
+                <div className={`framer-h9poP framer-FaBO9 framer-qhMV1 framer-11vn5nc ${openFaqs.includes(1) ? `}framer-v-11vn5nc" : "framer-v-1rhfu2w"} items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", width: "100%", borderRadius: "12px" }} tabIndex={0} role="button" aria-expanded={openFaqs.includes(1)} onClick={() => setOpenFaqs((list) => toggleIndex(list, 1))} onKeyDown={activateOnKey(() => setOpenFaqs((list) => toggleIndex(list, 1)))}>
                   <div className="framer-18eljuz items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]">
                     <div className="framer-16y69vw wrap-break-word select-none [word-break:break-word] [opacity:1]" style={{ "--extracted-r6o4lv": "var(--token-20520155-1f7c-48bb-bab4-b385c8b0875a, rgb(0, 0, 0))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" } as CSSProperties} data-framer-component-type="RichTextContainer">
                       <p className="framer-text framer-styles-preset-sqgpjx" style={{ "--framer-text-alignment": "left", "--framer-text-color": "var(--extracted-r6o4lv, var(--token-20520155-1f7c-48bb-bab4-b385c8b0875a, rgb(0, 0, 0)))" } as CSSProperties} dir="auto">How many gummies do I need to take per day?</p>
                     </div>
-                    <div className="framer-q26q4r items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]" style={{ transform: "rotate(-90deg)" }}>
-                      <div className="framer-4dJXD framer-1n78sdg aspect-square flex-none [opacity:1]" style={{ "--f5srmm": "var(--token-220b89ed-795b-40ee-a164-3b3423c23e62, rgba(0, 0, 0, 0.7))", transform: "none" } as CSSProperties} />
+                    <div className="framer-q26q4r items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]" style={{ transform: openFaqs.includes(1) ? "none" : "rotate(-90deg)" }}>
+                      <div className="framer-4dJXD framer-1n78sdg aspect-square flex-none [opacity:1]" style={{ "--f5srmm": "var(--token-220b89ed-795b-40ee-a164-3b3423c23e62, rgba(0, 0, 0, 0.7))", transform: openFaqs.includes(1) ? "rotate(90deg)" : "none" } as CSSProperties} />
                     </div>
                   </div>
+                  {openFaqs.includes(1) && (
+                    <div className="framer-1rf6utj" style={{ "--extracted-r6o4lv": "var(--token-52e79835-e8e9-4a84-ae4b-bf400f45d0cf, rgba(0, 0, 0, 0.7))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" } as CSSProperties} data-framer-component-type="RichTextContainer">
+                      <p className="framer-text framer-styles-preset-1gnmur6" style={{ "--framer-text-alignment": "left", "--framer-text-color": "var(--extracted-r6o4lv, var(--token-52e79835-e8e9-4a84-ae4b-bf400f45d0cf, rgba(0, 0, 0, 0.7)))" } as CSSProperties} dir="auto">{FAQ_ANSWERS[1]}</p>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
             <div className="ssr-variant">
               <div className="framer-btd0cx-container will-change-transform [opacity:1]" style={{ transform: "none" }}>
-                <div className="framer-h9poP framer-FaBO9 framer-qhMV1 framer-11vn5nc items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", width: "100%", borderRadius: "12px" }} tabIndex={0}>
+                <div className={`framer-h9poP framer-FaBO9 framer-qhMV1 framer-11vn5nc ${openFaqs.includes(2) ? `}framer-v-11vn5nc" : "framer-v-1rhfu2w"} items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", width: "100%", borderRadius: "12px" }} tabIndex={0} role="button" aria-expanded={openFaqs.includes(2)} onClick={() => setOpenFaqs((list) => toggleIndex(list, 2))} onKeyDown={activateOnKey(() => setOpenFaqs((list) => toggleIndex(list, 2)))}>
                   <div className="framer-18eljuz items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]">
                     <div className="framer-16y69vw wrap-break-word select-none [word-break:break-word] [opacity:1]" style={{ "--extracted-r6o4lv": "var(--token-20520155-1f7c-48bb-bab4-b385c8b0875a, rgb(0, 0, 0))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" } as CSSProperties} data-framer-component-type="RichTextContainer">
                       <p className="framer-text framer-styles-preset-sqgpjx" style={{ "--framer-text-alignment": "left", "--framer-text-color": "var(--extracted-r6o4lv, var(--token-20520155-1f7c-48bb-bab4-b385c8b0875a, rgb(0, 0, 0)))" } as CSSProperties} dir="auto">Is it safe to take with other medications?</p>
                     </div>
-                    <div className="framer-q26q4r items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]" style={{ transform: "rotate(-90deg)" }}>
-                      <div className="framer-4dJXD framer-1n78sdg aspect-square flex-none [opacity:1]" style={{ "--f5srmm": "var(--token-220b89ed-795b-40ee-a164-3b3423c23e62, rgba(0, 0, 0, 0.7))", transform: "none" } as CSSProperties} />
+                    <div className="framer-q26q4r items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]" style={{ transform: openFaqs.includes(2) ? "none" : "rotate(-90deg)" }}>
+                      <div className="framer-4dJXD framer-1n78sdg aspect-square flex-none [opacity:1]" style={{ "--f5srmm": "var(--token-220b89ed-795b-40ee-a164-3b3423c23e62, rgba(0, 0, 0, 0.7))", transform: openFaqs.includes(2) ? "rotate(90deg)" : "none" } as CSSProperties} />
                     </div>
                   </div>
+                  {openFaqs.includes(2) && (
+                    <div className="framer-1rf6utj" style={{ "--extracted-r6o4lv": "var(--token-52e79835-e8e9-4a84-ae4b-bf400f45d0cf, rgba(0, 0, 0, 0.7))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" } as CSSProperties} data-framer-component-type="RichTextContainer">
+                      <p className="framer-text framer-styles-preset-1gnmur6" style={{ "--framer-text-alignment": "left", "--framer-text-color": "var(--extracted-r6o4lv, var(--token-52e79835-e8e9-4a84-ae4b-bf400f45d0cf, rgba(0, 0, 0, 0.7)))" } as CSSProperties} dir="auto">{FAQ_ANSWERS[2]}</p>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
             <div className="ssr-variant">
               <div className="framer-m31mq9-container will-change-transform [opacity:1]" style={{ transform: "none" }}>
-                <div className="framer-h9poP framer-FaBO9 framer-qhMV1 framer-11vn5nc items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", width: "100%", borderRadius: "12px" }} tabIndex={0}>
+                <div className={`framer-h9poP framer-FaBO9 framer-qhMV1 framer-11vn5nc ${openFaqs.includes(3) ? `}framer-v-11vn5nc" : "framer-v-1rhfu2w"} items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", width: "100%", borderRadius: "12px" }} tabIndex={0} role="button" aria-expanded={openFaqs.includes(3)} onClick={() => setOpenFaqs((list) => toggleIndex(list, 3))} onKeyDown={activateOnKey(() => setOpenFaqs((list) => toggleIndex(list, 3)))}>
                   <div className="framer-18eljuz items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]">
                     <div className="framer-16y69vw wrap-break-word select-none [word-break:break-word] [opacity:1]" style={{ "--extracted-r6o4lv": "var(--token-20520155-1f7c-48bb-bab4-b385c8b0875a, rgb(0, 0, 0))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" } as CSSProperties} data-framer-component-type="RichTextContainer">
                       <p className="framer-text framer-styles-preset-sqgpjx" style={{ "--framer-text-alignment": "left", "--framer-text-color": "var(--extracted-r6o4lv, var(--token-20520155-1f7c-48bb-bab4-b385c8b0875a, rgb(0, 0, 0)))" } as CSSProperties} dir="auto">How long before I start seeing results?</p>
                     </div>
-                    <div className="framer-q26q4r items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]" style={{ transform: "rotate(-90deg)" }}>
-                      <div className="framer-4dJXD framer-1n78sdg aspect-square flex-none [opacity:1]" style={{ "--f5srmm": "var(--token-220b89ed-795b-40ee-a164-3b3423c23e62, rgba(0, 0, 0, 0.7))", transform: "none" } as CSSProperties} />
+                    <div className="framer-q26q4r items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]" style={{ transform: openFaqs.includes(3) ? "none" : "rotate(-90deg)" }}>
+                      <div className="framer-4dJXD framer-1n78sdg aspect-square flex-none [opacity:1]" style={{ "--f5srmm": "var(--token-220b89ed-795b-40ee-a164-3b3423c23e62, rgba(0, 0, 0, 0.7))", transform: openFaqs.includes(3) ? "rotate(90deg)" : "none" } as CSSProperties} />
                     </div>
                   </div>
+                  {openFaqs.includes(3) && (
+                    <div className="framer-1rf6utj" style={{ "--extracted-r6o4lv": "var(--token-52e79835-e8e9-4a84-ae4b-bf400f45d0cf, rgba(0, 0, 0, 0.7))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" } as CSSProperties} data-framer-component-type="RichTextContainer">
+                      <p className="framer-text framer-styles-preset-1gnmur6" style={{ "--framer-text-alignment": "left", "--framer-text-color": "var(--extracted-r6o4lv, var(--token-52e79835-e8e9-4a84-ae4b-bf400f45d0cf, rgba(0, 0, 0, 0.7)))" } as CSSProperties} dir="auto">{FAQ_ANSWERS[3]}</p>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
             <div className="ssr-variant">
               <div className="framer-1teae2x-container will-change-transform [opacity:1]" style={{ transform: "none" }}>
-                <div className="framer-h9poP framer-FaBO9 framer-qhMV1 framer-11vn5nc items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", width: "100%", borderRadius: "12px" }} tabIndex={0}>
+                <div className={`framer-h9poP framer-FaBO9 framer-qhMV1 framer-11vn5nc ${openFaqs.includes(4) ? `}framer-v-11vn5nc" : "framer-v-1rhfu2w"} items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", width: "100%", borderRadius: "12px" }} tabIndex={0} role="button" aria-expanded={openFaqs.includes(4)} onClick={() => setOpenFaqs((list) => toggleIndex(list, 4))} onKeyDown={activateOnKey(() => setOpenFaqs((list) => toggleIndex(list, 4)))}>
                   <div className="framer-18eljuz items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]">
                     <div className="framer-16y69vw wrap-break-word select-none [word-break:break-word] [opacity:1]" style={{ "--extracted-r6o4lv": "var(--token-20520155-1f7c-48bb-bab4-b385c8b0875a, rgb(0, 0, 0))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" } as CSSProperties} data-framer-component-type="RichTextContainer">
                       <p className="framer-text framer-styles-preset-sqgpjx" style={{ "--framer-text-alignment": "left", "--framer-text-color": "var(--extracted-r6o4lv, var(--token-20520155-1f7c-48bb-bab4-b385c8b0875a, rgb(0, 0, 0)))" } as CSSProperties} dir="auto">What happens if it doesn't work for me?</p>
                     </div>
-                    <div className="framer-q26q4r items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]" style={{ transform: "rotate(-90deg)" }}>
-                      <div className="framer-4dJXD framer-1n78sdg aspect-square flex-none [opacity:1]" style={{ "--f5srmm": "var(--token-220b89ed-795b-40ee-a164-3b3423c23e62, rgba(0, 0, 0, 0.7))", transform: "none" } as CSSProperties} />
+                    <div className="framer-q26q4r items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]" style={{ transform: openFaqs.includes(4) ? "none" : "rotate(-90deg)" }}>
+                      <div className="framer-4dJXD framer-1n78sdg aspect-square flex-none [opacity:1]" style={{ "--f5srmm": "var(--token-220b89ed-795b-40ee-a164-3b3423c23e62, rgba(0, 0, 0, 0.7))", transform: openFaqs.includes(4) ? "rotate(90deg)" : "none" } as CSSProperties} />
                     </div>
                   </div>
+                  {openFaqs.includes(4) && (
+                    <div className="framer-1rf6utj" style={{ "--extracted-r6o4lv": "var(--token-52e79835-e8e9-4a84-ae4b-bf400f45d0cf, rgba(0, 0, 0, 0.7))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" } as CSSProperties} data-framer-component-type="RichTextContainer">
+                      <p className="framer-text framer-styles-preset-1gnmur6" style={{ "--framer-text-alignment": "left", "--framer-text-color": "var(--extracted-r6o4lv, var(--token-52e79835-e8e9-4a84-ae4b-bf400f45d0cf, rgba(0, 0, 0, 0.7)))" } as CSSProperties} dir="auto">{FAQ_ANSWERS[4]}</p>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
             <div className="ssr-variant">
               <div className="framer-1rvv2kb-container will-change-transform [opacity:1]" style={{ transform: "none" }}>
-                <div className="framer-h9poP framer-FaBO9 framer-qhMV1 framer-11vn5nc items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", width: "100%", borderRadius: "12px" }} tabIndex={0}>
+                <div className={`framer-h9poP framer-FaBO9 framer-qhMV1 framer-11vn5nc ${openFaqs.includes(5) ? `}framer-v-11vn5nc" : "framer-v-1rhfu2w"} items-start flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", width: "100%", borderRadius: "12px" }} tabIndex={0} role="button" aria-expanded={openFaqs.includes(5)} onClick={() => setOpenFaqs((list) => toggleIndex(list, 5))} onKeyDown={activateOnKey(() => setOpenFaqs((list) => toggleIndex(list, 5)))}>
                   <div className="framer-18eljuz items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]">
                     <div className="framer-16y69vw wrap-break-word select-none [word-break:break-word] [opacity:1]" style={{ "--extracted-r6o4lv": "var(--token-20520155-1f7c-48bb-bab4-b385c8b0875a, rgb(0, 0, 0))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" } as CSSProperties} data-framer-component-type="RichTextContainer">
                       <p className="framer-text framer-styles-preset-sqgpjx" style={{ "--framer-text-alignment": "left", "--framer-text-color": "var(--extracted-r6o4lv, var(--token-20520155-1f7c-48bb-bab4-b385c8b0875a, rgb(0, 0, 0)))" } as CSSProperties} dir="auto">Is it vegan and allergen-friendly?</p>
                     </div>
-                    <div className="framer-q26q4r items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]" style={{ transform: "rotate(-90deg)" }}>
-                      <div className="framer-4dJXD framer-1n78sdg aspect-square flex-none [opacity:1]" style={{ "--f5srmm": "var(--token-220b89ed-795b-40ee-a164-3b3423c23e62, rgba(0, 0, 0, 0.7))", transform: "none" } as CSSProperties} />
+                    <div className="framer-q26q4r items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]" style={{ transform: openFaqs.includes(5) ? "none" : "rotate(-90deg)" }}>
+                      <div className="framer-4dJXD framer-1n78sdg aspect-square flex-none [opacity:1]" style={{ "--f5srmm": "var(--token-220b89ed-795b-40ee-a164-3b3423c23e62, rgba(0, 0, 0, 0.7))", transform: openFaqs.includes(5) ? "rotate(90deg)" : "none" } as CSSProperties} />
                     </div>
                   </div>
+                  {openFaqs.includes(5) && (
+                    <div className="framer-1rf6utj" style={{ "--extracted-r6o4lv": "var(--token-52e79835-e8e9-4a84-ae4b-bf400f45d0cf, rgba(0, 0, 0, 0.7))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" } as CSSProperties} data-framer-component-type="RichTextContainer">
+                      <p className="framer-text framer-styles-preset-1gnmur6" style={{ "--framer-text-alignment": "left", "--framer-text-color": "var(--extracted-r6o4lv, var(--token-52e79835-e8e9-4a84-ae4b-bf400f45d0cf, rgba(0, 0, 0, 0.7)))" } as CSSProperties} dir="auto">{FAQ_ANSWERS[5]}</p>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
