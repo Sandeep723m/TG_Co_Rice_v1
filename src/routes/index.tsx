@@ -732,6 +732,7 @@ function ImportedSectionFeaturedSection() {
 }
 
 function ImportedSectionAllInOneSection() {
+  const [gummyRef, gummyShown] = useInView<HTMLDivElement>();
   return (
     <section className="framer-m7hdsg items-center flex-none flex-col flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [padding:0px]">
       <div className="framer-1n4qav4 items-center flex-none flex-col flex-nowrap min-h-[815px] content-center justify-start [overflow:var(--overflow-clip-fallback,clip)]">
@@ -861,7 +862,7 @@ function ImportedSectionAllInOneSection() {
               </div>
             </div>
             <div className="ssr-variant">
-              <div className="framer-1vwkisw aspect-square flex-none [overflow:visible] [z-index:8] [@media(max-width:679.98px)]:[order:0] [@media(min-width:680px)_and_(max-width:1199.98px)]:[order:0] will-change-transform [opacity:1]" style={{ transform: "translateX(-100px) translateY(-340px) scale(0.22)" }}>
+              <div ref={gummyRef} className={`framer-1vwkisw aspect-square flex-none [overflow:visible] [z-index:8] [@media(max-width:679.98px)]:[order:0] [@media(min-width:680px)_and_(max-width:1199.98px)]:[order:0] will-change-transform [opacity:1] oi-appear ${gummyShown ? "[transform:none]" : "[transform:translate(-100px,-340px)_scale(0.22)] [@media(max-width:679.98px)]:[transform:translateY(-460px)_scale(0.22)]"}`}>
                 <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
                   <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="2921" height="2921" sizes="425px" srcSet="/site-assets/2b505afd9b61f6ef.avif 512w, /site-assets/1bffb004a1c8c76a.avif 1024w, /site-assets/78c1116f1df875a5.avif 2048w, /site-assets/07d47ede94a12452.avif 2921w" src="/site-assets/07d47ede94a12452.avif" alt="Supplement gummy" />
                 </div>
@@ -922,6 +923,9 @@ function ImportedSectionAllInOneSection() {
 }
 
 function ImportedSectionFeaturesSection() {
+  const [card1Ref, card1Shown] = useInView<HTMLDivElement>();
+  const [reviewRef, reviewShown] = useInView<HTMLDivElement>();
+  const [card3Ref, card3Shown] = useInView<HTMLDivElement>();
   return (
     <section className="framer-ra0yx0 items-start flex-none flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [scroll-margin-top:60px]" id="features">
       <div className="framer-n3g353 items-center flex-none flex-col flex-nowrap place-content-center [overflow:visible]">
@@ -968,7 +972,7 @@ function ImportedSectionFeaturesSection() {
                 <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="4096" height="4096" sizes="max((min(100vw - 120px, 1000px) - 60px) / 2, 1px)" srcSet="/site-assets/ae9aa0f64719e95a.avif 512w, /site-assets/fa68cc73f8e1416a.avif 1024w, /site-assets/a611172e61231f39.avif 2048w, /site-assets/b82866abd015bdcb.webp 4096w" src="/site-assets/b82866abd015bdcb.webp" alt="Person performing yoga" />
               </div>
               <div className="framer-hy5xhy flex-none [overflow:var(--overflow-clip-fallback,clip)] [z-index:1]" />
-              <div className="framer-1yd27yv items-center flex-none flex-col flex-nowrap place-content-center [backdrop-filter:blur(10px)] [overflow:var(--overflow-clip-fallback,clip)] [z-index:1] [@media(max-width:679.98px)]:right-[20px] [opacity:0]" style={{ willChange: "transform", transform: "translate(-50%, -50%) translateY(40px)" }}>
+              <div ref={card1Ref} className={`framer-1yd27yv items-center flex-none flex-col flex-nowrap place-content-center [backdrop-filter:blur(10px)] [overflow:var(--overflow-clip-fallback,clip)] [z-index:1] [@media(max-width:679.98px)]:right-[20px] ${card1Shown ? "[opacity:1]" : "[opacity:0]"} oi-appear`} style={{ willChange: "transform", translate: card1Shown ? "0 0" : "0 40px" }}>
                 <div className="framer-1wtmbz6 items-center flex-none flex-row flex-nowrap content-center justify-start [overflow:var(--overflow-clip-fallback,clip)]" data-border="true">
                   <div className="framer-1so6sjr [z-index:2]" style={{ transform: "none" }} data-framer-component-type="RichTextContainer">
                     <p className="framer-text framer-styles-preset-1gnmur6" style={{ "--framer-text-alignment": "left", "--framer-text-color": "var(--token-4d91f15a-be6f-4c68-8d25-3bf02a07afb6, rgb(255, 255, 255))" } as CSSProperties} dir="auto">Effectiveness Comparison</p>
@@ -1021,8 +1025,8 @@ function ImportedSectionFeaturesSection() {
               <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
                 <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="4096" height="4096" sizes="max((min(100vw - 120px, 1000px) - 60px) / 2, 1px)" srcSet="/site-assets/cdb8788da9c9879c.avif 512w, /site-assets/361864e59095202e.avif 1024w, /site-assets/4452f4198f75a26a.avif 2048w, /site-assets/f537768f4661c4c0.webp 4096w" src="/site-assets/f537768f4661c4c0.webp" alt="Supplement container shot" />
               </div>
-              <div className="framer-sh66ud-container flex-none [z-index:1] will-change-transform [opacity:0]" style={{ transform: "translateY(40px)" }}>
-                <div className="framer-Xaiv6 framer-2BTrO framer-1p9x1rh items-center flex-col flex-nowrap place-content-center [overflow:visible] will-change-transform [opacity:0]" style={{ transform: "translateY(40px)" }}>
+              <div ref={reviewRef} className={`framer-sh66ud-container flex-none [z-index:1] will-change-transform ${reviewShown ? "[opacity:1]" : "[opacity:0]"} oi-appear`} style={{ translate: reviewShown ? "0 0" : "0 40px" }}>
+                <div className={`framer-Xaiv6 framer-2BTrO framer-1p9x1rh items-center flex-col flex-nowrap place-content-center [overflow:visible] will-change-transform ${reviewShown ? "[opacity:1]" : "[opacity:0]"} oi-appear`} style={{ translate: reviewShown ? "0 0" : "0 40px" }}>
                   <div className="framer-10fdy2 flex-none [overflow:visible] [opacity:1]">
                     <div className="framer-1pjp34d aspect-square bottom-[3px] flex-none [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [z-index:1] [opacity:1]" style={{ "--border-bottom-width": "2px", "--border-color": "rgba(255, 255, 255, 0.5)", "--border-left-width": "2px", "--border-right-width": "2px", "--border-style": "solid", "--border-top-width": "2px", borderRadius: "70px" } as CSSProperties} data-border="true">
                       <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
@@ -1159,7 +1163,7 @@ function ImportedSectionFeaturesSection() {
               <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
                 <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="4096" height="4096" sizes="max((min(100vw - 120px, 1000px) - 60px) / 2, 1px)" srcSet="/site-assets/b004a5ee5988e516.avif 512w, /site-assets/2b422597354be02d.avif 1024w, /site-assets/1a44bd6c6f2eefcf.avif 2048w, /site-assets/f8a0da1ec9a82e66.webp 4096w" src="/site-assets/f8a0da1ec9a82e66.webp" alt="Woman holding a supplement container and smiling" />
               </div>
-              <div className="framer-qlbbaw items-center flex-none flex-col flex-nowrap place-content-center [backdrop-filter:blur(10px)] [overflow:var(--overflow-clip-fallback,clip)] [z-index:4] [@media(max-width:679.98px)]:right-[20px] [opacity:0]" style={{ willChange: "transform", transform: "translate(-50%, -50%) translateY(40px)" }}>
+              <div ref={card3Ref} className={`framer-qlbbaw items-center flex-none flex-col flex-nowrap place-content-center [backdrop-filter:blur(10px)] [overflow:var(--overflow-clip-fallback,clip)] [z-index:4] [@media(max-width:679.98px)]:right-[20px] ${card3Shown ? "[opacity:1]" : "[opacity:0]"} oi-appear`} style={{ willChange: "transform", translate: card3Shown ? "0 0" : "0 40px" }}>
                 <div className="framer-x4o5ou items-center flex-none flex-row flex-nowrap content-center justify-start [overflow:var(--overflow-clip-fallback,clip)]" data-border="true">
                   <div className="framer-1x5qqm1 [z-index:2]" style={{ transform: "none" }} data-framer-component-type="RichTextContainer">
                     <p className="framer-text framer-styles-preset-1gnmur6" style={{ "--framer-text-alignment": "left", "--framer-text-color": "var(--token-4d91f15a-be6f-4c68-8d25-3bf02a07afb6, rgb(255, 255, 255))" } as CSSProperties} dir="auto">Ingredient Profile</p>
@@ -1221,9 +1225,10 @@ function ImportedSectionFeaturesSection() {
 }
 
 function ImportedSectionIntroduceSection() {
+  const [introRef, introShown] = useInView<HTMLDivElement>();
   return (
     <section className="framer-y047zk items-center flex-none flex-col flex-nowrap content-center justify-start [mask:linear-gradient(rgb(0,0,0)_0%,rgba(0,0,0,0.96)_73%,rgba(0,0,0,0)_100%)] [overflow:visible]" id="introduction">
-      <div className="framer-ipe1eq items-center flex-none flex-col flex-nowrap place-content-center [overflow:visible] [z-index:1] will-change-transform [opacity:1]" style={{ transform: "none" }}>
+      <div ref={introRef} className="framer-ipe1eq items-center flex-none flex-col flex-nowrap place-content-center [overflow:visible] [z-index:1] will-change-transform [opacity:1] oi-appear" style={{ transform: introShown ? "translateY(-100px)" : "none" }}>
         <div className="framer-1q31ivl items-center flex-none flex-col flex-nowrap place-content-center [overflow:visible]">
           <div className="framer-7xe7aq wrap-break-word [word-break:break-word] [z-index:2]" style={{ transform: "none" }} data-framer-component-type="RichTextContainer">
             <h2 className="framer-text framer-styles-preset-8hagcl" style={{ "--framer-text-alignment": "center" } as CSSProperties} dir="auto"><span className="[opacity:1] will-change-transform" style={{ display: "inline-block", filter: "blur(0px)", transform: "none" } as CSSProperties} data-site-import-responsive="622">Introducing</span> <span className="[opacity:1] will-change-transform" style={{ display: "inline-block", filter: "blur(0px)", transform: "none" } as CSSProperties} data-site-import-responsive="623" /></h2>
@@ -1279,7 +1284,7 @@ function ImportedSectionIntroduceSection() {
           </div>
         </div>
         <div className="framer-11gxwhy-container flex-none [z-index:1] [@media(max-width:679.98px)]:aspect-square [@media(max-width:679.98px)]:right-[-15px]" style={{ "--site-import-responsive-display": "block" } as CSSProperties} data-site-import-mobile-variant="">
-          <div className="framer-7s6CG framer-bhp2dn [overflow:visible] will-change-transform [opacity:1]" style={{ height: "100%", width: "100%", transform: "none" }}>
+          <div className="framer-7s6CG framer-bhp2dn framer-v-f841vj [overflow:visible] will-change-transform [opacity:1]" style={{ height: "100%", width: "100%", transform: "none" }}>
             <div className="framer-jiq8l1 aspect-square flex-none right-[85px] [overflow:visible] [z-index:8] [filter:blur(5px)] [opacity:1]" style={{ transform: "translateY(-50%) rotate(-59deg)" }}>
               <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
                 <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="2921" height="2921" sizes="83px" srcSet="/site-assets/2b505afd9b61f6ef.avif 512w, /site-assets/1bffb004a1c8c76a.avif 1024w, /site-assets/78c1116f1df875a5.avif 2048w, /site-assets/07d47ede94a12452.avif 2921w" src="/site-assets/07d47ede94a12452.avif" alt="" />
@@ -1305,7 +1310,7 @@ function ImportedSectionIntroduceSection() {
                 <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="2921" height="2921" sizes="167px" srcSet="/site-assets/2b505afd9b61f6ef.avif 512w, /site-assets/1bffb004a1c8c76a.avif 1024w, /site-assets/78c1116f1df875a5.avif 2048w, /site-assets/07d47ede94a12452.avif 2921w" src="/site-assets/07d47ede94a12452.avif" alt="" />
               </div>
             </div>
-            <div className="framer-n1dhl aspect-square flex-none [overflow:visible] [z-index:8] [filter:blur(3px)] [opacity:1]" style={{ transform: "translateY(-50%) rotate(-40deg)" }}>
+            <div className="framer-n1dhl aspect-square flex-none [overflow:visible] [z-index:8] [filter:blur(3px)] [opacity:1]" style={{ transform: "rotate(-40deg)" }}>
               <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
                 <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="2921" height="2921" sizes="250px" srcSet="/site-assets/2b505afd9b61f6ef.avif 512w, /site-assets/1bffb004a1c8c76a.avif 1024w, /site-assets/78c1116f1df875a5.avif 2048w, /site-assets/07d47ede94a12452.avif 2921w" src="/site-assets/07d47ede94a12452.avif" alt="" />
               </div>
@@ -2160,6 +2165,32 @@ function ImportedFooterFooterSection() {
       </div>
     </footer>
   );
+}
+
+
+function useInView<T extends HTMLElement>() {
+  const ref = useRef<T>(null);
+  const [inView, setInView] = useState(false);
+  useEffect(() => {
+    const node = ref.current;
+    if (!node) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) {
+      setInView(true);
+      return;
+    }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry?.isIntersecting) {
+          setInView(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "0px 0px -10% 0px" },
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+  return [ref, inView] as const;
 }
 
 

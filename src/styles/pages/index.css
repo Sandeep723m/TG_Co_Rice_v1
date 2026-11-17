@@ -4707,3 +4707,17 @@ html body { background: rgb(255, 255, 255); }
   }
 }
 
+
+/* Motion restored from the source page's appear-on-scroll and floating effects. */
+.oi-appear {
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), translate 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+@keyframes oi-float {
+  from { translate: 0 0; }
+  to { translate: 0 50px; }
+}
+.oi-float { animation: oi-float 5.8s linear infinite alternate; }
+@media (prefers-reduced-motion: reduce) {
+  .oi-appear { transition: none; }
+  .oi-float { animation: none; }
+}
