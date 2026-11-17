@@ -5,7 +5,16 @@ import { createFileRoute } from "@tanstack/react-router";
 import capturedCSS from "../styles/pages/privacy-policy.css?raw";
 
 export const Route = createFileRoute("/privacy-policy")({
-  head: () => ({ meta: [{ title: "OneThing - Privacy Policy" }] }),
+  head: () => ({
+    meta: [
+      { title: "OneThing - Privacy Policy" },
+      { name: "description", content: "What data OneThing collects, how it is used, and how your information is protected." },
+      { property: "og:title", content: "OneThing - Privacy Policy" },
+      { property: "og:description", content: "What data OneThing collects, how it is used, and how your information is protected." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   staticData: { importedDocument: { html: { "dir": "ltr", "lang": "en" }, body: { "data-site-import-responsive-incomplete": "class-range-budget" } } },
   component: Index,
 });

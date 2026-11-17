@@ -4,7 +4,16 @@ import { createFileRoute } from "@tanstack/react-router";
 import capturedCSS from "../styles/pages/index.css?raw";
 
 export const Route = createFileRoute("/")({
-  head: () => ({ meta: [{ title: "OneThing - Daily Gummies" }] }),
+  head: () => ({
+    meta: [
+      { title: "OneThing - Daily Gummies" },
+      { name: "description", content: "One single gummy in the morning that handles immunity, digestion, sleep, energy and vitality." },
+      { property: "og:title", content: "OneThing - Daily Gummies" },
+      { property: "og:description", content: "One single gummy in the morning that handles immunity, digestion, sleep, energy and vitality." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   staticData: { importedDocument: { html: { "dir": "ltr", "lang": "en" }, body: { "data-site-import-responsive-incomplete": "class-range-budget" } } },
   component: Index,
 });

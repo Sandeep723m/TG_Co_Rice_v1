@@ -5,7 +5,16 @@ import { createFileRoute } from "@tanstack/react-router";
 import capturedCSS from "../styles/pages/terms-conditions.css?raw";
 
 export const Route = createFileRoute("/terms-conditions")({
-  head: () => ({ meta: [{ title: "OneThing - Terms \u0026 Conditions" }] }),
+  head: () => ({
+    meta: [
+      { title: "OneThing - Terms & Conditions" },
+      { name: "description", content: "The terms that apply when you use the OneThing website and buy OneThing gummies." },
+      { property: "og:title", content: "OneThing - Terms & Conditions" },
+      { property: "og:description", content: "The terms that apply when you use the OneThing website and buy OneThing gummies." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   staticData: { importedDocument: { html: { "dir": "ltr", "lang": "en" }, body: { "data-site-import-responsive-incomplete": "class-range-budget" } } },
   component: Index,
 });

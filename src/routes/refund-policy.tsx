@@ -4,7 +4,16 @@ import { createFileRoute } from "@tanstack/react-router";
 import capturedCSS from "../styles/pages/refund-policy.css?raw";
 
 export const Route = createFileRoute("/refund-policy")({
-  head: () => ({ meta: [{ title: "OneThing - Refund Policy" }] }),
+  head: () => ({
+    meta: [
+      { title: "OneThing - Refund Policy" },
+      { name: "description", content: "How OneThing handles returns, refunds, subscription cancellations and damaged orders." },
+      { property: "og:title", content: "OneThing - Refund Policy" },
+      { property: "og:description", content: "How OneThing handles returns, refunds, subscription cancellations and damaged orders." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   staticData: { importedDocument: { html: { "dir": "ltr", "lang": "en" }, body: { "data-site-import-responsive-incomplete": "class-range-budget" } } },
   component: Index,
 });
