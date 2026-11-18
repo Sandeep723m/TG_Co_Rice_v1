@@ -18,6 +18,10 @@ import ponniRiceBag from "../assets/Ponni Rice Bag with Floating Grains.png";
 import premiumIdliRice from "../assets/Premium Blue Idli Rice Packaging.png";
 import unzippingIdliRiceBag from "../assets/Unzipping a Blue Idli Rice Bag.png";
 import ctaMainImage from "../assets/CTA Main.png";
+import joyfulRiceFamilyMeal from "../assets/Joyful South Asian Family Meal.png";
+import warmRiceFeast from "../assets/Warm Restaurant Table with Rice Feast.png";
+import joyfulRiceCooking from "../assets/Joyful Rice Cooking in a Sunlit Kitchen.png";
+import cuppedRiceGrain from "../assets/Cupped Handful of Rice Against Blue Sky.png";
 import type { CSSProperties, KeyboardEvent } from "react";
 import { useEffect, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
@@ -1356,12 +1360,12 @@ function ImportedSectionIntroduceSection() {
             </div>
             <div className="framer-x7rgww aspect-square flex-none right-[43px] [overflow:visible] [z-index:8] [filter:blur(5px)] [opacity:1]" style={{ transform: "rotate(53deg)" }}>
               <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
-                <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" src={greenLeafTopLeft} alt="" />
+                <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" src={macroPolishedRiceGrain} alt="" />
               </div>
             </div>
             <div className="framer-8elmzo aspect-square bottom-[474px] flex-none right-[286px] [overflow:visible] [z-index:8] [opacity:1]" style={{ transform: "rotate(-32deg)" }}>
               <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
-                <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" src={greenLeafTopLeft} alt="" />
+                <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" src={macroPolishedRiceGrain} alt="" />
               </div>
             </div>
             <div className="framer-9djwlr aspect-square flex-none right-[235px] [overflow:visible] [z-index:8] [opacity:1]" style={{ transform: "rotate(145deg)" }}>
@@ -1371,12 +1375,12 @@ function ImportedSectionIntroduceSection() {
             </div>
             <div className="framer-1e2ze8m aspect-square flex-none [overflow:visible] [z-index:8] [opacity:1]" style={{ transform: "rotate(-120deg)" }}>
               <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
-                <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" src={goldenRicePanicleCutout} alt="" />
+                <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" src={macroPolishedRiceGrain} alt="" />
               </div>
             </div>
             <div className="framer-n1dhl aspect-square flex-none [overflow:visible] [z-index:8] [filter:blur(3px)] [opacity:1]" style={{ transform: "translateY(-50%) rotate(-40deg)" }}>
               <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
-                <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" src={goldenRicePanicleCutout} alt="" />
+                <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" src={macroPolishedRiceGrain} alt="" />
               </div>
             </div>
             <div className="framer-9o15fu aspect-square flex-none [overflow:visible] [z-index:0] [filter:blur(3px)] [opacity:1]" style={{ transform: "rotate(47deg)" }}>
@@ -1395,12 +1399,12 @@ function ImportedSectionIntroduceSection() {
             </div>
             <div className="framer-x7rgww aspect-square flex-none right-[43px] [overflow:visible] [z-index:8] [filter:blur(5px)] [opacity:1]" style={{ transform: "rotate(53deg)" }}>
               <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
-                <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" src={greenLeafTopLeft} alt="" />
+                <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" src={macroPolishedRiceGrain} alt="" />
               </div>
             </div>
             <div className="framer-8elmzo aspect-square bottom-[474px] flex-none right-[286px] [overflow:visible] [z-index:8] [opacity:1]" style={{ transform: "rotate(-32deg)" }}>
               <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
-                <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" src={greenLeafTopLeft} alt="" />
+                <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" src={macroPolishedRiceGrain} alt="" />
               </div>
             </div>
             <div className="framer-9djwlr aspect-square flex-none right-[235px] [overflow:visible] [z-index:8] [opacity:1]" style={{ transform: "rotate(145deg)" }}>
@@ -1410,12 +1414,12 @@ function ImportedSectionIntroduceSection() {
             </div>
             <div className="framer-1e2ze8m aspect-square flex-none [overflow:visible] [z-index:8] [opacity:1]" style={{ transform: "rotate(-120deg)" }}>
               <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
-                <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" src={goldenRicePanicleCutout} alt="" />
+                <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" src={macroPolishedRiceGrain} alt="" />
               </div>
             </div>
             <div className="framer-n1dhl aspect-square flex-none [overflow:visible] [z-index:8] [filter:blur(3px)] [opacity:1]" style={{ transform: "rotate(-40deg)" }}>
               <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
-                <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" src={goldenRicePanicleCutout} alt="" />
+                <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" src={macroPolishedRiceGrain} alt="" />
               </div>
             </div>
             <div className="framer-9o15fu aspect-square flex-none [overflow:visible] [z-index:0] [filter:blur(3px)] [opacity:1]" style={{ transform: "rotate(47deg)" }}>
@@ -1950,7 +1954,7 @@ function ImportedFooterFooterSection() {
                     </div>
                     <div className="framer-12d475x flex-none [inset:0px] [overflow:visible] [z-index:0] [opacity:1]">
                       <div className="[border-radius:inherit] [corner-shape:inherit] [inset:0px]" style={{ position: "absolute" }}>
-                        <img className="[border-radius:inherit] [corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%" }} decoding="auto" width="4096" height="4096" sizes="320px" srcSet="/site-assets/fa50155be2979378.avif 512w, /site-assets/3e5070104e849c20.avif 1024w, /site-assets/2b19a1113aafaaf0.webp 4096w" src="/site-assets/2b19a1113aafaaf0.webp" alt="Person holding supplement sachet next to his face" />
+                        <img className="[border-radius:inherit] [corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%" }} decoding="auto" width="4096" height="4096" sizes="320px" src={joyfulRiceFamilyMeal} alt="A family sharing a rice meal" />
                       </div>
                       <div className="framer-1ve6qdb flex-none [inset:0px] [overflow:visible] [z-index:1] [opacity:1]" style={{ background: "linear-gradient(rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.6) 100%)" }} />
                     </div>
@@ -1974,7 +1978,7 @@ function ImportedFooterFooterSection() {
                     </div>
                     <div className="framer-12d475x flex-none [inset:0px] [overflow:visible] [z-index:0] [opacity:1]">
                       <div className="[border-radius:inherit] [corner-shape:inherit] [inset:0px]" style={{ position: "absolute" }}>
-                        <img className="[border-radius:inherit] [corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%" }} decoding="auto" width="4096" height="4096" sizes="320px" srcSet="/site-assets/501de64378573e08.avif 512w, /site-assets/582baf5e6a8281ba.webp 4096w" src="/site-assets/582baf5e6a8281ba.webp" alt="Woman taking selfie with the supplement product" />
+                        <img className="[border-radius:inherit] [corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%" }} decoding="auto" width="4096" height="4096" sizes="320px" src={warmRiceFeast} alt="Guests sharing a rice dinner" />
                       </div>
                       <div className="framer-1ve6qdb flex-none [inset:0px] [overflow:visible] [z-index:1] [opacity:1]" style={{ background: "linear-gradient(rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.6) 100%)" }} />
                     </div>
@@ -1998,7 +2002,7 @@ function ImportedFooterFooterSection() {
                     </div>
                     <div className="framer-12d475x flex-none [inset:0px] [overflow:visible] [z-index:0] [opacity:1]">
                       <div className="[border-radius:inherit] [corner-shape:inherit] [inset:0px]" style={{ position: "absolute" }}>
-                        <img className="[border-radius:inherit] [corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%" }} decoding="auto" width="4096" height="4096" sizes="320px" srcSet="/site-assets/d3637162259014b5.avif 512w, /site-assets/2943b5155f2682b1.webp 4096w" src="/site-assets/2943b5155f2682b1.webp" alt="man holding a supplement box" />
+                        <img className="[border-radius:inherit] [corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%" }} decoding="auto" width="4096" height="4096" sizes="320px" src={joyfulRiceCooking} alt="A home cook preparing rice" />
                       </div>
                       <div className="framer-1ve6qdb flex-none [inset:0px] [overflow:visible] [z-index:1] [opacity:1]" style={{ background: "linear-gradient(rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.6) 100%)" }} />
                     </div>
@@ -2022,7 +2026,7 @@ function ImportedFooterFooterSection() {
                     </div>
                     <div className="framer-12d475x flex-none [inset:0px] [overflow:visible] [z-index:0] [opacity:1]">
                       <div className="[border-radius:inherit] [corner-shape:inherit] [inset:0px]" style={{ position: "absolute" }}>
-                        <img className="[border-radius:inherit] [corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%" }} decoding="auto" width="4096" height="4096" sizes="320px" srcSet="/site-assets/0874c04a32171426.avif 512w, /site-assets/7561227e5a4ee60e.webp 4096w" src="/site-assets/7561227e5a4ee60e.webp" alt="woman drinking coffee while having hands placed on the supplement box" />
+                        <img className="[border-radius:inherit] [corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%" }} decoding="auto" width="4096" height="4096" sizes="320px" src={riceFieldFarmers} alt="Rice fields in Telangana" />
                       </div>
                       <div className="framer-1ve6qdb flex-none [inset:0px] [overflow:visible] [z-index:1] [opacity:1]" style={{ background: "linear-gradient(rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.6) 100%)" }} />
                     </div>
@@ -2046,7 +2050,7 @@ function ImportedFooterFooterSection() {
                     </div>
                     <div className="framer-12d475x flex-none [inset:0px] [overflow:visible] [z-index:0] [opacity:1]">
                       <div className="[border-radius:inherit] [corner-shape:inherit] [inset:0px]" style={{ position: "absolute" }}>
-                        <img className="[border-radius:inherit] [corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%" }} decoding="auto" width="4096" height="4096" sizes="320px" srcSet="/site-assets/ccd619873287b069.avif 512w, /site-assets/68a47e4b75683182.webp 4096w" src="/site-assets/68a47e4b75683182.webp" alt="Supplement product on the biscep of a person" />
+                        <img className="[border-radius:inherit] [corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%" }} decoding="auto" width="4096" height="4096" sizes="320px" src={cuppedRiceGrain} alt="A hand holding a polished rice grain" />
                       </div>
                       <div className="framer-1ve6qdb flex-none [inset:0px] [overflow:visible] [z-index:1] [opacity:1]" style={{ background: "linear-gradient(rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.6) 100%)" }} />
                     </div>
@@ -2073,7 +2077,7 @@ function ImportedFooterFooterSection() {
                   </div>
                   <div className="framer-12d475x flex-none [inset:0px] [overflow:visible] [z-index:0] [opacity:1]">
                     <div className="[border-radius:inherit] [corner-shape:inherit] [inset:0px]" style={{ position: "absolute" }}>
-                      <img className="[border-radius:inherit] [corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%" }} decoding="auto" width="4096" height="4096" sizes="320px" srcSet="/site-assets/fa50155be2979378.avif 512w, /site-assets/3e5070104e849c20.avif 1024w, /site-assets/2b19a1113aafaaf0.webp 4096w" src="/site-assets/2b19a1113aafaaf0.webp" alt="Person holding supplement sachet next to his face" />
+                      <img className="[border-radius:inherit] [corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%" }} decoding="auto" width="4096" height="4096" sizes="320px" src={joyfulRiceFamilyMeal} alt="A family sharing a rice meal" />
                     </div>
                     <div className="framer-1ve6qdb flex-none [inset:0px] [overflow:visible] [z-index:1] [opacity:1]" style={{ background: "linear-gradient(rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.6) 100%)" }} />
                   </div>
@@ -2095,7 +2099,7 @@ function ImportedFooterFooterSection() {
                   </div>
                   <div className="framer-12d475x flex-none [inset:0px] [overflow:visible] [z-index:0] [opacity:1]">
                     <div className="[border-radius:inherit] [corner-shape:inherit] [inset:0px]" style={{ position: "absolute" }}>
-                      <img className="[border-radius:inherit] [corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%" }} decoding="auto" width="4096" height="4096" sizes="320px" srcSet="/site-assets/501de64378573e08.avif 512w, /site-assets/582baf5e6a8281ba.webp 4096w" src="/site-assets/582baf5e6a8281ba.webp" alt="Woman taking selfie with the supplement product" />
+                      <img className="[border-radius:inherit] [corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%" }} decoding="auto" width="4096" height="4096" sizes="320px" src={warmRiceFeast} alt="Guests sharing a rice dinner" />
                     </div>
                     <div className="framer-1ve6qdb flex-none [inset:0px] [overflow:visible] [z-index:1] [opacity:1]" style={{ background: "linear-gradient(rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.6) 100%)" }} />
                   </div>
@@ -2117,7 +2121,7 @@ function ImportedFooterFooterSection() {
                   </div>
                   <div className="framer-12d475x flex-none [inset:0px] [overflow:visible] [z-index:0] [opacity:1]">
                     <div className="[border-radius:inherit] [corner-shape:inherit] [inset:0px]" style={{ position: "absolute" }}>
-                      <img className="[border-radius:inherit] [corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%" }} decoding="auto" width="4096" height="4096" sizes="320px" srcSet="/site-assets/d3637162259014b5.avif 512w, /site-assets/2943b5155f2682b1.webp 4096w" src="/site-assets/2943b5155f2682b1.webp" alt="man holding a supplement box" />
+                      <img className="[border-radius:inherit] [corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%" }} decoding="auto" width="4096" height="4096" sizes="320px" src={joyfulRiceCooking} alt="A home cook preparing rice" />
                     </div>
                     <div className="framer-1ve6qdb flex-none [inset:0px] [overflow:visible] [z-index:1] [opacity:1]" style={{ background: "linear-gradient(rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.6) 100%)" }} />
                   </div>
@@ -2139,7 +2143,7 @@ function ImportedFooterFooterSection() {
                   </div>
                   <div className="framer-12d475x flex-none [inset:0px] [overflow:visible] [z-index:0] [opacity:1]">
                     <div className="[border-radius:inherit] [corner-shape:inherit] [inset:0px]" style={{ position: "absolute" }}>
-                      <img className="[border-radius:inherit] [corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%" }} decoding="auto" width="4096" height="4096" sizes="320px" srcSet="/site-assets/0874c04a32171426.avif 512w, /site-assets/7561227e5a4ee60e.webp 4096w" src="/site-assets/7561227e5a4ee60e.webp" alt="woman drinking coffee while having hands placed on the supplement box" />
+                      <img className="[border-radius:inherit] [corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%" }} decoding="auto" width="4096" height="4096" sizes="320px" src={riceFieldFarmers} alt="Rice fields in Telangana" />
                     </div>
                     <div className="framer-1ve6qdb flex-none [inset:0px] [overflow:visible] [z-index:1] [opacity:1]" style={{ background: "linear-gradient(rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.6) 100%)" }} />
                   </div>
@@ -2161,7 +2165,7 @@ function ImportedFooterFooterSection() {
                   </div>
                   <div className="framer-12d475x flex-none [inset:0px] [overflow:visible] [z-index:0] [opacity:1]">
                     <div className="[border-radius:inherit] [corner-shape:inherit] [inset:0px]" style={{ position: "absolute" }}>
-                      <img className="[border-radius:inherit] [corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%" }} decoding="auto" width="4096" height="4096" sizes="320px" srcSet="/site-assets/ccd619873287b069.avif 512w, /site-assets/68a47e4b75683182.webp 4096w" src="/site-assets/68a47e4b75683182.webp" alt="Supplement product on the biscep of a person" />
+                      <img className="[border-radius:inherit] [corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%" }} decoding="auto" width="4096" height="4096" sizes="320px" src={cuppedRiceGrain} alt="A hand holding a polished rice grain" />
                     </div>
                     <div className="framer-1ve6qdb flex-none [inset:0px] [overflow:visible] [z-index:1] [opacity:1]" style={{ background: "linear-gradient(rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.6) 100%)" }} />
                   </div>
