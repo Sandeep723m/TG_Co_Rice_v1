@@ -1963,3 +1963,11 @@ html body { background: rgb(255, 255, 255); }
   .framer-mV9bZ[data-fx-nav], .framer-6dH45, .framer-iqhows, .framer-1acbqbl-container, .framer-lzivtl-container, .framer-ikxl5d-container,
   .framer-q26q4r, .framer-1n78sdg, .framer-1oe5sxv, .framer-6BFw0, .framer-1imtrad, .framer-1caz9sd { transition: none; }
 }
+
+/* Larger replacement logo in the imported site header/footer */
+.framer-mV9bZ .framer-10nqhn5 { width: 136px; height: 48px; aspect-ratio: auto; }
+.framer-DrtIB .framer-8611ol { width: 175px; height: 68px; aspect-ratio: auto; }
+@media (max-width: 679.98px) {
+  .framer-mV9bZ .framer-10nqhn5 { width: 116px; height: 44px; }
+  .framer-DrtIB .framer-8611ol { width: 145px; height: 58px; }
+}

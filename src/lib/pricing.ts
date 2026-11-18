@@ -64,5 +64,5 @@ export function priceOrder(lines: CartLine[], promoCode?: string | null): Priced
 }
 
 export function formatMoney(cents: number): string {
-  return new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(cents / 100);
+  return new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR" }).format(cents / 100);
 }

@@ -1,13 +1,14 @@
-import daily from "@/assets/product-daily.jpg";
-import sleep from "@/assets/product-sleep.jpg";
-import glow from "@/assets/product-glow.jpg";
-import calm from "@/assets/product-calm.jpg";
-import immunity from "@/assets/product-immunity.jpg";
-import gut from "@/assets/product-gut.jpg";
+import basmati from "@/assets/Forest Green Basmati Rice Packaging.png";
+import kolam from "@/assets/Golden Kolam Rice Packaging.png";
+import idli from "@/assets/TG.CO Finest Idli Rice Packaging.png";
+import sonaMasoori from "@/assets/Premium Sona Masoori Rice Bag.png";
+import jeera from "@/assets/Premium Purple Jeera Rice Packaging.png";
+import ponni from "@/assets/Premium Orange Ponni Rice Package.png";
 import { CATALOG, type CatalogProduct } from "./catalog";
 
 export interface Product extends CatalogProduct {
   image: string;
+  imageBackground: string;
   badge?: string;
   flavor: string;
   description: string;
@@ -18,7 +19,8 @@ export interface Product extends CatalogProduct {
 
 const DETAILS: Record<string, Omit<Product, keyof CatalogProduct>> = {
   daily: {
-    image: daily,
+    image: basmati,
+    imageBackground: "#e7f0e9",
     badge: "Bestseller",
     flavor: "Blue raspberry",
     description:
@@ -34,7 +36,8 @@ const DETAILS: Record<string, Omit<Product, keyof CatalogProduct>> = {
     howToUse: "Chew one gummy a day, any time. Best with a glass of water.",
   },
   "deep-sleep": {
-    image: sleep,
+    image: kolam,
+    imageBackground: "#fff3d5",
     flavor: "Lavender berry",
     description:
       "A calming blend for a deeper, uninterrupted night. Helps you switch off without the groggy morning.",
@@ -48,7 +51,8 @@ const DETAILS: Record<string, Omit<Product, keyof CatalogProduct>> = {
     howToUse: "Chew one gummy 30 minutes before bed.",
   },
   glow: {
-    image: glow,
+    image: idli,
+    imageBackground: "#e5f0fa",
     badge: "New",
     flavor: "Strawberry rose",
     description:
@@ -63,7 +67,8 @@ const DETAILS: Record<string, Omit<Product, keyof CatalogProduct>> = {
     howToUse: "Chew one gummy a day. Visible results usually take 6–8 weeks.",
   },
   "calm-focus": {
-    image: calm,
+    image: sonaMasoori,
+    imageBackground: "#f8e8e6",
     flavor: "Green apple mint",
     description:
       "Stay steady through busy days. Adaptogens and L-theanine take the edge off stress while keeping you sharp.",
@@ -77,7 +82,8 @@ const DETAILS: Record<string, Omit<Product, keyof CatalogProduct>> = {
     howToUse: "Chew one gummy in the morning or whenever you need to reset.",
   },
   immunity: {
-    image: immunity,
+    image: jeera,
+    imageBackground: "#f0e9f5",
     flavor: "Orange citrus",
     description:
       "Daily defence for every season. Vitamin C, zinc and elderberry help keep your immune system ready.",
@@ -91,7 +97,8 @@ const DETAILS: Record<string, Omit<Product, keyof CatalogProduct>> = {
     howToUse: "Chew one gummy a day. During travel or busy weeks, take two.",
   },
   "gut-balance": {
-    image: gut,
+    image: ponni,
+    imageBackground: "#f9ecdf",
     flavor: "Tropical mango",
     description:
       "Probiotics and prebiotic fibre in one tasty gummy for lighter, more comfortable digestion.",

@@ -1,3 +1,4 @@
+import riceFarmerLogo from "../assets/Finest Rice Farmer Logo.png";
 import type { CSSProperties } from "react";
 import { useEffect } from "react";
 import { useSyncExternalStore } from "react";
@@ -123,7 +124,7 @@ function Index() {
                     <div className={isMobile ? "ssr-variant hidden-1n95zts hidden-206c69" : "ssr-variant"}>
                       <div className="framer-8611ol">
                         <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", inset: "0px" } as CSSProperties}>
-                          <img style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center center", objectFit: "cover" } as CSSProperties} decoding="auto" width="2219" height="638" sizes="(min-width: 1200px) max(86.9514px, 118.2539px), (max-width: 679.98px) max(86.9514px, 118.2539px), (min-width: 680px) and (max-width: 1199.98px) max(86.9514px, 118.2539px)" srcSet="/site-assets/ffa5660189cfaef9.avif 512w, /site-assets/6eb85bf3f09b72fa.avif 1024w, /site-assets/81342bc92387350b.avif 2048w, /site-assets/cccfbd665bf7358c.avif 2219w" src="/site-assets/cccfbd665bf7358c.avif" alt="Logo" />
+                          <img style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center center", objectFit: "contain" } as CSSProperties} decoding="auto" width="2219" height="638" sizes="(min-width: 1200px) max(86.9514px, 118.2539px), (max-width: 679.98px) max(86.9514px, 118.2539px), (min-width: 680px) and (max-width: 1199.98px) max(86.9514px, 118.2539px)" src={riceFarmerLogo} alt="Logo" />
                         </div>
                       </div>
                     </div>
@@ -160,7 +161,7 @@ function Index() {
                               <p className="framer-text framer-styles-preset-sqgpjx" dir="auto">OneThing Gummies</p>
                             </div>
                             <div className="framer-16l5uku" style={{ "--extracted-r6o4lv": "var(--token-52e79835-e8e9-4a84-ae4b-bf400f45d0cf, rgba(0, 0, 0, 0.7))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none", opacity: "1" } as CSSProperties} data-framer-component-type="RichTextContainer">
-                              <p className="framer-text framer-styles-preset-1gnmur6" style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-52e79835-e8e9-4a84-ae4b-bf400f45d0cf, rgba(0, 0, 0, 0.7)))" } as CSSProperties} dir="auto">$49.00</p>
+                              <p className="framer-text framer-styles-preset-1gnmur6" style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-52e79835-e8e9-4a84-ae4b-bf400f45d0cf, rgba(0, 0, 0, 0.7)))" } as CSSProperties} dir="auto">₹49.00</p>
                             </div>
                           </div>
                           <div className="framer-qqrxa4" style={{ backgroundColor: "var(--token-a5917666-de48-475a-8244-858af9f157b1, rgb(0, 0, 0))", borderRadius: "99px", opacity: "1" }}>
@@ -205,20 +206,6 @@ function Index() {
           </footer>
         </div>
         <div id="template-overlay" />
-      </div>
-      <div className="[bottom:0px] [z-index:calc(var(--infinity,2147480000))]" id="__framer-badge-container">
-        <a className="framer-6jWyo framer-n0ccwk framer-bmpgw8 will-change-transform [opacity:1]" style={{ pointerEvents: "auto", transform: "none" }} href="https://www.framer.com" rel="noopener" title="Create a free website with Framer, the website builder loved by startups, designers and agencies.">
-          <div className="framer-13yxzio [will-change:var(--framer-will-change-override,transform)] [box-shadow:rgba(0,_0,_0,_0.17)_0px_0.602187px_1.56569px_-1.5px,_rgba(0,_0,_0,_0.14)_0px_2.28853px_5.95019px_-3px,_rgba(0,_0,_0,_0.02)_0px_10px_26px_-4.5px] [opacity:1]" style={{ backgroundColor: "rgb(255, 255, 255)", borderRadius: "10px" }} />
-          <div className="framer-19yaanm [opacity:1]" style={{ transform: "translate(-50%, -50%)" }}>
-            <div className="framer-1kflzx5 [opacity:1]">
-              <div className="framer-hcsc7 framer-e50co aspect-[0.6/1] [opacity:1]" style={{ "--1bd4d3i": "rgb(0, 0, 0)", "--otdjsv": "rgb(0, 0, 0)", transform: "translateX(-50%)" } as CSSProperties} />
-            </div>
-            <p style={{ position: "absolute", transform: "scale(0.001)" }}>Create a free website with Framer, the website builder loved by startups, designers and agencies.</p>
-            <div className="framer-g7oZR framer-1um7t9d aspect-[9.7/1] [opacity:1]" style={{ "--1bd4d3i": "rgb(0, 0, 0)", "--otdjsv": "rgb(0, 0, 0)" } as CSSProperties} />
-          </div>
-          <div className="framer-j4ugry [mask:linear-gradient(rgba(0,_0,_0,_0)_65%,_rgb(0,_0,_0)_100%)] [box-shadow:rgb(0,_0,_0)_0px_0px_0px_1px_inset] [opacity:0.06]" style={{ borderRadius: "11px" }} />
-          <div className="framer-jnuwbw [box-shadow:rgb(0,_0,_0)_0px_0px_0px_1px_inset] [opacity:0.04]" style={{ borderRadius: "11px" }} />
-        </a>
       </div>
       <div className="[bottom:0px] [z-index:0] [contain:strict]" style={{ position: "absolute", overflow: "hidden", left: "0px", width: "0px", height: "0px" }} id="svg-templates" aria-hidden="true" />
     </>
@@ -344,7 +331,7 @@ function ImportedDivInnerStack() {
       <div className="framer-5m92od" style={{ opacity: "1" }}>
         <div className="framer-10nqhn5" style={{ opacity: "1" }}>
           <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", inset: "0px" } as CSSProperties}>
-            <img style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center center", objectFit: "cover" } as CSSProperties} decoding="auto" width="2219" height="638" sizes="(min-width: 1200px) max(86.9514px, 118.2539px), (max-width: 679.98px) max(86.9514px, 118.2539px), (min-width: 680px) and (max-width: 1199.98px) max(86.9514px, 118.2539px)" srcSet="/site-assets/ffa5660189cfaef9.avif 512w, /site-assets/6eb85bf3f09b72fa.avif 1024w, /site-assets/81342bc92387350b.avif 2048w, /site-assets/cccfbd665bf7358c.avif 2219w" src="/site-assets/cccfbd665bf7358c.avif" alt="" />
+            <img style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center center", objectFit: "contain" } as CSSProperties} decoding="auto" width="2219" height="638" sizes="(min-width: 1200px) max(86.9514px, 118.2539px), (max-width: 679.98px) max(86.9514px, 118.2539px), (min-width: 680px) and (max-width: 1199.98px) max(86.9514px, 118.2539px)" src={riceFarmerLogo} alt="" />
           </div>
         </div>
         <div className="framer-hr1tzd" style={{ opacity: "1" }}>
@@ -465,10 +452,11 @@ function ImportedDivOfferNav() {
               <div className="framer-5m92od" style={{ opacity: "1" }}>
                 <div className="framer-10nqhn5" style={{ opacity: "1" }}>
                   <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", inset: "0px" } as CSSProperties}>
-                    <img style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center center", objectFit: "cover" } as CSSProperties} decoding="auto" width="2219" height="638" sizes="(min-width: 1200px) max(86.9514px, 118.2539px), (max-width: 679.98px) max(86.9514px, 118.2539px), (min-width: 680px) and (max-width: 1199.98px) max(86.9514px, 118.2539px)" srcSet="/site-assets/ffa5660189cfaef9.avif 512w, /site-assets/6eb85bf3f09b72fa.avif 1024w, /site-assets/81342bc92387350b.avif 2048w, /site-assets/cccfbd665bf7358c.avif 2219w" src="/site-assets/cccfbd665bf7358c.avif" alt="" />
+                    <img style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center center", objectFit: "contain" } as CSSProperties} decoding="auto" width="2219" height="638" sizes="(min-width: 1200px) max(86.9514px, 118.2539px), (max-width: 679.98px) max(86.9514px, 118.2539px), (min-width: 680px) and (max-width: 1199.98px) max(86.9514px, 118.2539px)" src={riceFarmerLogo} alt="" />
                   </div>
                 </div>
               </div>
+              <a className="oi-header-track" href="/track-order">Track Order</a>
               <div className="framer-ujfetw-container" style={{ opacity: "1" }}>
                 <a className="framer-6dH45 framer-FaBO9 framer-Jf64E framer-7z2klu framer-v-1a2u647 framer-wcun84" style={{ backdropFilter: "none", backgroundColor: "var(--token-a5917666-de48-475a-8244-858af9f157b1, rgb(0, 0, 0))", borderRadius: "99px", opacity: "1" } as CSSProperties} href="/">
                   <div className="framer-x7c3yg" style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--extracted-r6o4lv": "var(--token-4d91f15a-be6f-4c68-8d25-3bf02a07afb6, rgb(255, 255, 255))", transform: "none", opacity: "1" } as CSSProperties} data-framer-component-type="RichTextContainer">

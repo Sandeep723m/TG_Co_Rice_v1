@@ -535,8 +535,8 @@ type TickerState = { step: (dt: number, reduced: boolean) => boolean; destroy: (
 
 function createTicker(container: HTMLElement, def: FxTicker, kick: () => void): TickerState {
   const list = (container.querySelector(":scope > ul") as HTMLElement | null) ?? container;
+  list.querySelectorAll(":scope > [data-oi-ticker-clone]").forEach((clone) => clone.remove());
   const items = Array.from(list.children) as HTMLElement[];
-  const gap = parseFloat(getComputedStyle(list).columnGap || getComputedStyle(list).gap) || 0;
   let offset = 0;
   let inView = true;
   let dragging = false;
@@ -548,17 +548,49 @@ function createTicker(container: HTMLElement, def: FxTicker, kick: () => void): 
   const direction = def.reverse ? -1 : 1;
   items.forEach((li) => li.style.removeProperty("transform"));
   list.style.removeProperty("transform");
-  const period = () => items.reduce((sum, li) => sum + li.offsetWidth, 0) + gap * items.length;
+  container.style.overflow = "hidden";
+  list.style.width = "max-content";
+  list.style.maxWidth = "none";
+  list.style.flexShrink = "0";
+  // Measure the actual rendered span from the first card through the last,
+  // including the browser's real flex gap. Summing nominal widths can drift
+  // from offsetLeft at fractional zoom levels and causes the wrapped copy to
+  // collide with the previous card.
+  const period = () => {
+    const first = items[0];
+    const last = items[items.length - 1];
+    if (!first || !last) return 0;
+    const gapAfterSet = items.length > 1
+      ? Math.max(0, items[1].offsetLeft - first.offsetLeft - first.offsetWidth)
+      : 0;
+    return last.offsetLeft + last.offsetWidth - first.offsetLeft + gapAfterSet;
+  };
+
+  // Move a duplicated track as one unit. Per-card teleport transforms drift from
+  // the flex gap/offset measurements and can make cards overlap at the wrap.
+  function ensureTrackCopies() {
+    const p = period();
+    if (!p) return;
+    const requiredCopies = Math.max(1, Math.ceil(container.clientWidth / p) + 1);
+    while (list.children.length < items.length * requiredCopies) {
+      const source = items[(list.children.length - items.length) % items.length];
+      if (!source) break;
+      const clone = source.cloneNode(true) as HTMLElement;
+      clone.setAttribute("data-oi-ticker-clone", "true");
+      clone.setAttribute("aria-hidden", "true");
+      clone.setAttribute("inert", "");
+      clone.style.removeProperty("transform");
+      list.appendChild(clone);
+    }
+  }
+  ensureTrackCopies();
 
   function place() {
     const p = period();
     if (!p) return;
+    ensureTrackCopies();
     const mod = (((offset % p) + p) % p) - p;
     list.style.transform = `translateX(${round(mod, 2)}px)`;
-    for (const li of items) {
-      const right = li.offsetLeft + li.offsetWidth + mod;
-      li.style.transform = right < 0 ? `translateX(${round(p, 2)}px)` : "none";
-    }
   }
   const io = new IntersectionObserver(([entry]) => {
     inView = !!entry?.isIntersecting;
@@ -624,6 +656,12 @@ function createTicker(container: HTMLElement, def: FxTicker, kick: () => void): 
     },
     destroy() {
       io.disconnect();
+      list.querySelectorAll(":scope > [data-oi-ticker-clone]").forEach((clone) => clone.remove());
+      list.style.removeProperty("transform");
+      list.style.removeProperty("width");
+      list.style.removeProperty("max-width");
+      list.style.removeProperty("flex-shrink");
+      container.style.removeProperty("overflow");
       container.removeEventListener("pointerdown", onDown);
       container.removeEventListener("pointermove", onMove);
       container.removeEventListener("pointerup", onUp);
