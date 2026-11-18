@@ -31,9 +31,18 @@ function RiceHomeFooter() {
   </footer>;
 }
 
+const PRODUCT_CARD_BACKGROUNDS: Record<string, string> = {
+  daily: "#c9ddce",
+  "deep-sleep": "#f1dfa9",
+  glow: "#c6dced",
+  "calm-focus": "#e8c8c4",
+  immunity: "#d6c9e1",
+  "gut-balance": "#e8cfb5",
+};
+
 function ProductCard({ product }: { product: Product }) {
   const [added, setAdded] = useState(false);
-  return <article className="product-card"><Link to="/products/$slug" params={{ slug: product.slug }} className="product-card-image" style={{ backgroundColor: product.imageBackground }}><img src={product.image} alt={product.name} />{product.badge && <span className="product-badge">{product.badge}</span>}</Link><div className="product-card-copy"><div><span className="product-flavor">{product.flavor}</span><h3><Link to="/products/$slug" params={{ slug: product.slug }}>{product.name}</Link></h3><p>{product.tagline}</p></div><div className="product-card-bottom"><strong>{formatMoney(product.priceCents)}<small> / month</small></strong><button className="store-icon-button" aria-label={`Add ${product.name} to bag`} onClick={() => { cart.add(product.slug, "one-time"); setAdded(true); window.setTimeout(() => setAdded(false), 1600); }}>{added ? <Check size={18} /> : <ShoppingBag size={18} />}</button></div></div></article>;
+  return <article className="product-card"><Link to="/products/$slug" params={{ slug: product.slug }} className="product-card-image" style={{ backgroundColor: PRODUCT_CARD_BACKGROUNDS[product.slug] ?? product.imageBackground }}><img src={product.image} alt={product.name} />{product.badge && <span className="product-badge">{product.badge}</span>}</Link><div className="product-card-copy"><div><span className="product-flavor">{product.flavor}</span><h3><Link to="/products/$slug" params={{ slug: product.slug }}>{product.name}</Link></h3><p>{product.tagline}</p></div><div className="product-card-bottom"><strong>{formatMoney(product.priceCents)}<small> / month</small></strong><button className="store-icon-button" aria-label={`Add ${product.name} to bag`} onClick={() => { cart.add(product.slug, "one-time"); setAdded(true); window.setTimeout(() => setAdded(false), 1600); }}>{added ? <Check size={18} /> : <ShoppingBag size={18} />}</button></div></div></article>;
 }
 
 export function ProductShelf() {
