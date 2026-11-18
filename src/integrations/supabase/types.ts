@@ -14,7 +14,125 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      order_tracking_codes: {
+        Row: {
+          attempts: number
+          code_hash: string
+          created_at: string
+          expires_at: string
+          id: string
+          order_id: string
+          verified_at: string | null
+        }
+        Insert: {
+          attempts?: number
+          code_hash: string
+          created_at?: string
+          expires_at: string
+          id?: string
+          order_id: string
+          verified_at?: string | null
+        }
+        Update: {
+          attempts?: number
+          code_hash?: string
+          created_at?: string
+          expires_at?: string
+          id?: string
+          order_id?: string
+          verified_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "order_tracking_codes_order_id_fkey"
+            columns: ["order_id"]
+            isOneToOne: false
+            referencedRelation: "orders"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      orders: {
+        Row: {
+          address_line1: string
+          address_line2: string | null
+          city: string
+          country: string
+          created_at: string
+          currency: string
+          discount_cents: number
+          email: string
+          full_name: string
+          id: string
+          items: Json
+          order_code: string
+          payment_last4: string | null
+          payment_method: string
+          payment_status: string
+          phone: string
+          postal_code: string
+          promo_code: string | null
+          shipping_cents: number
+          state: string
+          status: string
+          subtotal_cents: number
+          total_cents: number
+          updated_at: string
+        }
+        Insert: {
+          address_line1: string
+          address_line2?: string | null
+          city: string
+          country: string
+          created_at?: string
+          currency?: string
+          discount_cents?: number
+          email: string
+          full_name: string
+          id?: string
+          items?: Json
+          order_code: string
+          payment_last4?: string | null
+          payment_method: string
+          payment_status?: string
+          phone: string
+          postal_code: string
+          promo_code?: string | null
+          shipping_cents?: number
+          state: string
+          status?: string
+          subtotal_cents: number
+          total_cents: number
+          updated_at?: string
+        }
+        Update: {
+          address_line1?: string
+          address_line2?: string | null
+          city?: string
+          country?: string
+          created_at?: string
+          currency?: string
+          discount_cents?: number
+          email?: string
+          full_name?: string
+          id?: string
+          items?: Json
+          order_code?: string
+          payment_last4?: string | null
+          payment_method?: string
+          payment_status?: string
+          phone?: string
+          postal_code?: string
+          promo_code?: string | null
+          shipping_cents?: number
+          state?: string
+          status?: string
+          subtotal_cents?: number
+          total_cents?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
