@@ -22,6 +22,11 @@ import joyfulRiceFamilyMeal from "../assets/Joyful South Asian Family Meal.png";
 import warmRiceFeast from "../assets/Warm Restaurant Table with Rice Feast.png";
 import joyfulRiceCooking from "../assets/Joyful Rice Cooking in a Sunlit Kitchen.png";
 import cuppedRiceGrain from "../assets/Cupped Handful of Rice Against Blue Sky.png";
+import benefitTasteImage from "../assets/9c2c1ef611eaa3410d49ee37a16b6682.jpg";
+import benefitPurityImage from "../assets/7b10d795514710e95f0f2f0ef38437d7.jpg";
+import benefitNutritionImage from "../assets/Moody Kitchen Meal Prep with Rice.png";
+import benefitVersatilityImage from "../assets/4009737d229eac956e611b9a995e5d1d.jpg";
+import benefitOriginImage from "../assets/5a5d386228af8c8e5dad117736a5018b.jpg";
 import type { CSSProperties, KeyboardEvent } from "react";
 import { useEffect, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
@@ -542,7 +547,7 @@ function ImportedSectionBenefitsSection() {
               <div className="framer-p3k4s framer-FaBO9 framer-qhMV1 framer-1hrjdua items-start flex-col flex-nowrap content-start justify-center [overflow:visible] [opacity:1]" style={{ width: "100%" }}>
                 <div className="framer-wffgw6 aspect-[0.8/1] flex-none [overflow:visible] [opacity:1]" style={{ borderRadius: "15px" }}>
                   <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
-                    <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="3712" height="4608" sizes="(min-width: 1200px) 220px, (min-width: 680px) and (max-width: 1199.98px) 220px, (max-width: 679.98px) 220px" srcSet="/site-assets/3b5800854ed7d1e7.avif 824w, /site-assets/5cc0137625cfe352.webp 1649w, /site-assets/ac3a528f4c83a23c.webp 3299w, /site-assets/ac3a528f4c83a23c.webp 3712w" src="/site-assets/ac3a528f4c83a23c.webp" alt="Woman streching" />
+                    <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="3712" height="4608" sizes="(min-width: 1200px) 220px, (min-width: 680px) and (max-width: 1199.98px) 220px, (max-width: 679.98px) 220px" src={benefitTasteImage} alt="A flavorful rice dish served with curry" />
                   </div>
                 </div>
                 <div className="framer-r7o4di items-start flex-none flex-col flex-nowrap content-start justify-center select-none [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]">
@@ -561,7 +566,7 @@ function ImportedSectionBenefitsSection() {
               <div className="framer-p3k4s framer-FaBO9 framer-qhMV1 framer-1hrjdua items-start flex-col flex-nowrap content-start justify-center [overflow:visible] [opacity:1]" style={{ width: "100%" }}>
                 <div className="framer-wffgw6 aspect-[0.8/1] flex-none [overflow:visible] [opacity:1]" style={{ borderRadius: "15px" }}>
                   <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
-                    <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="4096" height="4096" sizes="(min-width: 1200px) 220px, (min-width: 680px) and (max-width: 1199.98px) 220px, (max-width: 679.98px) 220px" srcSet="/site-assets/ea04489170a01014.avif 512w, /site-assets/befd98ff13284d42.avif 1024w, /site-assets/8882d2204adb9c1f.webp 2048w, /site-assets/39c87533d2f502d4.webp 4096w" src="/site-assets/39c87533d2f502d4.webp" alt="People enjoying time together" />
+                    <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="4096" height="4096" sizes="(min-width: 1200px) 220px, (min-width: 680px) and (max-width: 1199.98px) 220px, (max-width: 679.98px) 220px" src={benefitPurityImage} alt="Rice purity and careful cultivation" />
                   </div>
                 </div>
                 <div className="framer-r7o4di items-start flex-none flex-col flex-nowrap content-start justify-center select-none [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]">
@@ -580,7 +585,7 @@ function ImportedSectionBenefitsSection() {
               <div className="framer-p3k4s framer-FaBO9 framer-qhMV1 framer-1hrjdua items-start flex-col flex-nowrap content-start justify-center [overflow:visible] [opacity:1]" style={{ width: "100%" }}>
                 <div className="framer-wffgw6 aspect-[0.8/1] flex-none [overflow:visible] [opacity:1]" style={{ borderRadius: "15px" }}>
                   <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
-                    <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="4096" height="4096" sizes="(min-width: 1200px) 220px, (min-width: 680px) and (max-width: 1199.98px) 220px, (max-width: 679.98px) 220px" srcSet="/site-assets/0a0a27240b443282.avif 512w, /site-assets/6a26f420840c1743.avif 1024w, /site-assets/c1e96a8bf9438533.webp 2048w, /site-assets/56fa7b6a2746b255.webp 4096w" src="/site-assets/56fa7b6a2746b255.webp" alt="A person holding hand towards the stomach" />
+                    <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="4096" height="4096" sizes="(min-width: 1200px) 220px, (min-width: 680px) and (max-width: 1199.98px) 220px, (max-width: 679.98px) 220px" src="/site-assets/c1e96a8bf9438533.webp" alt="A bowl of light cooked rice" />
                   </div>
                 </div>
                 <div className="framer-r7o4di items-start flex-none flex-col flex-nowrap content-start justify-center select-none [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]">
@@ -599,7 +604,7 @@ function ImportedSectionBenefitsSection() {
               <div className="framer-p3k4s framer-FaBO9 framer-qhMV1 framer-1hrjdua items-start flex-col flex-nowrap content-start justify-center [overflow:visible] [opacity:1]" style={{ width: "100%" }}>
                 <div className="framer-wffgw6 aspect-[0.8/1] flex-none [overflow:visible] [opacity:1]" style={{ borderRadius: "15px" }}>
                   <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
-                    <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="4096" height="4096" sizes="(min-width: 1200px) 220px, (min-width: 680px) and (max-width: 1199.98px) 220px, (max-width: 679.98px) 220px" srcSet="/site-assets/68bea22161521fbc.avif 512w, /site-assets/09a9650aa717110c.avif 1024w, /site-assets/ed6dcd8ac74fb80f.webp 2048w, /site-assets/281ea81488019b90.webp 4096w" src="/site-assets/281ea81488019b90.webp" alt="Woman smiling with a bottle in hand" />
+                    <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="4096" height="4096" sizes="(min-width: 1200px) 220px, (min-width: 680px) and (max-width: 1199.98px) 220px, (max-width: 679.98px) 220px" src={benefitNutritionImage} alt="Rice as part of a balanced meal" />
                   </div>
                 </div>
                 <div className="framer-r7o4di items-start flex-none flex-col flex-nowrap content-start justify-center select-none [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]">
@@ -618,7 +623,7 @@ function ImportedSectionBenefitsSection() {
               <div className="framer-p3k4s framer-FaBO9 framer-qhMV1 framer-1hrjdua items-start flex-col flex-nowrap content-start justify-center [overflow:visible] [opacity:1]" style={{ width: "100%" }}>
                 <div className="framer-wffgw6 aspect-[0.8/1] flex-none [overflow:visible] [opacity:1]" style={{ borderRadius: "15px" }}>
                   <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
-                    <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="1072" height="1467" sizes="(min-width: 1200px) 220px, (min-width: 680px) and (max-width: 1199.98px) 220px, (max-width: 679.98px) 220px" srcSet="/site-assets/aa2564f58eadc961.avif 748w, /site-assets/2a380ff100918f23.webp 1072w" src="/site-assets/2a380ff100918f23.webp" alt="woman sleeping peacefully" />
+                    <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="1072" height="1467" sizes="(min-width: 1200px) 220px, (min-width: 680px) and (max-width: 1199.98px) 220px, (max-width: 679.98px) 220px" src={benefitVersatilityImage} alt="Rice prepared for a variety of meals" />
                   </div>
                 </div>
                 <div className="framer-r7o4di items-start flex-none flex-col flex-nowrap content-start justify-center select-none [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]">
@@ -637,7 +642,7 @@ function ImportedSectionBenefitsSection() {
               <div className="framer-p3k4s framer-FaBO9 framer-qhMV1 framer-1hrjdua items-start flex-col flex-nowrap content-start justify-center [overflow:visible] [opacity:1]" style={{ width: "100%" }}>
                 <div className="framer-wffgw6 aspect-[0.8/1] flex-none [overflow:visible] [opacity:1]" style={{ borderRadius: "15px" }}>
                   <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
-                    <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="1072" height="1467" sizes="(min-width: 1200px) 220px, (min-width: 680px) and (max-width: 1199.98px) 220px, (max-width: 679.98px) 220px" srcSet="/site-assets/aa2564f58eadc961.avif 748w, /site-assets/2a380ff100918f23.webp 1072w" src="/site-assets/2a380ff100918f23.webp" alt="woman sleeping peacefully" />
+                    <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="1072" height="1467" sizes="(min-width: 1200px) 220px, (min-width: 680px) and (max-width: 1199.98px) 220px, (max-width: 679.98px) 220px" src={benefitOriginImage} alt="Rice farmers working in the fields" />
                   </div>
                 </div>
                 <div className="framer-r7o4di items-start flex-none flex-col flex-nowrap content-start justify-center select-none [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]">
