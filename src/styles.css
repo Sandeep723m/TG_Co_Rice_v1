@@ -189,3 +189,74 @@
   --color-site-import-muted: var(--site-import-muted);
 }
 /* site-import tokens: end */
+
+/* OneThing shop UI (new pages + home products section).
+   Unprefixed shadcn roles are re-pointed at the brand so new UI reads like the imported site. */
+@font-face { font-family: "OT Manrope"; src: url("/site-assets/ffe88ffb8d802882.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "OT Manrope"; src: url("/site-assets/b00e3a79b8e3e734.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "OT Switzer"; src: url("/site-assets/ce38aa90da1b2331.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "OT Switzer"; src: url("/site-assets/cfab7610f8aee35e.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0 0 0);
+  --primary: oklch(0 0 0);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.976 0 0);
+  --secondary-foreground: oklch(0 0 0);
+  --muted: oklch(0.976 0 0);
+  --muted-foreground: oklch(0.46 0 0);
+  --accent: oklch(0.962 0.034 219);
+  --accent-foreground: oklch(0 0 0);
+  --border: oklch(0.92 0 0);
+  --input: oklch(0.88 0 0);
+  --ring: oklch(0.42901 0.29728 264.05);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(1 0 0);
+  /* light blue of the "What's inside our super gummies?" panel */
+  --sky: oklch(0.962 0.034 219);
+  --sky-foreground: oklch(0 0 0);
+  /* jar royal blue */
+  --brand: oklch(0.42901 0.29728 264.05);
+  --brand-foreground: oklch(1 0 0);
+  --success: oklch(0.62 0.16 150);
+  --success-foreground: oklch(1 0 0);
+  --success-soft: oklch(0.96 0.04 150);
+  --shadow-card: 0 1px 2px oklch(0 0 0 / 0.04), 0 12px 32px -12px oklch(0 0 0 / 0.12);
+  --shadow-float: 0 18px 40px -16px oklch(0 0 0 / 0.35);
+  --ease-spring: cubic-bezier(0.22, 1.2, 0.36, 1);
+  --ease-out-soft: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@theme inline {
+  --font-display: "OT Manrope", Manrope, sans-serif;
+  --font-body: "OT Switzer", Switzer, sans-serif;
+  --color-sky: var(--sky);
+  --color-sky-foreground: var(--sky-foreground);
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-success-soft: var(--success-soft);
+  --shadow-card: var(--shadow-card);
+  --shadow-float: var(--shadow-float);
+  --ease-spring: var(--ease-spring);
+  --ease-out-soft: var(--ease-out-soft);
+}
+
+@layer components {
+  .ot-reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.9s var(--ease-out-soft), transform 1s var(--ease-spring); transition-delay: var(--ot-delay, 0ms); }
+  .ot-reveal.is-in { opacity: 1; transform: none; }
+  @keyframes ot-pop { 0% { transform: scale(0.6); opacity: 0; } 60% { transform: scale(1.08); opacity: 1; } 100% { transform: scale(1); } }
+  .ot-pop { animation: ot-pop 0.7s var(--ease-spring) both; }
+  @keyframes ot-fade-up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  .ot-fade-up { animation: ot-fade-up 0.5s var(--ease-out-soft) both; }
+  @media (prefers-reduced-motion: reduce) {
+    .ot-reveal { opacity: 1; transform: none; transition: none; }
+    .ot-pop, .ot-fade-up { animation: none; }
+  }
+}
