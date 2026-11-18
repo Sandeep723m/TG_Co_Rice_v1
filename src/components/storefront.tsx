@@ -46,7 +46,7 @@ function ProductCard({ product }: { product: Product }) {
 }
 
 export function ProductShelf() {
-  return <section className="oi-products" id="products"><div className="oi-products-inner"><div className="oi-products-heading"><Link className="store-view-bag" to="/checkout">View Your Bag <ArrowRight size={16} /></Link></div><div className="product-grid">{PRODUCTS.map((product) => <ProductCard key={product.slug} product={product} />)}</div><div className="store-shipping-note"><Truck size={18} /> Complimentary shipping on every order</div></div></section>;
+  return <section className="oi-products" id="products"><div className="oi-products-inner"><div className="oi-products-heading"><h2>Our Rice Varieties</h2><Link className="store-view-bag" to="/checkout">View Your Bag <ArrowRight size={16} /></Link></div><div className="product-grid">{PRODUCTS.map((product) => <ProductCard key={product.slug} product={product} />)}</div><div className="store-shipping-note"><Truck size={18} /> Complimentary shipping on every order</div></div></section>;
 }
 
 export function ProductDetail({ slug }: { slug: string }) {

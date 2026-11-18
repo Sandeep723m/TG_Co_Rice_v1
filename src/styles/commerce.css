@@ -39,6 +39,9 @@
 .store-icon-button{background:transparent!important;color:#000!important;border:1px solid #000;border-radius:50%;}
 .store-icon-button:hover{background:#f0f0f0!important;color:#000!important}
 @media(max-width:560px){.oi-products-heading{align-items:flex-end;margin-bottom:18px}.product-card h3{font-size:16px}.product-card-copy p{font-size:11px}}
+.oi-products-heading{justify-content:space-between;align-items:flex-end}
+.oi-products-heading h2{font-family:Switzer,Inter,sans-serif;font-size:clamp(32px,4vw,48px);line-height:1.05;letter-spacing:-.055em;font-weight:600;color:#000;margin:0}
+@media(max-width:560px){.oi-products-heading{align-items:flex-start}.oi-products-heading h2{font-size:32px}.oi-products-heading .store-view-bag{align-self:flex-end}}
 /* Primary actions are black filled; order tracking remains a blue outlined secondary action. */
 .store-page .store-primary{background:#000!important;color:#fff!important;border:1px solid #000}
 .store-page .store-primary:hover{background:#262626!important;border-color:#262626}
