@@ -2031,7 +2031,7 @@ function ImportedFooterFooterSection() {
                     </div>
                     <div className="framer-12d475x flex-none [inset:0px] [overflow:visible] [z-index:0] [opacity:1]">
                       <div className="[border-radius:inherit] [corner-shape:inherit] [inset:0px]" style={{ position: "absolute" }}>
-                        <img className="[border-radius:inherit] [corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%" }} decoding="auto" width="4096" height="4096" sizes="320px" src={riceFieldFarmers} alt="Rice fields in Telangana" />
+                        <img className="[border-radius:inherit] [corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%" }} decoding="auto" width="4096" height="4096" sizes="320px" src={benefitOriginImage} alt="Rice fields in Telangana" />
                       </div>
                       <div className="framer-1ve6qdb flex-none [inset:0px] [overflow:visible] [z-index:1] [opacity:1]" style={{ background: "linear-gradient(rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.6) 100%)" }} />
                     </div>
@@ -2148,7 +2148,7 @@ function ImportedFooterFooterSection() {
                   </div>
                   <div className="framer-12d475x flex-none [inset:0px] [overflow:visible] [z-index:0] [opacity:1]">
                     <div className="[border-radius:inherit] [corner-shape:inherit] [inset:0px]" style={{ position: "absolute" }}>
-                      <img className="[border-radius:inherit] [corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%" }} decoding="auto" width="4096" height="4096" sizes="320px" src={riceFieldFarmers} alt="Rice fields in Telangana" />
+                      <img className="[border-radius:inherit] [corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%" }} decoding="auto" width="4096" height="4096" sizes="320px" src={benefitOriginImage} alt="Rice fields in Telangana" />
                     </div>
                     <div className="framer-1ve6qdb flex-none [inset:0px] [overflow:visible] [z-index:1] [opacity:1]" style={{ background: "linear-gradient(rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.6) 100%)" }} />
                   </div>
