@@ -59,3 +59,71 @@
 /* Make the footer studio credit an intentional, discoverable external link. */
 .oi-web-anatomy-link{transition:color .18s ease,text-decoration-color .18s ease;text-decoration:underline;text-decoration-color:transparent;text-underline-offset:3px}
 .oi-web-anatomy-link:hover,.oi-web-anatomy-link:focus-visible{color:#075bff!important;text-decoration-color:currentColor}
+
+/* Tracking page shares the homepage's monochrome action hierarchy. */
+.tracking-page .store-nav nav>a.store-track-link{border-color:#cfe6f3;color:#000!important;background:transparent;font-family:Switzer,"Switzer Placeholder",sans-serif;font-size:14px;font-weight:500;line-height:1.1em;padding:9px 20px;border-radius:99px}
+.tracking-page .store-nav nav>a.store-track-link:hover{background:#f2faff;color:#000!important}
+.tracking-page .store-nav .store-bag{background:#000;color:#fff;border-radius:99px;font-family:Switzer,"Switzer Placeholder",sans-serif;font-size:14px;font-weight:500;line-height:1.1em;padding:10px 20px}
+.tracking-page .store-nav .store-bag span{background:#fff;color:#000}
+.tracking-page .store-primary{background:#000!important;color:#fff!important;border:1px solid #000;border-radius:99px;font-family:Switzer,"Switzer Placeholder",sans-serif;font-size:14px;font-weight:500;line-height:1.1em;padding:15px 22px}
+.tracking-page .store-primary:hover{background:#262626!important;border-color:#262626}
+.tracking-page .store-eyebrow{color:#111820!important}
+
+.rice-home-footer{border-top:1px solid #e5edf3;padding:52px clamp(24px,6vw,88px) 36px;background:#fff;color:#111820}
+.rice-footer-top{max-width:1280px;margin:0 auto 70px;display:grid;grid-template-columns:1.25fr 1fr .8fr;gap:42px;align-items:start}
+.rice-footer-brand>a{display:block;width:220px;height:68px}
+.rice-footer-brand img{width:100%;height:100%;object-fit:contain;object-position:left center}
+.rice-footer-brand p{margin:14px 0 0;font-size:14px;line-height:1.5}
+.rice-footer-product{display:flex;align-items:center;gap:16px;padding:13px 15px;border:1px solid #075bff;border-radius:18px;text-decoration:none;color:#111820;min-height:86px}
+.rice-footer-product-mark{width:58px;height:58px;border-radius:12px;display:grid;place-items:center;background:#e8f6fc;overflow:hidden}.rice-footer-product-mark img{width:100%;height:100%;object-fit:contain;padding:4px}
+.rice-footer-product>span:nth-child(2){display:grid;gap:5px;flex:1}.rice-footer-product strong{font-size:15px}.rice-footer-product small{font-size:13px;color:#626b75}.rice-footer-product>b{width:36px;height:36px;border-radius:50%;background:#000;color:#fff;display:grid;place-items:center;font-size:25px;font-weight:400}
+.rice-footer-trust>span{display:block;text-align:center;color:#626b75;margin-bottom:13px;font-size:14px}.rice-footer-trust>div{display:flex;justify-content:center;gap:12px}.rice-footer-trust img{width:42px;height:42px;object-fit:contain;border-radius:50%}
+.rice-footer-bottom{max-width:1280px;margin:auto;display:grid;grid-template-columns:1fr 1.45fr;gap:70px}.rice-footer-legal{display:grid;align-content:start;gap:18px;color:#606c78;font-size:12px;line-height:1.6}.rice-footer-legal p{max-width:420px;margin:0 0 38px}.rice-footer-legal a{color:inherit;text-decoration:none;width:max-content}.rice-footer-legal a:hover{color:#075bff}.rice-footer-links{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}.rice-footer-links>div{display:grid;align-content:start;gap:13px}.rice-footer-links span{color:#606c78;font-size:13px;margin-bottom:4px}.rice-footer-links a{color:#111820;text-decoration:none;font-size:13px}.rice-footer-links a:hover{color:#075bff}
+@media(max-width:760px){.rice-home-footer{padding:38px 22px 28px}.rice-footer-top{grid-template-columns:1fr 1fr;gap:28px;margin-bottom:44px}.rice-footer-brand{grid-column:1/-1}.rice-footer-brand>a{width:180px}.rice-footer-product{grid-column:1/-1}.rice-footer-trust{grid-column:1/-1}.rice-footer-bottom{grid-template-columns:1fr;gap:34px}.rice-footer-legal p{margin-bottom:8px}.rice-footer-links{grid-template-columns:repeat(2,1fr);row-gap:28px}}
+
+/* Homepage type scale and action styles for checkout and order tracking. */
+.checkout-page .store-nav nav>a.store-track-link,.tracking-page .store-nav nav>a.store-track-link{min-height:36px;border:1px solid #cfe6f3;border-radius:99px;background:transparent;color:#000!important;font-family:Switzer,"Switzer Placeholder",sans-serif;font-size:14px;font-weight:500;line-height:1.1em;padding:9px 20px}
+.checkout-page .store-nav nav>a.store-track-link:hover,.tracking-page .store-nav nav>a.store-track-link:hover{background:#f2faff;color:#000!important}
+.checkout-page .store-nav .store-bag,.tracking-page .store-nav .store-bag{min-height:36px;border-radius:99px;background:#000;color:#fff;font-family:Switzer,"Switzer Placeholder",sans-serif;font-size:14px;font-weight:500;line-height:1.1em;padding:10px 20px}
+.checkout-page .store-nav .store-bag:hover,.tracking-page .store-nav .store-bag:hover{background:#262626;color:#fff}
+.checkout-page .store-nav .store-bag span,.tracking-page .store-nav .store-bag span{background:#fff;color:#000}
+.checkout-page .store-primary,.tracking-page .store-primary{min-height:52px;border:1px solid #000;border-radius:99px;background:#000!important;color:#fff!important;font-family:Switzer,"Switzer Placeholder",sans-serif;font-size:16px;font-weight:600;line-height:1.2;padding:15px 24px}
+.checkout-page .store-primary:hover,.tracking-page .store-primary:hover{background:#262626!important;border-color:#262626}
+.checkout-page .checkout-submit{min-height:58px}
+.checkout-page .checkout-heading h1,.tracking-page .track-heading h1{font-family:Switzer,"Switzer Placeholder",sans-serif;font-size:clamp(36px,4.2vw,50px);font-weight:500;letter-spacing:-.06em;line-height:1.02}
+.checkout-page .checkout-heading p,.tracking-page .track-heading p{font-size:16px;line-height:1.55}
+.checkout-page .form-section,.checkout-page .order-summary{border-radius:22px;padding:28px}
+.checkout-page .form-section h2,.checkout-page .order-summary h2{font-family:Switzer,"Switzer Placeholder",sans-serif;font-size:21px;font-weight:550;letter-spacing:-.035em;line-height:1.2}
+.checkout-page .form-grid{gap:18px 16px}
+.checkout-page .form-field,.tracking-page .form-field{gap:8px}
+.checkout-page .form-field label,.checkout-page .promo-field label,.tracking-page .form-field label{font-size:14px;font-weight:600;line-height:1.35;color:#303943}
+.checkout-page .form-field input,.checkout-page .promo-field input,.tracking-page .form-field input{height:52px;border-radius:12px;padding:0 16px;font-family:Switzer,"Switzer Placeholder",sans-serif;font-size:16px;line-height:1.3}
+.checkout-page .secure-note,.tracking-page .secure-note,.checkout-page .store-checkout-note{font-size:14px;line-height:1.55}
+.checkout-page .payment-choice label{min-height:50px;padding:14px;font-size:14px;font-weight:500}
+.checkout-page .summary-line{grid-template-columns:64px 1fr auto;gap:14px}
+.checkout-page .summary-line>img{width:64px;height:64px}
+.checkout-page .summary-line>div strong{font-size:15px;line-height:1.35}
+.checkout-page .summary-line>div span,.checkout-page .summary-line>div button{font-size:13px;line-height:1.4}
+.checkout-page .summary-line>b{font-size:15px}
+.checkout-page .promo-field>div button{min-height:48px;padding:0 18px;border:1px solid #000;border-radius:99px;background:#000;color:#fff;font-family:Switzer,"Switzer Placeholder",sans-serif;font-size:14px;font-weight:600}
+.checkout-page .promo-field>div button:hover{background:#262626}
+.checkout-page .promo-success,.checkout-page .form-error,.tracking-page .form-error{font-size:13px}
+.checkout-page .summary-totals>div{font-size:14px;line-height:1.45}
+.checkout-page .summary-totals .summary-total{font-size:17px}
+.checkout-page .summary-totals .summary-total b{font-size:24px}
+.tracking-page .store-eyebrow{font-size:13px;letter-spacing:.12em}
+.tracking-page .track-heading{margin:38px 0 32px}
+.tracking-page .track-card,.tracking-page .tracking-card{border-radius:22px;padding:30px}
+.tracking-page .track-fields{gap:18px}
+.tracking-page .track-fields .store-primary{margin-top:6px}
+.tracking-page .test-code{font-size:14px;padding:16px}
+.tracking-page .tracking-status{font-size:12px}
+.tracking-page .tracking-card>p{font-size:15px;line-height:1.5}
+.tracking-page .tracking-step small{font-size:12px;line-height:1.3}
+.tracking-page .tracking-dot{width:32px;height:32px;font-size:13px}
+.tracking-page .tracking-steps:before{top:15px}
+.tracking-page .tracking-items>div{font-size:14px;line-height:1.45}
+.tracking-page .tracking-total{font-size:16px}
+.tracking-page .confirm-link{font-size:14px}
+@media(max-width:760px){.checkout-page .form-section,.checkout-page .order-summary,.tracking-page .track-card,.tracking-page .tracking-card{padding:20px}.checkout-page .checkout-layout{gap:28px}.checkout-page .summary-line{grid-template-columns:54px 1fr auto;gap:10px}.checkout-page .summary-line>img{width:54px;height:54px}}
+@media(max-width:560px){.checkout-page .checkout-heading h1,.tracking-page .track-heading h1{font-size:34px}.checkout-page .checkout-heading p,.tracking-page .track-heading p{font-size:14px}.checkout-page .form-field label,.checkout-page .promo-field label,.tracking-page .form-field label{font-size:13px}.checkout-page .form-field input,.checkout-page .promo-field input,.tracking-page .form-field input{height:48px;font-size:16px}.checkout-page .form-section h2,.checkout-page .order-summary h2{font-size:19px}.checkout-page .summary-totals>div{font-size:13px}.checkout-page .summary-totals .summary-total b{font-size:22px}.tracking-page .track-card,.tracking-page .tracking-card{padding:18px}.tracking-page .tracking-step small{font-size:10px}}

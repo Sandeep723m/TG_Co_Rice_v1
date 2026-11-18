@@ -2,18 +2,33 @@ import { useState, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight, Check, ChevronRight, PackageCheck, ShoppingBag, Truck } from "lucide-react";
 import riceFarmerLogo from "../assets/Finest Rice Farmer Logo.png";
+import basmatiRiceBag from "../assets/Forest Green Basmati Rice Packaging.png";
 import { PRODUCTS, getProduct, type Product } from "../lib/products";
 import { cart, useCart } from "../lib/cart";
 import { formatMoney, priceOrder, type CartLine } from "../lib/pricing";
 import type { OrderView } from "../lib/order-types";
 
-export function StoreNav() {
+export function StoreNav({ hideShop = false }: { hideShop?: boolean }) {
   const { count } = useCart();
-  return <header className="store-nav"><Link to="/" className="store-wordmark" aria-label="OneThing home"><img src={riceFarmerLogo} alt="OneThing" /></Link><nav><Link to="/" hash="products">Shop</Link><Link to="/track-order" className="store-track-link">Track order</Link><Link to="/checkout" className="store-bag"><ShoppingBag size={17} /> Bag <span>{count}</span></Link></nav></header>;
+  return <header className="store-nav"><Link to="/" className="store-wordmark" aria-label="TG.CO Finest Rice home"><img src={riceFarmerLogo} alt="TG.CO Finest Rice" /></Link><nav>{!hideShop && <Link to="/" hash="products">Shop</Link>}<Link to="/track-order" className="store-track-link">Track order</Link><Link to="/checkout" className="store-bag"><ShoppingBag size={17} /> Bag <span>{count}</span></Link></nav></header>;
 }
 
-export function StoreFrame({ children }: { children: ReactNode }) {
-  return <div className="store-page"><StoreNav />{children}<footer className="store-footer"><Link to="/" className="store-footer-logo" aria-label="OneThing home"><img src={riceFarmerLogo} alt="OneThing" /></Link><span>One good thing, every day.</span><Link to="/track-order">Track an order <ArrowRight size={14} /></Link></footer></div>;
+export function StoreFrame({ children, hideShop = false, homepageFooter = false, pageClassName = "" }: { children: ReactNode; hideShop?: boolean; homepageFooter?: boolean; pageClassName?: string }) {
+  return <div className={`store-page${homepageFooter ? " tracking-page" : ""}${pageClassName ? ` ${pageClassName}` : ""}`}><StoreNav hideShop={hideShop} />{children}{homepageFooter ? <RiceHomeFooter /> : <footer className="store-footer"><Link to="/" className="store-footer-logo" aria-label="TG.CO Finest Rice home"><img src={riceFarmerLogo} alt="TG.CO Finest Rice" /></Link><span>From Telangana, with care.</span></footer>}</div>;
+}
+
+function RiceHomeFooter() {
+  return <footer className="rice-home-footer">
+    <div className="rice-footer-top">
+      <div className="rice-footer-brand"><Link to="/" aria-label="TG.CO Finest Rice home"><img src={riceFarmerLogo} alt="TG.CO Finest Rice" /></Link><p>From Telangana’s fields to tables everywhere.</p></div>
+      <Link className="rice-footer-product" to="/" hash="products"><span className="rice-footer-product-mark"><img src={basmatiRiceBag} alt="" /></span><span><strong>TG.CO Finest Rice</strong><small>Explore our rice</small></span><b aria-hidden="true">›</b></Link>
+      <div className="rice-footer-trust"><span>Trusted By</span><div><img src="/site-assets/3e86127cbfae5eee.avif" alt="Trusted brand" /><img src="/site-assets/2be8954f60e86e37.avif" alt="Quality mark" /><img src="/site-assets/c3fc84c02217b695.avif" alt="Certification mark" /></div></div>
+    </div>
+    <div className="rice-footer-bottom">
+      <div className="rice-footer-legal"><p>Rice varieties, availability and delivery options vary by location. See product details and policies before ordering.</p><span>© 2026 TG.CO Finest Rice. All rights reserved.</span><a href="https://webanatomy.in/" target="_blank" rel="noopener noreferrer">Designed &amp; Developed by Web Anatomy</a></div>
+      <div className="rice-footer-links"><div><span>Explore</span><Link to="/" hash="introduction">Our Story</Link><Link to="/" hash="benefits">Our Farmers</Link><Link to="/" hash="effects-timeline">How We Grow</Link><Link to="/" hash="faq">FAQs</Link></div><div><span>Shop</span><Link to="/" hash="products">All Rice</Link><Link to="/" hash="products">Rice Varieties</Link><Link to="/" hash="products">Bulk Orders</Link><Link to="/" hash="products">Reorder</Link></div><div><span>Support</span><a href="mailto:hello@tgcofinest.com">Contact Us</a><Link to="/track-order">Track Order</Link><Link to="/refund-policy">Returns &amp; Refunds</Link></div><div><span>Legal</span><Link to="/privacy-policy">Privacy Policy</Link><Link to="/terms-conditions">Terms &amp; Conditions</Link><Link to="/privacy-policy">Cookie Policy</Link><Link to="/terms-conditions">Accessibility</Link></div></div>
+    </div>
+  </footer>;
 }
 
 function ProductCard({ product }: { product: Product }) {

@@ -3,6 +3,8 @@ import riceFarmerStencil from "../assets/Monochrome Rice Paddy Farmer Stencil.pn
 import basmatiRiceBag from "../assets/Forest Green Basmati Rice Packaging.png";
 import riceGrainAgainstBlueSky from "../assets/Rice Grain Against Blue Sky.png";
 import macroPolishedRiceGrain from "../assets/Macro Polished Rice Grain.png";
+import goldenRicePanicleCutout from "../assets/Golden Rice Panicle 1 Cutout.png";
+import greenLeafTopLeft from "../assets/green_leaf_top_left.png";
 import woodenBowlBasmatiRice from "../assets/Wooden Bowl of Basmati Rice.png";
 import idliRicePackaging from "../assets/TG.CO Finest Idli Rice Packaging.png";
 import goldenRiceCascade from "../assets/Golden Rice Cascade from Wooden Scoop.png";
@@ -447,12 +449,12 @@ function ImportedDivDesktop() {
       </div>
       <div className="framer-1twa8cg aspect-square flex-none right-[43px] [overflow:visible] [z-index:8] [filter:blur(5px)] will-change-transform [opacity:1]" style={{ transform: "rotate(53deg)" }}>
         <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
-          <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" sizes="220px" src={macroPolishedRiceGrain} alt="" />
+          <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" sizes="220px" src={greenLeafTopLeft} alt="" />
         </div>
       </div>
       <div className="framer-lt83ag aspect-square flex-none right-[286px] [overflow:visible] [z-index:8] will-change-transform [opacity:1]" style={{ transform: "translateY(-50%) rotate(-32deg)" }}>
         <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
-          <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" sizes="220px" src={macroPolishedRiceGrain} alt="" />
+          <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" sizes="220px" src={greenLeafTopLeft} alt="" />
         </div>
       </div>
       <div className="framer-86ela9 aspect-square flex-none right-[235px] [overflow:visible] [z-index:8] will-change-transform [opacity:1]" style={{ transform: "rotate(145deg)" }}>
@@ -462,12 +464,12 @@ function ImportedDivDesktop() {
       </div>
       <div className="framer-1xujcsz aspect-square flex-none [overflow:visible] [z-index:8] will-change-transform [opacity:1]" style={{ transform: "rotate(285deg)" }}>
         <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
-          <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" sizes="220px" src={macroPolishedRiceGrain} alt="" />
+          <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" sizes="220px" src={goldenRicePanicleCutout} alt="" />
         </div>
       </div>
       <div className="framer-1uue3vh aspect-square flex-none [overflow:visible] [z-index:8] [filter:blur(3px)] will-change-transform [opacity:1]" style={{ transform: "translateY(-50%) rotate(-40deg)" }}>
         <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
-          <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" sizes="220px" src={macroPolishedRiceGrain} alt="" />
+          <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" sizes="220px" src={goldenRicePanicleCutout} alt="" />
         </div>
       </div>
       <div className="framer-1i2u684 aspect-square flex-none [overflow:visible] [z-index:0] [filter:blur(3px)] will-change-transform [opacity:1]" style={{ transform: "rotate(47deg)" }}>
@@ -502,12 +504,12 @@ function ImportedDivDesktop2() {
       </div>
       <div className="framer-1xujcsz aspect-square flex-none [overflow:visible] [z-index:8] will-change-transform [opacity:1]" style={{ transform: "rotate(240deg)" }}>
         <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
-          <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" sizes="220px" src={macroPolishedRiceGrain} alt="" />
+          <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" sizes="220px" src={goldenRicePanicleCutout} alt="" />
         </div>
       </div>
       <div className="framer-1i2u684 aspect-square flex-none [overflow:visible] [z-index:0] [filter:blur(3px)] will-change-transform [opacity:1]" style={{ transform: "rotate(47deg)" }}>
         <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
-          <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" sizes="220px" src={macroPolishedRiceGrain} alt="" />
+          <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" sizes="220px" src={goldenRicePanicleCutout} alt="" />
         </div>
       </div>
     </div>
@@ -1354,12 +1356,12 @@ function ImportedSectionIntroduceSection() {
             </div>
             <div className="framer-x7rgww aspect-square flex-none right-[43px] [overflow:visible] [z-index:8] [filter:blur(5px)] [opacity:1]" style={{ transform: "rotate(53deg)" }}>
               <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
-                <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" src={macroPolishedRiceGrain} alt="" />
+                <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" src={greenLeafTopLeft} alt="" />
               </div>
             </div>
             <div className="framer-8elmzo aspect-square bottom-[474px] flex-none right-[286px] [overflow:visible] [z-index:8] [opacity:1]" style={{ transform: "rotate(-32deg)" }}>
               <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
-                <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" src={macroPolishedRiceGrain} alt="" />
+                <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" src={greenLeafTopLeft} alt="" />
               </div>
             </div>
             <div className="framer-9djwlr aspect-square flex-none right-[235px] [overflow:visible] [z-index:8] [opacity:1]" style={{ transform: "rotate(145deg)" }}>
@@ -1369,12 +1371,12 @@ function ImportedSectionIntroduceSection() {
             </div>
             <div className="framer-1e2ze8m aspect-square flex-none [overflow:visible] [z-index:8] [opacity:1]" style={{ transform: "rotate(-120deg)" }}>
               <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
-                <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" src={macroPolishedRiceGrain} alt="" />
+                <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" src={goldenRicePanicleCutout} alt="" />
               </div>
             </div>
             <div className="framer-n1dhl aspect-square flex-none [overflow:visible] [z-index:8] [filter:blur(3px)] [opacity:1]" style={{ transform: "translateY(-50%) rotate(-40deg)" }}>
               <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
-                <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" src={macroPolishedRiceGrain} alt="" />
+                <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" src={goldenRicePanicleCutout} alt="" />
               </div>
             </div>
             <div className="framer-9o15fu aspect-square flex-none [overflow:visible] [z-index:0] [filter:blur(3px)] [opacity:1]" style={{ transform: "rotate(47deg)" }}>
@@ -1393,12 +1395,12 @@ function ImportedSectionIntroduceSection() {
             </div>
             <div className="framer-x7rgww aspect-square flex-none right-[43px] [overflow:visible] [z-index:8] [filter:blur(5px)] [opacity:1]" style={{ transform: "rotate(53deg)" }}>
               <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
-                <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" src={macroPolishedRiceGrain} alt="" />
+                <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" src={greenLeafTopLeft} alt="" />
               </div>
             </div>
             <div className="framer-8elmzo aspect-square bottom-[474px] flex-none right-[286px] [overflow:visible] [z-index:8] [opacity:1]" style={{ transform: "rotate(-32deg)" }}>
               <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
-                <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" src={macroPolishedRiceGrain} alt="" />
+                <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" src={greenLeafTopLeft} alt="" />
               </div>
             </div>
             <div className="framer-9djwlr aspect-square flex-none right-[235px] [overflow:visible] [z-index:8] [opacity:1]" style={{ transform: "rotate(145deg)" }}>
@@ -1408,12 +1410,12 @@ function ImportedSectionIntroduceSection() {
             </div>
             <div className="framer-1e2ze8m aspect-square flex-none [overflow:visible] [z-index:8] [opacity:1]" style={{ transform: "rotate(-120deg)" }}>
               <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
-                <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" src={macroPolishedRiceGrain} alt="" />
+                <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" src={goldenRicePanicleCutout} alt="" />
               </div>
             </div>
             <div className="framer-n1dhl aspect-square flex-none [overflow:visible] [z-index:8] [filter:blur(3px)] [opacity:1]" style={{ transform: "rotate(-40deg)" }}>
               <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
-                <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" src={macroPolishedRiceGrain} alt="" />
+                <img className="[corner-shape:inherit] [object-position:center_center] object-contain" style={{ display: "block", width: "100%", height: "100%", borderRadius: "0px" } as CSSProperties} decoding="auto" width="1254" height="1254" src={goldenRicePanicleCutout} alt="" />
               </div>
             </div>
             <div className="framer-9o15fu aspect-square flex-none [overflow:visible] [z-index:0] [filter:blur(3px)] [opacity:1]" style={{ transform: "rotate(47deg)" }}>
@@ -1590,7 +1592,7 @@ function ImportedSectionBuySection() {
                   </div>
                 </div>
                 <div className="framer-1qssmuj-container flex-none [opacity:1]">
-                  <a className="framer-6dH45 framer-FaBO9 framer-Jf64E framer-7z2klu framer-wcun84 [backdrop-filter:none] [opacity:1]" style={{ backgroundColor: "var(--token-a5917666-de48-475a-8244-858af9f157b1, rgb(0, 0, 0))", width: "100%", borderRadius: "99px" }} href="https://x.com/adheebhameed" rel="noopener">
+                  <a className="framer-6dH45 framer-FaBO9 framer-Jf64E framer-7z2klu framer-wcun84 [backdrop-filter:none] [opacity:1]" style={{ backgroundColor: "var(--token-a5917666-de48-475a-8244-858af9f157b1, rgb(0, 0, 0))", width: "100%", borderRadius: "99px" }} href="/#buy-product">
                     <div className="framer-x7c3yg [opacity:1]" style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--extracted-r6o4lv": "var(--token-4d91f15a-be6f-4c68-8d25-3bf02a07afb6, rgb(255, 255, 255))", transform: "none" } as CSSProperties} data-framer-component-type="RichTextContainer">
                       <p className="framer-text framer-styles-preset-sqgpjx" style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-4d91f15a-be6f-4c68-8d25-3bf02a07afb6, rgb(255, 255, 255)))" } as CSSProperties} dir="auto">{plan === "subscribe" ? "Subscribe & Save 20%" : "One-Time Purchase"}</p>
                     </div>
@@ -1652,7 +1654,7 @@ function ImportedSectionBuySection() {
                   </div>
                 </div>
                 <div className="framer-1qssmuj-container flex-none [opacity:1]">
-                  <a className="framer-6dH45 framer-FaBO9 framer-Jf64E framer-7z2klu framer-wcun84 [backdrop-filter:none] [opacity:1]" style={{ backgroundColor: "var(--token-a5917666-de48-475a-8244-858af9f157b1, rgb(0, 0, 0))", width: "100%", borderRadius: "99px" }} href="https://x.com/adheebhameed" rel="noopener">
+                  <a className="framer-6dH45 framer-FaBO9 framer-Jf64E framer-7z2klu framer-wcun84 [backdrop-filter:none] [opacity:1]" style={{ backgroundColor: "var(--token-a5917666-de48-475a-8244-858af9f157b1, rgb(0, 0, 0))", width: "100%", borderRadius: "99px" }} href="/#buy-product">
                     <div className="framer-x7c3yg [opacity:1]" style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--extracted-r6o4lv": "var(--token-4d91f15a-be6f-4c68-8d25-3bf02a07afb6, rgb(255, 255, 255))", transform: "none" } as CSSProperties} data-framer-component-type="RichTextContainer">
                       <p className="framer-text framer-styles-preset-sqgpjx" style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-4d91f15a-be6f-4c68-8d25-3bf02a07afb6, rgb(255, 255, 255)))" } as CSSProperties} dir="auto">{plan === "subscribe" ? "Subscribe & Save 20%" : "One-Time Purchase"}</p>
                     </div>
