@@ -4883,6 +4883,11 @@ html body { background: rgb(255, 255, 255); }
 .oi-v2-farmer-card { position: absolute; z-index: 3; left: max(24px, calc((100vw - 1200px) / 2)); bottom: 26px; width: 188px; padding: 8px; border: 1px solid #d9e4d1; border-radius: 100px 100px 18px 18px; background: rgba(255,255,255,.94); box-shadow: 0 18px 42px rgba(35,72,44,.16); transform: rotate(-3deg); }
 .oi-v2-farmer-card img { display: block; width: 100%; aspect-ratio: .84; border-radius: 92px 92px 12px 12px; object-fit: cover; }
 .oi-v2-farmer-card span { display: block; padding: 10px 6px 8px; color: #315a3a; text-align: center; font: 600 12px/1.25 Switzer, "Switzer Placeholder", sans-serif; }
+@media (max-width: 767px) {
+  [data-site-import-mobile-header] > .framer-1kzqzec,
+  [data-site-import-mobile-header] .oi-header-track,
+  [data-site-import-mobile-header] .framer-ujfetw-container { display: none !important; }
+}
 @media (max-width: 679.98px) {
   .oi-version-two .framer-CWw9Z .framer-1nmhst2 { background: linear-gradient(180deg, #edf3e6 0%, #fff 70%, #e9f0e2 100%); }
   .oi-v2-farmer-card { left: 14px; bottom: 14px; width: 104px; padding: 4px; border-radius: 54px 54px 12px 12px; }
@@ -4890,3 +4895,8 @@ html body { background: rgb(255, 255, 255); }
   .oi-v2-farmer-card span { padding: 6px 2px; font-size: 9px; }
 }
 @media (prefers-reduced-motion: reduce) { .oi-v2-farmer-card { transform: none; } }
+
+/* Version 1 desktop hero height follows its content, not the viewport. */
+@media (min-width: 1200px) {
+  #main:not(.oi-version-two) .framer-CWw9Z .framer-1nmhst2 { min-height: unset; }
+}
