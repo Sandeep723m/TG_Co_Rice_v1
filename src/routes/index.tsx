@@ -18,7 +18,8 @@ import premiumSonaMasooriRice from "../assets/Premium Sona Masoori Rice Bag.png"
 import ponniRiceBag from "../assets/Ponni Rice Bag with Floating Grains.png";
 import premiumIdliRice from "../assets/Premium Blue Idli Rice Packaging.png";
 import unzippingIdliRiceBag from "../assets/Unzipping a Blue Idli Rice Bag.png";
-import ctaMainImage from "../assets/Joyful Woman Savouring Steaming Curry Rice.png";
+import ctaMainImage from "../assets/CTA Main.png";
+import ctaVersionTwoImage from "../assets/Joyful Woman Savouring Steaming Curry Rice.png";
 import joyfulRiceFamilyMeal from "../assets/Joyful South Asian Family Meal.png";
 import warmRiceFeast from "../assets/Warm Restaurant Table with Rice Feast.png";
 import joyfulRiceCooking from "../assets/Joyful Rice Cooking in a Sunlit Kitchen.png";
@@ -53,8 +54,12 @@ export const Route = createFileRoute("/")({
     ],
   }),
   staticData: { importedDocument: { html: { "dir": "ltr", "lang": "en" }, body: { "data-site-import-responsive-incomplete": "class-range-budget" } } },
-  component: Index,
+  component: VersionOne,
 });
+
+function VersionOne() {
+  return <Index version={1} />;
+}
 
 export function Index({ version = 1 }: { version?: 1 | 2 }) {
   useImportedLayout();
@@ -95,7 +100,7 @@ export function Index({ version = 1 }: { version?: 1 | 2 }) {
           <div id="overlay" />
           <div className="framer-1qo258n grow" />
           <div className="ssr-variant">
-            <ImportedDivCTASection />
+            <ImportedDivCTASection version={version} />
           </div>
           <ImportedFooterFooterSection />
         </div>
@@ -1941,11 +1946,11 @@ function ImportedSectionFAQSection() {
   );
 }
 
-function ImportedDivCTASection() {
+function ImportedDivCTASection({ version }: { version: 1 | 2 }) {
   return (
     <div className="framer-vwvzt items-center place-content-center [order:1002] [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-filter-override,filter)]">
       <div className="[border-radius:inherit] [corner-shape:inherit] [inset:0px]" style={{ position: "absolute" }}>
-        <img className="[border-radius:inherit] [corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%" }} decoding="auto" src={ctaMainImage} alt="TG.CO Finest Rice call to action" />
+        <img className="[border-radius:inherit] [corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%" }} decoding="auto" src={version === 2 ? ctaVersionTwoImage : ctaMainImage} alt={version === 2 ? "Woman enjoying rice with curry" : "TG.CO Finest Rice call to action"} />
       </div>
       <div className="framer-5k7g2i flex-none [inset:0px] [overflow:var(--overflow-clip-fallback,clip)] [z-index:1]" />
       <div className="framer-jdbpv2 items-start max-w-[1200px] content-start justify-center [overflow:var(--overflow-clip-fallback,clip)]">
