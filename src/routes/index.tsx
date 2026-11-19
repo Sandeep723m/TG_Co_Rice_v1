@@ -29,7 +29,7 @@ import benefitVersatilityImage from "../assets/4009737d229eac956e611b9a995e5d1d.
 import benefitOriginImage from "../assets/5a5d386228af8c8e5dad117736a5018b.jpg";
 import type { CSSProperties, KeyboardEvent } from "react";
 import { useEffect, useState } from "react";
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import capturedCSS from "../styles/pages/index.css?raw";
 import { animateLayoutHeight, fxInitialCss, useFramerEffects } from "../lib/framer-effects";
 import { HOME_FX } from "../lib/onething-motion";
@@ -55,7 +55,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-function Index() {
+export function Index({ version = 1 }: { version?: 1 | 2 }) {
   useImportedLayout();
   useFramerEffects(HOME_FX);
   return (
@@ -64,8 +64,8 @@ function Index() {
       <style>{HOME_FX_CSS}</style>
       <div id="main">
         <div className="framer-DrtIB framer-71N50 framer-2BTrO framer-Jf64E framer-a8wg0 framer-9H6qh framer-unEwr framer-1n95zts items-center flex-col flex-nowrap content-center justify-start [overflow:var(--overflow-clip-fallback,clip)] [min-height:100vh]" style={{ width: "auto" }} data-layout-template="true">
-          <ImportedDivOfferNav />
-          <ImportedDivOfferNav2 />
+          <ImportedDivOfferNav version={version} />
+          <ImportedDivOfferNav2 version={version} />
           <div className="framer-CWw9Z framer-RzgxU framer-4SWp1 framer-oziYd framer-Jf64E framer-T8kHB framer-qhMV1 framer-FaBO9 framer-XAi7s framer-71N50 framer-2BTrO framer-a8wg0 framer-6aPAA framer-72rtr7 items-center flex-col flex-nowrap content-center justify-start [overflow:var(--overflow-clip-fallback,clip)] [min-height:100vh]" style={{ width: "auto", display: "contents" }}>
             <main className="framer-1nmhst2 items-center flex-none flex-col flex-nowrap content-center justify-start [overflow:var(--overflow-clip-fallback,clip)]">
               <ImportedDivContentStack />
@@ -83,7 +83,7 @@ function Index() {
             <ImportedSectionBenefitsSection />
             <ProductShelf />
             <ImportedSectionTimelineSection />
-            <ImportedSectionFeaturedSection />
+            {version === 2 ? <RiceDifferenceSection /> : <ImportedSectionFeaturedSection />}
             <ImportedSectionAllInOneSection />
             <ImportedSectionFeaturesSection />
             <ImportedSectionIntroduceSection />
@@ -104,7 +104,7 @@ function Index() {
   );
 }
 
-function ImportedDivOfferNav() {
+function ImportedDivOfferNav({ version }: { version: 1 | 2 }) {
   return (
     <div className="framer-frk7oi items-center flex-none flex-col flex-nowrap place-content-center [left:0px] [order:-1000] [overflow:visible] [right:0px] [top:0px] [z-index:10] [opacity:1]" style={{ transform: "none", willChange: "transform" }} data-site-import-desktop-header="">
       <div className="framer-1kzqzec items-center place-content-center [overflow:var(--overflow-clip-fallback,clip)]">
@@ -281,6 +281,7 @@ function ImportedDivOfferNav() {
                   </div>
                 </div>
               </div>
+              <Link className="oi-version-switch" to={version === 1 ? "/version-2" : "/"}>Version {version === 1 ? "2" : "1"}</Link>
               <a className="oi-header-track" href="/track-order">Track Order</a>
               <div className="framer-ujfetw-container" style={{ opacity: "1" }}>
                 <a className="framer-6dH45 framer-FaBO9 framer-Jf64E framer-7z2klu framer-v-1a2u647 framer-wcun84" style={{ backdropFilter: "none", backgroundColor: "var(--token-a5917666-de48-475a-8244-858af9f157b1, rgb(0, 0, 0))", borderRadius: "99px", opacity: "1" } as CSSProperties} data-framer-page-link-current="true" href="/">
@@ -297,7 +298,7 @@ function ImportedDivOfferNav() {
   );
 }
 
-function ImportedDivOfferNav2() {
+function ImportedDivOfferNav2({ version }: { version: 1 | 2 }) {
   return (
     <div className="framer-frk7oi items-center flex-none flex-col flex-nowrap place-content-center [left:0px] [order:-1000] [overflow:visible] [right:0px] [top:0px] [z-index:10] [opacity:1]" style={{ transform: "none", willChange: "transform", "--site-import-header-display": "flex" } as CSSProperties} data-site-import-mobile-header="">
       <div className="framer-1kzqzec items-center place-content-center [overflow:var(--overflow-clip-fallback,clip)]">
@@ -407,6 +408,7 @@ function ImportedDivOfferNav2() {
                   </div>
                 </div>
               </div>
+              <Link className="oi-version-switch" to={version === 1 ? "/version-2" : "/"}>Version {version === 1 ? "2" : "1"}</Link>
               <a className="oi-header-track" href="/track-order">Track Order</a>
               <div className="framer-ujfetw-container" style={{ opacity: "1" }}>
                 <a className="framer-6dH45 framer-FaBO9 framer-Jf64E framer-7z2klu framer-v-1a2u647 framer-wcun84" style={{ backdropFilter: "none", backgroundColor: "var(--token-a5917666-de48-475a-8244-858af9f157b1, rgb(0, 0, 0))", borderRadius: "99px", opacity: "1" } as CSSProperties} data-framer-page-link-current="true" href="/">
@@ -843,6 +845,41 @@ function ImportedSectionFeaturedSection() {
             <p className="framer-text framer-styles-preset-1gnmur6" style={{ "--framer-text-alignment": "center", "--framer-text-color": "var(--token-52e79835-e8e9-4a84-ae4b-bf400f45d0cf, rgba(0, 0, 0, 0.7))" } as CSSProperties} dir="auto">Rooted in Telangana’s agricultural heritage, our rice is carefully selected for authentic taste and wholesome everyday cooking.</p>
           </div>
         </div>
+      </div>
+    </section>
+  );
+}
+
+function RiceDifferenceSection() {
+  const rows = [
+    { feature: "Origin", ours: "Grown in Telangana", check: "Look for a named growing region and source." },
+    { feature: "Variety", ours: "Sona Masoori, Basmati, Idli Rice and more", check: "Check the exact variety and how it cooks." },
+    { feature: "Processing", ours: "Ask us for variety-specific milling details.", check: "Look for milling and polishing information." },
+    { feature: "Quality", ours: "Contact us for available quality-check information.", check: "Look for current test records or certification details." },
+    { feature: "Pack & price", ours: "5 kg bags with a listed price per bag.", check: "Compare net weight, batch details and price per kg." },
+  ];
+
+  return (
+    <section className="oi-rice-difference" aria-labelledby="oi-rice-difference-title">
+      <div className="oi-rice-difference-inner">
+        <header className="oi-rice-difference-heading">
+          <h2 className="framer-oi-rice-difference-title" id="oi-rice-difference-title">Know your rice. Choose with confidence.</h2>
+          <p>Compare the details that matter, from where your rice is grown to how it reaches your kitchen.</p>
+        </header>
+        <div className="oi-rice-guide-grid framer-oi-rice-difference-table" aria-label="TG.CO rice details and what to check when buying rice">
+          <div className="oi-rice-guide-column-heading oi-rice-guide-brand">TG.CO Finest Rice</div>
+          <div className="oi-rice-guide-column-heading">What to check</div>
+          {rows.map((row) => (
+            <div className="oi-rice-guide-pair" key={row.feature}>
+              <div className="oi-rice-guide-cell oi-rice-guide-brand">
+                <h3>{row.feature}</h3>
+                <p>{row.feature === "Processing" ? <>Ask us for <a href="mailto:hello@tgcofinest.com">variety-specific milling details</a>.</> : row.feature === "Quality" ? <><a href="mailto:hello@tgcofinest.com">Contact us</a> for available quality-check information.</> : row.ours}</p>
+              </div>
+              <div className="oi-rice-guide-cell"><h3>{row.feature}</h3><p>{row.check}</p></div>
+            </div>
+          ))}
+        </div>
+        <Link className="oi-rice-guide-cta" to="/" hash="products">Explore rice varieties</Link>
       </div>
     </section>
   );

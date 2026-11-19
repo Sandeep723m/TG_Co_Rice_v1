@@ -16,6 +16,7 @@ import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as RefundPolicyRouteImport } from './routes/refund-policy'
 import { Route as TermsConditionsRouteImport } from './routes/terms-conditions'
 import { Route as TrackOrderRouteImport } from './routes/track-order'
+import { Route as Version2RouteImport } from './routes/version-2'
 import { Route as ProductsSlugRouteImport } from './routes/products.$slug'
 
 const IndexRoute = IndexRouteImport.update({
@@ -53,6 +54,11 @@ const TrackOrderRoute = TrackOrderRouteImport.update({
   path: '/track-order',
   getParentRoute: () => rootRouteImport,
 } as any)
+const Version2Route = Version2RouteImport.update({
+  id: '/version-2',
+  path: '/version-2',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProductsSlugRoute = ProductsSlugRouteImport.update({
   id: '/products/$slug',
   path: '/products/$slug',
@@ -67,6 +73,7 @@ export interface FileRoutesByFullPath {
   '/refund-policy': typeof RefundPolicyRoute
   '/terms-conditions': typeof TermsConditionsRoute
   '/track-order': typeof TrackOrderRoute
+  '/version-2': typeof Version2Route
   '/products/$slug': typeof ProductsSlugRoute
 }
 export interface FileRoutesByTo {
@@ -77,6 +84,7 @@ export interface FileRoutesByTo {
   '/refund-policy': typeof RefundPolicyRoute
   '/terms-conditions': typeof TermsConditionsRoute
   '/track-order': typeof TrackOrderRoute
+  '/version-2': typeof Version2Route
   '/products/$slug': typeof ProductsSlugRoute
 }
 export interface FileRoutesById {
@@ -88,6 +96,7 @@ export interface FileRoutesById {
   '/refund-policy': typeof RefundPolicyRoute
   '/terms-conditions': typeof TermsConditionsRoute
   '/track-order': typeof TrackOrderRoute
+  '/version-2': typeof Version2Route
   '/products/$slug': typeof ProductsSlugRoute
 }
 export interface FileRouteTypes {
@@ -100,6 +109,7 @@ export interface FileRouteTypes {
     | '/refund-policy'
     | '/terms-conditions'
     | '/track-order'
+    | '/version-2'
     | '/products/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -110,6 +120,7 @@ export interface FileRouteTypes {
     | '/refund-policy'
     | '/terms-conditions'
     | '/track-order'
+    | '/version-2'
     | '/products/$slug'
   id:
     | '__root__'
@@ -120,6 +131,7 @@ export interface FileRouteTypes {
     | '/refund-policy'
     | '/terms-conditions'
     | '/track-order'
+    | '/version-2'
     | '/products/$slug'
   fileRoutesById: FileRoutesById
 }
@@ -131,6 +143,7 @@ export interface RootRouteChildren {
   RefundPolicyRoute: typeof RefundPolicyRoute
   TermsConditionsRoute: typeof TermsConditionsRoute
   TrackOrderRoute: typeof TrackOrderRoute
+  Version2Route: typeof Version2Route
   ProductsSlugRoute: typeof ProductsSlugRoute
 }
 
@@ -185,6 +198,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TrackOrderRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/version-2': {
+      id: '/version-2'
+      path: '/version-2'
+      fullPath: '/version-2'
+      preLoaderRoute: typeof Version2RouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/products/$slug': {
       id: '/products/$slug'
       path: '/products/$slug'
@@ -203,6 +223,7 @@ const rootRouteChildren: RootRouteChildren = {
   RefundPolicyRoute: RefundPolicyRoute,
   TermsConditionsRoute: TermsConditionsRoute,
   TrackOrderRoute: TrackOrderRoute,
+  Version2Route: Version2Route,
   ProductsSlugRoute: ProductsSlugRoute,
 }
 export const routeTree = rootRouteImport

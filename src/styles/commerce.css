@@ -134,6 +134,10 @@
 .oi-products-heading h2{font-family:Manrope,"Manrope Placeholder",sans-serif;font-size:40px;font-weight:600;letter-spacing:-.02em;line-height:1.2;margin:12px 0}
 @media(max-width:1199px){.oi-products-heading h2{font-size:36px}}
 @media(max-width:679px){.oi-products-heading h2{font-size:28px}}
+/* Reciprocal navigation between the two homepage versions. */
+.oi-version-switch{display:inline-flex;align-items:center;justify-content:center;margin-left:10px;padding:9px 12px;border:1px solid #cfe6f3;border-radius:999px;background:rgba(255,255,255,.9);color:#015afd!important;text-decoration:none;font-family:Switzer,"Switzer Placeholder",sans-serif;font-size:12px;font-weight:600;line-height:1.2;white-space:nowrap}
+.oi-version-switch:hover{background:#def6ff}
+@media(max-width:767px){.oi-version-switch{margin-left:6px;padding:8px 9px;font-size:10px}}
 /* Match the imported Get Rice button's typography and proportions. */
 .oi-products-heading .store-view-bag{min-width:150px;padding:16px 25px;gap:10px;font-family:Switzer,"Switzer Placeholder",sans-serif;font-size:16px;font-weight:500;line-height:1.2;letter-spacing:0}
 /* Product cards use the same compact heading/body/caption scale as the rest of the page. */

@@ -109,6 +109,8 @@ export const HOME_FX: FxConfig = {
     inView("2ceimn", RS, AS),
     inView("9x75jg", RS, AS),
     inView("jfluk4", SS, AS),
+    inView("oi-rice-difference-title", RS, AS),
+    inView("oi-rice-difference-table", SS, AS),
     inView("hs2c7x", SS, X),
     inView("lzivtl-container", Z, X),
     inView("b6y478", Z, X),
