@@ -4816,16 +4816,15 @@ html body { background: rgb(255, 255, 255); }
 .oi-rice-difference-heading p { margin: 14px 0 0; color: #58636e; font: 400 18px/1.5 Switzer, "Switzer Placeholder", sans-serif; }
 .oi-rice-guide-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); overflow: hidden; border: 1px solid #e6edf2; border-radius: 18px; background: #fff; box-shadow: 0 14px 38px rgba(17, 42, 56, .05); }
 .oi-rice-guide-column-heading { display: flex; align-items: center; min-height: 64px; padding: 18px 24px; color: #101820; background: #f7f7f7; font: 600 20px/1.25 Manrope, "Manrope Placeholder", sans-serif; }
-.oi-rice-guide-column-heading + .oi-rice-guide-column-heading { border-left: 1px solid #e6edf2; background: #f3f9fc; }
-.oi-rice-guide-brand { background: #f3f9fc; }
+.oi-rice-guide-column-heading + .oi-rice-guide-column-heading { border-left: 1px solid #e6edf2; background: #f7f7f7; }
+.oi-rice-guide-column-heading.oi-rice-guide-brand { background: #f7f7f7; }
 .oi-rice-guide-pair { display: grid; grid-column: 1 / -1; grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .oi-rice-guide-pair + .oi-rice-guide-pair { border-top: 1px solid #e6edf2; }
 .oi-rice-guide-cell { min-height: 88px; padding: 18px 24px; background: #fff; }
 .oi-rice-guide-cell + .oi-rice-guide-cell { border-left: 1px solid #e6edf2; }
-.oi-rice-guide-pair:nth-of-type(odd) .oi-rice-guide-cell:not(.oi-rice-guide-brand) { background: #fff; }
-.oi-rice-guide-pair:nth-of-type(even) .oi-rice-guide-cell:not(.oi-rice-guide-brand) { background: #f7f7f7; }
-.oi-rice-guide-pair:nth-of-type(odd) .oi-rice-guide-brand { background: #f0f7fa; }
-.oi-rice-guide-pair:nth-of-type(even) .oi-rice-guide-brand { background: #eaf3f7; }
+.oi-rice-guide-pair:nth-of-type(odd) { --oi-guide-row-background: #fff; }
+.oi-rice-guide-pair:nth-of-type(even) { --oi-guide-row-background: #f7f7f7; }
+.oi-rice-guide-pair .oi-rice-guide-cell { background: var(--oi-guide-row-background); }
 .oi-rice-guide-cell h3 { margin: 0 0 6px; color: #101820; font: 600 15px/1.35 Switzer, "Switzer Placeholder", sans-serif; }
 .oi-rice-guide-cell p { margin: 0; color: #202830; font: 400 16px/1.5 Switzer, "Switzer Placeholder", sans-serif; }
 .oi-rice-guide-cell p a { color: #101820; text-decoration: underline; text-underline-offset: 3px; }
@@ -4845,3 +4844,49 @@ html body { background: rgb(255, 255, 255); }
   .oi-rice-guide-cell p { font-size: 16px; }
   .oi-rice-guide-cta { width: 100%; }
 }
+
+/* Version 2: farm-forward palette and farmer imagery. */
+.oi-version-two #features { display: none; }
+.oi-version-two {
+  --token-7dec4550-2ba6-4025-bfd1-f0cbf4c0a7c9: #f4f6ef;
+  --token-e46bed0c-483b-4e60-ad0a-7b7b62606c6e: #315a3a;
+  --token-a4a59c3d-74c9-4b4f-8436-40db24906b27: #55754b;
+  --token-386be558-6ca4-4ca8-a951-5ab182c823ab: #315a3a1a;
+  --token-6f627e21-b0e4-487c-9d71-2d6da8b639ea: #edf3e8;
+  --token-5417a7f0-c127-4b51-90bb-f563c7acffe5: #e8efdf;
+}
+.oi-version-two .framer-DrtIB .framer-1kzqzec { background-color: #315a3a; }
+.oi-version-two .framer-CWw9Z .framer-1nmhst2 { background: linear-gradient(180deg, #edf3e6 0%, #fbfcf8 64%, #e9f0e2 100%); }
+.oi-version-two .framer-6dH45 { background-color: #315a3a !important; }
+.oi-version-two .framer-6dH45:hover { background-color: #23482c !important; }
+.oi-version-two .oi-header-track, .oi-version-two .oi-version-switch { color: #315a3a !important; border-color: #bfd0b8; }
+.oi-version-two .oi-products { background: #edf3e8; }
+.oi-version-two .product-card { border-color: #d7e2d0; }
+.oi-version-two .framer-11iqdm2,
+.oi-version-two .framer-vc60rx { background: #f1f5eb; }
+.oi-version-two .framer-1n4qav4 { background: linear-gradient(180deg, #315a3a 0%, #315a3a 52%, #f1f5eb 90%, #f1f5eb 100%); }
+.oi-version-two .framer-hs2c7x { background-color: #315a3a !important; }
+.oi-version-two .oi-rice-seal circle { fill: #315a3a; }
+.oi-version-two .framer-ontxra, .oi-version-two .framer-1tksyyx { border: 6px solid #e2ead8; border-radius: 24px; }
+.oi-version-two .framer-ontxra { overflow: visible; }
+.oi-version-two .framer-vc60rx h2, .oi-version-two .framer-11iqdm2 h2 { color: #203b29; }
+.oi-version-two .framer-vwvzt .framer-mdv6xc-container .framer-6dH45 { background: #dceccf !important; border: 1px solid #dceccf; }
+.oi-version-two .framer-vwvzt .framer-mdv6xc-container .framer-6dH45 p { color: #23482c !important; }
+.oi-version-two .framer-vwvzt .framer-1acd4v7-container .framer-6dH45 { background: rgba(255, 255, 255, .12) !important; border: 1px solid rgba(255, 255, 255, .8); }
+.oi-version-two .framer-vwvzt .framer-1acd4v7-container .framer-6dH45 p { color: #fff !important; }
+.oi-version-two .oi-rice-guide-column-heading, .oi-version-two .oi-rice-guide-column-heading + .oi-rice-guide-column-heading { background: #e9f0e3; }
+.oi-version-two .oi-rice-guide-column-heading.oi-rice-guide-brand { background: #e9f0e3; }
+.oi-version-two .oi-rice-guide-pair:nth-of-type(odd) { --oi-guide-row-background: #fff; }
+.oi-version-two .oi-rice-guide-pair:nth-of-type(even) { --oi-guide-row-background: #f3f6ef; }
+.oi-version-two .oi-rice-guide-cta { background: #315a3a; border-color: #315a3a; }
+.oi-version-two .oi-rice-guide-cta:hover { background: #23482c; border-color: #23482c; }
+.oi-v2-farmer-card { position: absolute; z-index: 3; left: max(24px, calc((100vw - 1200px) / 2)); bottom: 26px; width: 188px; padding: 8px; border: 1px solid #d9e4d1; border-radius: 100px 100px 18px 18px; background: rgba(255,255,255,.94); box-shadow: 0 18px 42px rgba(35,72,44,.16); transform: rotate(-3deg); }
+.oi-v2-farmer-card img { display: block; width: 100%; aspect-ratio: .84; border-radius: 92px 92px 12px 12px; object-fit: cover; }
+.oi-v2-farmer-card span { display: block; padding: 10px 6px 8px; color: #315a3a; text-align: center; font: 600 12px/1.25 Switzer, "Switzer Placeholder", sans-serif; }
+@media (max-width: 679.98px) {
+  .oi-version-two .framer-CWw9Z .framer-1nmhst2 { background: linear-gradient(180deg, #edf3e6 0%, #fff 70%, #e9f0e2 100%); }
+  .oi-v2-farmer-card { left: 14px; bottom: 14px; width: 104px; padding: 4px; border-radius: 54px 54px 12px 12px; }
+  .oi-v2-farmer-card img { border-radius: 48px 48px 8px 8px; }
+  .oi-v2-farmer-card span { padding: 6px 2px; font-size: 9px; }
+}
+@media (prefers-reduced-motion: reduce) { .oi-v2-farmer-card { transform: none; } }

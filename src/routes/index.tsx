@@ -2,6 +2,7 @@ import riceFarmerLogo from "../assets/Finest Rice Farmer Logo.png";
 import riceFarmerStencil from "../assets/Monochrome Rice Paddy Farmer Stencil.png";
 import basmatiRiceBag from "../assets/Forest Green Basmati Rice Packaging.png";
 import riceGrainAgainstBlueSky from "../assets/Rice Grain Against Blue Sky.png";
+import premiumRiceGreenBackground from "../assets/Premium Rice Green Field Background.png";
 import macroPolishedRiceGrain from "../assets/Macro Polished Rice Grain.png";
 import goldenRicePanicleCutout from "../assets/Golden Rice Panicle 1 Cutout.png";
 import greenLeafTopLeft from "../assets/green_leaf_top_left.png";
@@ -17,7 +18,7 @@ import premiumSonaMasooriRice from "../assets/Premium Sona Masoori Rice Bag.png"
 import ponniRiceBag from "../assets/Ponni Rice Bag with Floating Grains.png";
 import premiumIdliRice from "../assets/Premium Blue Idli Rice Packaging.png";
 import unzippingIdliRiceBag from "../assets/Unzipping a Blue Idli Rice Bag.png";
-import ctaMainImage from "../assets/CTA Main.png";
+import ctaMainImage from "../assets/Joyful Woman Savouring Steaming Curry Rice.png";
 import joyfulRiceFamilyMeal from "../assets/Joyful South Asian Family Meal.png";
 import warmRiceFeast from "../assets/Warm Restaurant Table with Rice Feast.png";
 import joyfulRiceCooking from "../assets/Joyful Rice Cooking in a Sunlit Kitchen.png";
@@ -62,13 +63,14 @@ export function Index({ version = 1 }: { version?: 1 | 2 }) {
     <>
       <style>{capturedCSS}</style>
       <style>{HOME_FX_CSS}</style>
-      <div id="main">
+      <div id="main" className={version === 2 ? "oi-version-two" : undefined}>
         <div className="framer-DrtIB framer-71N50 framer-2BTrO framer-Jf64E framer-a8wg0 framer-9H6qh framer-unEwr framer-1n95zts items-center flex-col flex-nowrap content-center justify-start [overflow:var(--overflow-clip-fallback,clip)] [min-height:100vh]" style={{ width: "auto" }} data-layout-template="true">
           <ImportedDivOfferNav version={version} />
           <ImportedDivOfferNav2 version={version} />
           <div className="framer-CWw9Z framer-RzgxU framer-4SWp1 framer-oziYd framer-Jf64E framer-T8kHB framer-qhMV1 framer-FaBO9 framer-XAi7s framer-71N50 framer-2BTrO framer-a8wg0 framer-6aPAA framer-72rtr7 items-center flex-col flex-nowrap content-center justify-start [overflow:var(--overflow-clip-fallback,clip)] [min-height:100vh]" style={{ width: "auto", display: "contents" }}>
             <main className="framer-1nmhst2 items-center flex-none flex-col flex-nowrap content-center justify-start [overflow:var(--overflow-clip-fallback,clip)]">
               <ImportedDivContentStack />
+              {version === 2 && <div className="oi-v2-farmer-card"><img src={riceFieldFarmers} alt="Rice farmers tending a Telangana paddy field" /><span>Rooted in Telangana farming</span></div>}
               <div className="ssr-variant" data-site-import-desktop-variant="">
                 <div className="framer-w7ue3b-container aspect-square flex-none [z-index:1] [opacity:1]" style={{ willChange: "transform" }}>
                   <ImportedDivDesktop />
@@ -84,7 +86,7 @@ export function Index({ version = 1 }: { version?: 1 | 2 }) {
             <ProductShelf />
             <ImportedSectionTimelineSection />
             {version === 2 ? <RiceDifferenceSection /> : <ImportedSectionFeaturedSection />}
-            <ImportedSectionAllInOneSection />
+            <ImportedSectionAllInOneSection version={version} />
             <ImportedSectionFeaturesSection />
             <ImportedSectionIntroduceSection />
             <ImportedSectionBuySection />
@@ -852,23 +854,22 @@ function ImportedSectionFeaturedSection() {
 
 function RiceDifferenceSection() {
   const rows = [
-    { feature: "Origin", ours: "Grown in Telangana", check: "Look for a named growing region and source." },
-    { feature: "Variety", ours: "Sona Masoori, Basmati, Idli Rice and more", check: "Check the exact variety and how it cooks." },
-    { feature: "Processing", ours: "Ask us for variety-specific milling details.", check: "Look for milling and polishing information." },
-    { feature: "Quality", ours: "Contact us for available quality-check information.", check: "Look for current test records or certification details." },
-    { feature: "Pack & price", ours: "5 kg bags with a listed price per bag.", check: "Compare net weight, batch details and price per kg." },
+    { feature: "Origin", ours: "Sourced from Telangana farmers.", check: "Growing regions vary by brand. Check the pack for origin." },
+    { feature: "Variety", ours: "Named varieties, including Ponni, Sona Masoori and Basmati.", check: "Varieties and cooking qualities differ by product. Check the label." },
+    { feature: "Processing", ours: "Ask TG.CO for variety-specific milling details.", check: "Milling and polishing practices can vary by brand." },
+    { feature: "Quality", ours: "Ask TG.CO for available quality-check information.", check: "Check for current test records or certification details." },
+    { feature: "Pack & price", ours: "5 kg bags with the price shown per bag.", check: "Pack sizes and prices vary. Compare net weight and price per kg." },
   ];
 
   return (
     <section className="oi-rice-difference" aria-labelledby="oi-rice-difference-title">
       <div className="oi-rice-difference-inner">
         <header className="oi-rice-difference-heading">
-          <h2 className="framer-oi-rice-difference-title" id="oi-rice-difference-title">Know your rice. Choose with confidence.</h2>
-          <p>Compare the details that matter, from where your rice is grown to how it reaches your kitchen.</p>
+          <h2 className="framer-oi-rice-difference-title" id="oi-rice-difference-title">TG.CO Finest Rice vs. Other Rice Brands</h2>
         </header>
-        <div className="oi-rice-guide-grid framer-oi-rice-difference-table" aria-label="TG.CO rice details and what to check when buying rice">
+        <div className="oi-rice-guide-grid framer-oi-rice-difference-table" aria-label="A comparison of TG.CO Finest Rice and other rice brands">
           <div className="oi-rice-guide-column-heading oi-rice-guide-brand">TG.CO Finest Rice</div>
-          <div className="oi-rice-guide-column-heading">What to check</div>
+          <div className="oi-rice-guide-column-heading">Other rice brands</div>
           {rows.map((row) => (
             <div className="oi-rice-guide-pair" key={row.feature}>
               <div className="oi-rice-guide-cell oi-rice-guide-brand">
@@ -885,7 +886,7 @@ function RiceDifferenceSection() {
   );
 }
 
-function ImportedSectionAllInOneSection() {
+function ImportedSectionAllInOneSection({ version }: { version: 1 | 2 }) {
   return (
     <section className="framer-m7hdsg items-center flex-none flex-col flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [padding:0px]">
       <div className="framer-1n4qav4 items-center flex-none flex-col flex-nowrap min-h-[815px] content-center justify-start [overflow:var(--overflow-clip-fallback,clip)]">
@@ -914,17 +915,17 @@ function ImportedSectionAllInOneSection() {
                   <div className="framer-12ym6a6 items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: "var(--token-136beebb-89fe-4d20-a894-e7f11788a217, rgb(255, 255, 255))", borderRadius: "15px" }}>
                     <div className="framer-k82luq aspect-square flex-none [overflow:visible] [filter:drop-shadow(rgba(0,_0,_0,_0.15)_0px_5px_3px)] [opacity:1]">
                       <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
-                        <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="8000" height="8000" sizes="(min-width: 1200px) max(50px, calc(max((min(100vw - 120px, 1200px) - 60px) / 2, 1px) - 100px)), (min-width: 680px) and (max-width: 1199.98px) max(50px, calc(min(100vw - 80px, 1200px) - 100px)), (max-width: 679.98px) max(50px, calc(min(100vw - 50px, 1200px) - 100px))" src={sonaMasooriRiceBag} alt="Telangana Sona Masoori Rice Bag" />
+                        <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="8000" height="8000" sizes="(min-width: 1200px) max(50px, calc(max((min(100vw - 120px, 1200px) - 60px) / 2, 1px) - 100px)), (min-width: 680px) and (max-width: 1199.98px) max(50px, calc(min(100vw - 80px, 1200px) - 100px)), (max-width: 679.98px) max(50px, calc(min(100vw - 50px, 1200px) - 100px))" src={ponniRiceBag} alt="TG.CO Finest Ponni Rice 5 kg bag" />
                       </div>
                     </div>
                   </div>
                   <div className="framer-o187ju content-center! items-center flex-[1_0_0px] flex-row flex-nowrap content-end justify-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]">
                     <div className="framer-1ef9szw items-start flex-[1_0_0px] flex-col flex-nowrap content-start justify-center [overflow:var(--overflow-clip-fallback,clip)] [opacity:1]">
                       <div className="framer-iv1a0p [z-index:2] [opacity:1]" style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" } as CSSProperties} data-framer-component-type="RichTextContainer">
-                        <p className="framer-text framer-styles-preset-sqgpjx" dir="auto">OneThing Rice</p>
+                        <p className="framer-text framer-styles-preset-sqgpjx" dir="auto">Ponni Rice</p>
                       </div>
                       <div className="framer-16l5uku [z-index:2] [opacity:1]" style={{ "--extracted-r6o4lv": "var(--token-52e79835-e8e9-4a84-ae4b-bf400f45d0cf, rgba(0, 0, 0, 0.7))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" } as CSSProperties} data-framer-component-type="RichTextContainer">
-                        <p className="framer-text framer-styles-preset-1gnmur6" style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-52e79835-e8e9-4a84-ae4b-bf400f45d0cf, rgba(0, 0, 0, 0.7)))" } as CSSProperties} dir="auto">₹24.00</p>
+                        <p className="framer-text framer-styles-preset-1gnmur6" style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-52e79835-e8e9-4a84-ae4b-bf400f45d0cf, rgba(0, 0, 0, 0.7)))" } as CSSProperties} dir="auto">₹1,800</p>
                       </div>
                     </div>
                     <div className="framer-qqrxa4 items-center flex-none flex-row flex-nowrap place-content-center [overflow:var(--overflow-clip-fallback,clip)] [will-change:var(--framer-will-change-override,transform)] [opacity:1]" style={{ backgroundColor: "var(--token-a5917666-de48-475a-8244-858af9f157b1, rgb(0, 0, 0))", borderRadius: "99px" }}>
@@ -939,7 +940,7 @@ function ImportedSectionAllInOneSection() {
         <div className="ssr-variant">
           <div className="framer-1k1cdsc flex-none [mask:linear-gradient(rgb(0,0,0)_61.5797%,rgba(0,0,0,0.4)_77%,rgba(0,0,0,0)_98%)] [overflow:visible] [z-index:1] [opacity:1]" style={{ transform: "none", willChange: "transform" }}>
             <div className="[corner-shape:inherit]" style={{ position: "absolute", borderRadius: "inherit", inset: "0px" } as CSSProperties}>
-              <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="1532" height="1027" sizes="(min-width: 1200px) 100vw, (min-width: 680px) and (max-width: 1199.98px) 100vw, (max-width: 679.98px) 100vw" src={riceGrainAgainstBlueSky} alt="Rice grain against a blue sky" />
+              <img className="[corner-shape:inherit] [object-position:center_center] object-cover" style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit" } as CSSProperties} decoding="auto" width="1672" height="941" sizes="(min-width: 1200px) 100vw, (min-width: 680px) and (max-width: 1199.98px) 100vw, (max-width: 679.98px) 100vw" src={version === 2 ? premiumRiceGreenBackground : riceGrainAgainstBlueSky} alt={version === 2 ? "Farmers holding golden rice over green paddy fields" : "Rice grain against a blue sky"} />
             </div>
             <div className="framer-rlphh1-container flex-none [bottom:0px] [right:0px]">
               <div className="[overflow:hidden]" style={{ position: "relative", width: "100%", height: "100%", pointerEvents: "none" }}>
