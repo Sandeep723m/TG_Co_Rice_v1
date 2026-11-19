@@ -130,3 +130,17 @@
 .tracking-page .confirm-link{font-size:14px}
 @media(max-width:760px){.checkout-page .form-section,.checkout-page .order-summary,.tracking-page .track-card,.tracking-page .tracking-card{padding:20px}.checkout-page .checkout-layout{gap:28px}.checkout-page .summary-line{grid-template-columns:54px 1fr auto;gap:10px}.checkout-page .summary-line>img{width:54px;height:54px}}
 @media(max-width:560px){.checkout-page .checkout-heading h1,.tracking-page .track-heading h1{font-size:34px}.checkout-page .checkout-heading p,.tracking-page .track-heading p{font-size:14px}.checkout-page .form-field label,.checkout-page .promo-field label,.tracking-page .form-field label{font-size:13px}.checkout-page .form-field input,.checkout-page .promo-field input,.tracking-page .form-field input{height:48px;font-size:16px}.checkout-page .form-section h2,.checkout-page .order-summary h2{font-size:19px}.checkout-page .summary-totals>div{font-size:13px}.checkout-page .summary-totals .summary-total b{font-size:22px}.tracking-page .track-card,.tracking-page .tracking-card{padding:18px}.tracking-page .tracking-step small{font-size:10px}}
+/* Match the imported page's shared section-title typography. */
+.oi-products-heading h2{font-family:Manrope,"Manrope Placeholder",sans-serif;font-size:40px;font-weight:600;letter-spacing:-.02em;line-height:1.2;margin:12px 0}
+@media(max-width:1199px){.oi-products-heading h2{font-size:36px}}
+@media(max-width:679px){.oi-products-heading h2{font-size:28px}}
+/* Match the imported Get Rice button's typography and proportions. */
+.oi-products-heading .store-view-bag{min-width:150px;padding:16px 25px;gap:10px;font-family:Switzer,"Switzer Placeholder",sans-serif;font-size:16px;font-weight:500;line-height:1.2;letter-spacing:0}
+/* Product cards use the same compact heading/body/caption scale as the rest of the page. */
+.product-card-copy{font-family:Switzer,"Switzer Placeholder",sans-serif}
+.product-flavor{font-family:Switzer,"Switzer Placeholder",sans-serif;font-size:11px;font-weight:500;line-height:1.3;letter-spacing:.08em}
+.product-card h3{font-family:Switzer,"Switzer Placeholder",sans-serif;font-size:20px;font-weight:600;line-height:1.2;letter-spacing:-.02em}
+.product-card-copy p{font-family:Switzer,"Switzer Placeholder",sans-serif;font-size:14px;font-weight:400;line-height:1.4}
+.product-card-bottom strong{font-family:Switzer,"Switzer Placeholder",sans-serif;font-size:16px;font-weight:600;line-height:1.2}
+.product-card-bottom small{font-family:Switzer,"Switzer Placeholder",sans-serif;font-size:11px;font-weight:400;line-height:1.3}
+@media(max-width:560px){.product-flavor{font-size:9px}.product-card h3{font-size:16px}.product-card-copy p{font-size:11px;line-height:1.4}.product-card-bottom strong{font-size:14px}.product-card-bottom small{font-size:10px}}

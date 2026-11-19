@@ -22,7 +22,7 @@ const DETAILS: Record<string, Omit<Product, keyof CatalogProduct>> = {
     image: basmati,
     imageBackground: "#e7f0e9",
     badge: "Bestseller",
-    flavor: "Blue raspberry",
+    flavor: "Long-grain · aromatic",
     description:
       "Our original formula. One gummy a day covers immunity, digestion, sleep and energy, so you can replace a shelf of supplements with just one thing.",
     benefits: ["Supports immunity & energy", "Gentle on digestion", "Better sleep quality", "Vegan & gluten-free"],
@@ -38,7 +38,7 @@ const DETAILS: Record<string, Omit<Product, keyof CatalogProduct>> = {
   "deep-sleep": {
     image: kolam,
     imageBackground: "#fff3d5",
-    flavor: "Lavender berry",
+    flavor: "Soft · fragrant",
     description:
       "A calming blend for a deeper, uninterrupted night. Helps you switch off without the groggy morning.",
     benefits: ["Fall asleep faster", "Fewer night wake-ups", "No morning grogginess", "Non habit-forming"],
@@ -54,7 +54,7 @@ const DETAILS: Record<string, Omit<Product, keyof CatalogProduct>> = {
     image: idli,
     imageBackground: "#e5f0fa",
     badge: "New",
-    flavor: "Strawberry rose",
+    flavor: "Parboiled · idli-ready",
     description:
       "Beauty from the inside out. Biotin and collagen support help strengthen hair and nails and keep skin looking clear.",
     benefits: ["Stronger hair & nails", "Clearer, brighter skin", "Antioxidant support", "Vegan collagen booster"],
@@ -69,7 +69,7 @@ const DETAILS: Record<string, Omit<Product, keyof CatalogProduct>> = {
   "calm-focus": {
     image: sonaMasoori,
     imageBackground: "#f8e8e6",
-    flavor: "Green apple mint",
+    flavor: "Light · aromatic",
     description:
       "Stay steady through busy days. Adaptogens and L-theanine take the edge off stress while keeping you sharp.",
     benefits: ["Calm, clear focus", "Less everyday stress", "No caffeine crash", "Supports mood"],
@@ -84,7 +84,7 @@ const DETAILS: Record<string, Omit<Product, keyof CatalogProduct>> = {
   immunity: {
     image: jeera,
     imageBackground: "#f0e9f5",
-    flavor: "Orange citrus",
+    flavor: "Cumin-scented",
     description:
       "Daily defence for every season. Vitamin C, zinc and elderberry help keep your immune system ready.",
     benefits: ["Year-round immune support", "Rich in antioxidants", "Faster recovery", "Kid-friendly taste"],
@@ -99,7 +99,7 @@ const DETAILS: Record<string, Omit<Product, keyof CatalogProduct>> = {
   "gut-balance": {
     image: ponni,
     imageBackground: "#f9ecdf",
-    flavor: "Tropical mango",
+    flavor: "South Indian staple",
     description:
       "Probiotics and prebiotic fibre in one tasty gummy for lighter, more comfortable digestion.",
     benefits: ["Less bloating", "Regular digestion", "Shelf-stable probiotics", "Sugar-free"],

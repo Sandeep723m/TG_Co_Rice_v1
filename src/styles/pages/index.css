@@ -1026,7 +1026,8 @@ navigationcontainer [data-framer-component-type="NavigationContainer"] > *, [dat
 .framer-CWw9Z .framer-1nmhst2 {
   background: linear-gradient(0deg,var(--token-5417a7f0-c127-4b51-90bb-f563c7acffe5,#def6ff)-3%,#fff 81.5896%,#def6ff 105%);
   height: min-content;
-  min-height: 900px;
+  min-height: 100vh;
+  min-height: 100svh;
   gap: 10px;
   width: 100%;
   padding: 170px 60px 60px;
@@ -2645,7 +2646,8 @@ navigationcontainer [data-framer-component-type="NavigationContainer"] > *, [dat
 
 @media (max-width:679.98px) {
   .framer-CWw9Z .framer-1nmhst2 {
-    min-height: 800px;
+    min-height: 100vh;
+    min-height: 100svh;
     padding: 160px 25px 60px;
   }
 }
