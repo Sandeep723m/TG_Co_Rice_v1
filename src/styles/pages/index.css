@@ -4898,5 +4898,9 @@ html body { background: rgb(255, 255, 255); }
 
 /* Version 1 desktop hero height follows its content, not the viewport. */
 @media (min-width: 1200px) {
-  #main:not(.oi-version-two) .framer-CWw9Z .framer-1nmhst2 { min-height: unset; }
+  #main:not(.oi-version-two) .framer-CWw9Z .framer-1nmhst2 {
+    min-height: 100vh;
+    min-height: 100svh;
+    padding-bottom: 60px;
+  }
 }
